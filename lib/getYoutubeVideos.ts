@@ -13,7 +13,11 @@ export async function getYoutubeVideos() {
 
         return await data.json();
 
-    } catch (error) {
-        throw new Error("An error acurred while fetching the videos");
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            throw new Error(error.message);
+        } else {
+            throw new Error("An error acurred while fetching the videos");
+        }
     }
 }
