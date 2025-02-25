@@ -1,3 +1,4 @@
+"use server"
 export async function getYoutubeVideos() {
     const apiKey = process.env.YT_API_KEY;
     const channelId = process.env.YT_CHANNEL_ID;
