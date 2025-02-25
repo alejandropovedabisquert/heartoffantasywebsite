@@ -5,7 +5,7 @@ export async function getYoutubeVideos() {
     const playlistId = process.env.NEXT_PUBLIC_YT_PLAYLIST_ID
 
     try {
-        const data = await fetch(`${apiURL}?key=${apiKey}&channelId=${channelId}&playlistId=${playlistId}&part=snippet&maxResults=50`);
+        const data = await fetch(`${apiURL}?key=${apiKey}&channelId=${channelId}&playlistId=${playlistId}&part=snippet&maxResults=6`);
 
         if(!data.ok){
             throw Error('Failed to fetch videos');

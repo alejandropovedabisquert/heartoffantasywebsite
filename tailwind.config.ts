@@ -8,6 +8,14 @@ export default {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        title: '1fr auto 1fr',
+        'left-side': '.1fr auto 1fr',
+        'right-side': '1fr auto .1fr'
+      },
+      gridTemplateRows: {
+        title: '22px 0'
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
