@@ -1,8 +1,8 @@
 export async function getYoutubeVideos() {
-    const apiKey = process.env.NEXT_PUBLIC_YT_API_KEY;
-    const channelId = process.env.NEXT_PUBLIC_YT_CHANNEL_ID;
-    const apiURL = process.env.NEXT_PUBLIC_YT_API_URL;
-    const playlistId = process.env.NEXT_PUBLIC_YT_PLAYLIST_ID
+    const apiKey = process.env.YT_API_KEY;
+    const channelId = process.env.YT_CHANNEL_ID;
+    const apiURL = process.env.YT_API_URL;
+    const playlistId = process.env.YT_PLAYLIST_ID
 
     try {
         const data = await fetch(`${apiURL}?key=${apiKey}&channelId=${channelId}&playlistId=${playlistId}&part=snippet&maxResults=6`);
