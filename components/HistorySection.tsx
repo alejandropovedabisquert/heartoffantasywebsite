@@ -1,15 +1,4 @@
-// import clsx from "clsx";
-import clsx from "clsx";
 import { Titulo } from "./common/Titulo";
-
-const gridHistory = [
-    "Sunnyside_World_ExampleScene.png",
-    "cafe.jpg",
-    "fox.jpg",
-    "fox2.jpg",
-    "Sunnyside_World_ExampleScene.png",
-    "Sunnyside_World_ExampleScene.png",
-];
 
 export default function HistorySection() {
     return (
@@ -24,22 +13,6 @@ export default function HistorySection() {
                 <div data-aos="fade-left" data-aos-delay="100" className="col-span-6 md:col-span-2">
                     <img data-aos="fade-left" className="max-h-64 h-screen float-right" src="/heart.png" alt="" />
                 </div>
-            </div>
-            {/* POSIBLE GALLERY */}
-            <div className="grid grid-cols-3 grid-rows-3 gap-8 mt-8">
-                {
-                    gridHistory.map((item, index) => (
-                        <div 
-                            key={index}
-                            data-aos="fade-up" data-aos-delay={(index + 1) * 50}
-                            className={clsx("col-span-3 row-span-1",
-                                index == 0 ? "sm:col-span-2 sm:row-span-2" : "sm:col-span-1 sm:row-span-1"
-                            )}
-                        >
-                            <img src={item} className="h-full object-cover" alt="" />
-                        </div>
-                    ))
-                }
             </div>
         </div>
     );
