@@ -1,3 +1,4 @@
+import FirefliesEffect from "@/components/common/FirefliesEffect";
 import FeaturesSection from "@/components/FeaturesSection";
 import HistorySection from "@/components/HistorySection";
 import VideosSection from "@/components/VideosSection";
@@ -7,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <div className="relative">
-        <video 
+        <video
           className="w-full h-screen object-cover"
           preload="none" aria-label="Video player" autoPlay controls={false} loop muted playsInline
         >
@@ -22,9 +23,18 @@ export default function Home() {
         </div>
       </div>
       {/* <main className="relative bg-[url(/bg-content2.png)] bg-top bg-cover bg-no-repeat overflow-y-hidden"> */}
-      <main className="relative overflow-y-hidden">
+      <main className="relative overflow-hidden">
+
+        <FirefliesEffect
+          count={100}
+          speed={3}
+          flicker={true}
+          colors={["#A43046", "#FFFFFF",]}
+          sizeRange={[3, 4]} // Tamaños entre 3px y 8px
+          glow={true} // Activar glow
+        />
         <div className="bg-gradient-to-b absolute top-0 h-screen max-h-[600px] w-full from-black to-transparent"></div>
-        <div className="relative z-10 container mx-auto px-4 pt-24">
+        <div className="relative z-10 container mx-auto px-4 pt-24 overflow-hidden">
           <HistorySection />
           <FeaturesSection />
           <VideosSection />

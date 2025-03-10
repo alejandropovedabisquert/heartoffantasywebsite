@@ -14,7 +14,7 @@ export const Titulo = ({
 }) => {
   const baseStyles = clsx(
     "uppercase tracking-widest grid grid-cols-title grid-rows-title gap-4 mb-12",
-    "before:content-[''] before:block before:border-b-2 before:border-[#A43046]",
+    "before:content-[''] before:block before:border-b-2 before:border-transparent before:md:border-[#A43046]",
     "after:content-[''] after:block after:border-b-2",
     {
       "md:grid-cols-left-side after:border-transparent": position == "left",
@@ -24,7 +24,9 @@ export const Titulo = ({
 
   return (
     <Component className={`${baseStyles} ${className}`}>
-      <span className="text-[#A43046]">#</span>{children}
+      <span>
+        <span className="text-[#A43046]">#</span>{children}
+      </span>
     </Component>
   );
 };
