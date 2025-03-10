@@ -13,18 +13,18 @@ export const Titulo = ({
   position?: string;
 }) => {
   const baseStyles = clsx(
-    "uppercase tracking-widest grid grid-cols-title grid-rows-title gap-4",
-    "before:content-[''] before:block before:border-b-2 before:border-red-700",
-    "after:content-[''] after:block after:border-b-2 after:border-red-700",
+    "uppercase tracking-widest grid grid-cols-title grid-rows-title gap-4 mb-12",
+    "before:content-[''] before:block before:border-b-2 before:border-[#A43046]",
+    "after:content-[''] after:block after:border-b-2",
     {
-      "md:grid-cols-left-side": position == "left",
+      "md:grid-cols-left-side after:border-transparent": position == "left",
       "md:grid-cols-right-side": position == "right",
     }
   );
 
   return (
     <Component className={`${baseStyles} ${className}`}>
-      {children}
+      <span className="text-[#A43046]">#</span>{children}
     </Component>
   );
 };

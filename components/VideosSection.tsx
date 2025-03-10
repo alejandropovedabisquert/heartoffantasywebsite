@@ -34,15 +34,17 @@ export default function VideosSection() {
         return "Loading";
     }
 
-    console.log(videos);
+    // console.log(videos);
 
     return (
-        <div className="relative">
-            <Titulo as={"h2"} position="left" className="text-4xl font-bold my-4">#Devlogs</Titulo>
+        <div className="relative my-24">
+            <div data-aos="fade-right">
+                <Titulo as={"h2"} position="left" className="text-4xl font-bold my-4">Devblogs</Titulo>
+            </div>
             <div className="grid grid-cols-6 gap-4">
                 {
-                    videos.items.map((video: Video) => (
-                        <div className="col-span-2" key={video.id}>
+                    videos.items.map((video: Video, index) => (
+                        <div className="col-span-2" key={video.id}  data-aos="fade-up" data-aos-delay={(index + 1) * 50}>
                             <div className="relative overflow-hidden group/image">
                                 <a href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}&list=${video.snippet.playlistId}`} target="_blank">
                                 <div className="absolute w-full h-full bg-black opacity-40 z-10 group-hover/image:opacity-20 transition-all"></div>
