@@ -14,7 +14,7 @@ export default function SliderSection() {
             <div className="bg-gradient-to-b absolute top-0 h-screen max-h-[60vh] w-full from-black to-transparent"></div>
             <div className="bg-gradient-to-t absolute bottom-0 h-screen max-h-[60vh] w-full from-black to-transparent"></div>
             <div className="absolute left-1/2 top-1/2 ease-in -translate-y-1/2 -translate-x-1/2">
-                <Image src={"/logo.png"} className="w-auto h-[400px]" width={300} height={300} alt="logo" unoptimized={true} priority />
+                <Image src={"/logo.png"} className="w-auto h-[400px]" width={300} height={300} alt="logo" priority />
             </div>
         </div>
     );

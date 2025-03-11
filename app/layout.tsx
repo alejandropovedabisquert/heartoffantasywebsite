@@ -28,9 +28,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.className} antialiased`}
       >
-        <header>
-          test cosa test
-        </header>
         {children}
         <FooterSection />
       </body>
