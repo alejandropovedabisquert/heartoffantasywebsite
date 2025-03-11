@@ -25,6 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <AOSInit />
+      <head>
+        <link rel="preload" href="/logo.png" as="image" />
+      </head>
       <body
         className={`${geistSans.className} antialiased`}
       >
