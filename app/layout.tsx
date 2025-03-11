@@ -3,7 +3,6 @@ import { Geist } from "next/font/google";
 import "./globals.css";
 import { AOSInit } from "@/components/common/AosInit";
 import FooterSection from "@/components/FooterSection";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +30,6 @@ export default function RootLayout({
         >
         {children}
         <FooterSection />
-        <SpeedInsights/>
       </body>
     </html>
   );
