@@ -1,0 +1,96 @@
+{
+  "Metadata": {
+    "title": "Heart of Fantasy | A permadeath MMORPG",
+    "description": "\"Heart of Fantasy\" is a permadeath survival MMORPG with a procedurally generated world featuring oceans, rivers, and mountains.",
+    "openGraphImage": "/openGraph.png"
+  },  
+  "LanguageSwitcher":[
+    {
+      "locale": "es",
+      "language": "Spanish"
+    },
+    {
+      "locale": "en",
+      "language": "English"
+    }
+  ],
+  "HistorySection": {
+    "title": "About the game",
+    "description": "<important>Lorem Ipsum</important> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+  },
+  "FeaturesSection": {
+    "title": "Features",
+    "features" : [
+      {
+        "title": "Permadeath",
+        "description": "Every decision counts. Die, and you lose everything: character, gear, and progress. A high-stakes system that rewards strategy and turns every win into a legend. Dare to risk it all? 🗡️"
+      },
+      {
+        "title": "World Crafting",
+        "description": "Shape the world: build towns, terraform landscapes, design dungeons, and leave your mark. The environment evolves based on community actions, making every server unique! 🌱"
+      },
+      {
+        "title": "Cyclic Boss",
+        "description": "Bosses grow stronger when defeated: they return with upgraded skills, shifting attack patterns, and exclusive rewards. The battle—and glory—never ends! ⚔️"
+      },
+      {
+        "title": "Wraparound Map",
+        "description": "A borderless world: reach the edge, and you reappear on the opposite side. Explore endlessly, uncover hidden paths, and face looping dangers. Geography is an eternal loop! 🔄"
+      }
+    ]
+  },
+  "VideosSection":{
+    "title": "Devblogs"
+  },
+  "GallerySection": [
+    {
+      "src": "/gallery/cafe.jpg",
+      "alt": "Coffee in a cup"
+    },
+    {
+      "src": "/gallery/Sunnyside_World_ExampleScene.png",
+      "alt": "Sunnyside example scene 1"
+    },
+    {
+      "src": "/gallery/fox.jpg",
+      "alt": "Fox in the snow"
+    },
+    {
+      "src": "/gallery/Sunnyside_World_ExampleScene.png",
+      "alt": "Sunnyside example scene 2"
+    },
+    {
+      "src": "/gallery/fox2.jpg",
+      "alt": "Fox in the forest"
+    },
+    {
+      "src": "/gallery/Sunnyside_World_ExampleScene.png",
+      "alt": "Sunnyside example scene 1"
+    }
+  ],
+  "FooterSection": {
+    "copyright": "Heart of Fantasy © {year} All Rights Reserved"
+  },
+  "SocialMedia" : [
+    {
+      "link": "https://www.twitch.tv/blacksmith3",
+      "logo": "twitch"
+    },
+    {
+      "link": "https://www.youtube.com/@blacksmith94",
+      "logo": "youtube"
+    },
+    {
+      "link": "https://discord.gg/Qmp4aqJcQ8",
+      "logo": "discord"
+    },
+    {
+      "link": "https://ko-fi.com/blacksmith3",
+      "logo": "kofi"
+    },
+    {
+      "link": "https://blacksmith94.itch.io/heartoffantasy",
+      "logo": "itchio"
+    }
+  ]
+}

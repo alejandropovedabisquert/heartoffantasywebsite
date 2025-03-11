@@ -3,19 +3,13 @@ import clsx from "clsx";
 import Image, { ImageProps } from "next/image";
 import { useState } from "react";
 import ModalComponent from "./common/ModalComponent";
+import { useTranslations } from "next-intl";
 
 export default function GallerySection() {
     const [selectedImage, setSelectedImage] = useState<ImageProps  | null>(null);
     const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
-
-    const images: ImageProps[] = [
-        { src: "/gallery/cafe.jpg", alt: "Café en taza" },
-        { src: "/gallery/Sunnyside_World_ExampleScene.png", alt: "Escena de ejemplo Sunnyside 1" },
-        { src: "/gallery/fox.jpg", alt: "Zorro en la nieve" },
-        { src: "/gallery/Sunnyside_World_ExampleScene.png", alt: "Escena de ejemplo Sunnyside 2" },
-        { src: "/gallery/fox2.jpg", alt: "Zorro en el bosque" },
-        { src: "/gallery/Sunnyside_World_ExampleScene.png", alt: "Escena de ejemplo Sunnyside 1" },
-    ];
+    const t = useTranslations();
+    const images = t.raw("GallerySection");
 
     const handleOnClicked = (src: string, index: number) => {
         setSelectedImage(images[index]);
@@ -59,7 +53,7 @@ export default function GallerySection() {
         <>
             <div className="grid grid-cols-3 grid-rows-3 gap-8 mt-8">
                 {
-                    images.map((image, index) => (
+                    images.map((image: ImageProps, index: number) => (
                         <div
                             key={index}
                             data-aos="fade-up" data-aos-delay={(index + 1) * 50}

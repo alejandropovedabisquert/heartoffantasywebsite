@@ -1,0 +1,97 @@
+{
+  "Metadata": {
+    "title": "Heart of Fantasy | Un MMORPG con permadeath",
+    "description": "\"Heart of Fantasy\" es un MMORPG de supervivencia con permadeath y un mundo generado proceduralmente que incluye océanos, ríos y montañas.",
+    "openGraphImage": "/openGraph.png"
+  },
+  "LanguageSwitcher":[
+    {
+      "locale": "es",
+      "language": "Spanish"
+    },
+    {
+      "locale": "en",
+      "language": "English"
+    }
+  ],
+  "HistorySection": {
+    "title": "Sobre el juego",
+    "description": "<important>Lorem Ipsum</important> es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum."
+  },
+  "FeaturesSection": {
+    "title": "Características",
+    "features" : [
+      {
+        "title": "Permadeath",
+        "description": "Cada decisión cuenta. Si mueres, lo pierdes todo: personaje, equipo y progreso. Un sistema de alto riesgo que premia la estrategia y convierte cada victoria en una leyenda. ¿Te atreves a arriesgarlo todo? 🗡️"
+      },
+      {
+        "title": "Creación del mundo",
+        "description": "Da forma al mundo: construye ciudades, transforma paisajes, diseña mazmorras y deja tu huella. El entorno evoluciona según las acciones de la comunidad, ¡haciendo que cada servidor sea único! 🌱"
+      },
+      {
+        "title": "Jefe cíclico",
+        "description": "Los jefes se vuelven más fuertes al ser derrotados: regresan con habilidades mejoradas, nuevos patrones de ataque y recompensas exclusivas. ¡La batalla—y la gloria—nunca terminan! ⚔️"
+      },
+      {
+        "title": "Mapa envolvente",
+        "description": "Un mundo sin fronteras: al llegar al borde, reapareces en el lado opuesto. Explora sin límites, descubre rutas ocultas y enfréntate a peligros recurrentes. ¡La geografía es un bucle eterno! 🔄"
+      }        
+    ]
+  },
+  "VideosSection":{
+    "title": "Devblogs"
+  },
+  "GallerySection": [
+    {
+      "src": "/gallery/cafe.jpg",
+      "alt": "Café en taza"
+    },
+    {
+      "src": "/gallery/Sunnyside_World_ExampleScene.png",
+      "alt": "Escena de ejemplo Sunnyside 1"
+    },
+    {
+      "src": "/gallery/fox.jpg",
+      "alt": "Zorro en la nieve"
+    },
+    {
+      "src": "/gallery/Sunnyside_World_ExampleScene.png",
+      "alt": "Escena de ejemplo Sunnyside 2"
+    },
+    {
+      "src": "/gallery/fox2.jpg",
+      "alt": "Zorro en el bosque"
+    },
+    {
+      "src": "/gallery/Sunnyside_World_ExampleScene.png",
+      "alt": "Escena de ejemplo Sunnyside 1"
+    }
+  ],
+  "FooterSection": {
+    "copyright": "Heart of Fantasy © {year} Todos los derechos reservados"
+
+  },
+  "SocialMedia" : [
+    {
+      "link": "https://www.twitch.tv/blacksmith3",
+      "logo": "twitch"
+    },
+    {
+      "link": "https://www.youtube.com/@blacksmith94",
+      "logo": "youtube"
+    },
+    {
+      "link": "https://discord.gg/Qmp4aqJcQ8",
+      "logo": "discord"
+    },
+    {
+      "link": "https://ko-fi.com/blacksmith3",
+      "logo": "kofi"
+    },
+    {
+      "link": "https://blacksmith94.itch.io/heartoffantasy",
+      "logo": "itchio"
+    }
+  ]
+}

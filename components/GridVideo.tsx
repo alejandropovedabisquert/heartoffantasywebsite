@@ -31,7 +31,7 @@ export default function GridVideo() {
     }
 
     if (!videos) {
-        return <SkeletonGridVideo length={6}/>;
+        return <SkeletonGridVideo length={3}/>;
     }
 
     return (
