@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { Titulo } from "./common/Titulo";
 import GridVideo from "./GridVideo";
 
@@ -8,9 +7,7 @@ export default function VideosSection() {
             <div data-aos="fade-right">
                 <Titulo as={"h2"} position="left" className="text-4xl font-bold my-4">Devblogs</Titulo>
             </div>
-            <Suspense fallback="Loading.....asdas" >
-                <GridVideo/>
-            </Suspense>
+            <GridVideo/>
         </div>
     );
 }

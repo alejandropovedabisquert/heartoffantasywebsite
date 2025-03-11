@@ -2,20 +2,24 @@ import Image from "next/image";
 
 const socialMedia = [
     {
-        "link": "https://ko-fi.com/blacksmith3",
-        "logo": "kofi",
-    },
-    {
-        "link": "https://blacksmith94.itch.io/heartoffantasy",
-        "logo": "itchio",
-    },
-    {
         "link": "https://www.twitch.tv/blacksmith3",
         "logo": "twitch",
     },
     {
         "link": "https://www.youtube.com/@blacksmith94",
         "logo": "youtube",
+    },
+    {
+        "link": "https://discord.gg/Qmp4aqJcQ8",
+        "logo": "discord",
+    },
+    {
+        "link": "https://ko-fi.com/blacksmith3",
+        "logo": "kofi",
+    },
+    {
+        "link": "https://blacksmith94.itch.io/heartoffantasy",
+        "logo": "itchio",
     },
 ]
 

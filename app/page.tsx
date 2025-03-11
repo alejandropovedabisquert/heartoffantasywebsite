@@ -19,7 +19,7 @@ export default function Home() {
           glow={true} // Activar glow
         />
         <div className="bg-gradient-to-b absolute top-0 h-screen max-h-[600px] w-full from-black to-transparent"></div>
-        <div className="relative z-10 container mx-auto px-4 pt-24 overflow-hidden">
+        <div className="container mx-auto px-4 pt-24 overflow-hidden">
           <HistorySection />
           <GallerySection/>
           <FeaturesSection />

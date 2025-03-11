@@ -5,20 +5,9 @@ export default function SliderSection() {
         <div className="relative h-screen">
             <div className="absolute top-0 h-screen w-full bg-[url(/bg_principal.jpg)] bg-center bg-cover bg-no-repeat"></div>
             <div className="absolute left-1/2 top-1/2 ease-in -translate-y-1/2 -translate-x-1/2 z-10">
-                {/* <Image src={"/logo.png"} className="w-auto h-[400px]" width={300} height={300} alt="logo" priority={true} /> */}
-                <picture>
-                    <source media="(max-width:699px)" srcSet={"/logo.png"} type="image/png" />
-                    <source media="(max-width:640px)" srcSet={"/logo.png"} type="image/png" />
-                    <Image
-                        src={"/logo.png"}
-                        width={500}
-                        height={500}
-                        alt="logo"
-                        quality={100}
-                        priority={true}
-                        loading="eager"
-                    />
-                </picture>
+                <div className="w-[400px] h-[400px]">
+                    <Image src={"/logo.png"} fill alt="logo" priority={true} />
+                </div>
             </div>
             <video
                 className="absolute top-0 w-full h-screen object-cover"
