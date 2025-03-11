@@ -26,12 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <AOSInit />
-      <SpeedInsights/>
       <body
         className={`${geistSans.className} antialiased`}
-      >
+        >
         {children}
         <FooterSection />
+        <SpeedInsights/>
       </body>
     </html>
   );
