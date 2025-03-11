@@ -13,9 +13,9 @@ export default function SliderSection() {
             </video>
             <div className="bg-gradient-to-b absolute top-0 h-screen max-h-[60vh] w-full from-black to-transparent"></div>
             <div className="bg-gradient-to-t absolute bottom-0 h-screen max-h-[60vh] w-full from-black to-transparent"></div>
-            <div className="absolute left-1/2 top-1/2 ease-in -translate-y-1/2 -translate-x-1/2 h-[300px] w-[300px] md:h-[350px] md:w-[350px]">
+            {/* <div className="absolute left-1/2 top-1/2 ease-in -translate-y-1/2 -translate-x-1/2 h-[300px] w-[300px] md:h-[350px] md:w-[350px]">
                 <Image src={"/logo.png"} fill alt="logo" unoptimized={true} priority={true} />
-            </div>
+            </div> */}
         </div>
     );
 }
