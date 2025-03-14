@@ -1,41 +1,18 @@
 'use client';
 
-import { startTransition, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { Link, usePathname, useRouter } from '@/i18n/navigation';
-import { useParams } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { Globe } from 'lucide-react';
 import clsx from 'clsx';
-
-interface languagesProps {
-  locale: string;
-  language: string;
-}
 
 export default function LanguageSwitcher() {
   const [open, isOpen] = useState<boolean>(false);
   const heightRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number | undefined>(0);
   const t = useTranslations("LocaleSwitcher");
-  const router = useRouter();
-  const pathname = usePathname();
-  const params = useParams();
   const currentLocale = useLocale();
-  const switchLanguage = (nextLocale: string) => {
-    if (nextLocale === currentLocale) return;
 
-    startTransition(() => {
-      router.replace(
-        // @ts-expect-error -- TypeScript will validate that only known `params`
-        // are used in combination with a given `pathname`. Since the two will
-        // always match for the current route, we can skip runtime checks.
-        { pathname, params }, // Mantiene la ruta actual
-        { locale: nextLocale } // Cambia el idioma
-      );
-    });
-    router.refresh();
-  };
   useEffect(()=>{
     setHeight(heightRef.current?.scrollHeight)
   });
@@ -63,9 +40,6 @@ export default function LanguageSwitcher() {
             ):null
           }
           </>
-          // <button key={cur} onClick={() => switchLanguage(cur)} hidden={cur == currentLocale} className='p-2 w-full'>
-          //   {t('locale', { locale: cur })}
-          // </button>
         ))}
       </div>
     </div>
