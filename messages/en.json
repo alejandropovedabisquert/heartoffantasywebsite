@@ -32,6 +32,9 @@
       }
     ]
   },
+  "BannerGodotSection": {
+    "title": "Made with"
+  },
   "VideosSection":{
     "title": "Devblogs"
   },

@@ -32,6 +32,9 @@
       }        
     ]
   },
+  "BannerGodotSection": {
+    "title": "Hecho con"
+  },
   "VideosSection":{
     "title": "Devblogs"
   },

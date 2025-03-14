@@ -1,3 +1,4 @@
+import BannerGodotSection from "@/components/BannerGodotSection";
 import FirefliesEffect from "@/components/common/FirefliesEffect";
 import FeaturesSection from "@/components/FeaturesSection";
 import GallerySection from "@/components/GallerySection";
@@ -23,6 +24,11 @@ export default function Home() {
           <HistorySection />
           <GallerySection/>
           <FeaturesSection />
+        </div>
+        <div className="relative overflow-hidden">
+          <BannerGodotSection/>
+        </div>
+        <div className="container mx-auto px-4 overflow-hidden">
           <VideosSection />
         </div>
       </main>
