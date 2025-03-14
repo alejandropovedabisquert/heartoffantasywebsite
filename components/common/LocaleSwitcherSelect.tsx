@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { Globe } from 'lucide-react';
-import clsx from 'clsx';
 
 export default function LanguageSwitcher() {
   const [open, isOpen] = useState<boolean>(false);
@@ -16,10 +15,6 @@ export default function LanguageSwitcher() {
   useEffect(()=>{
     setHeight(heightRef.current?.scrollHeight)
   });
-
-  const heightStyle = clsx(
-    open ? `h-[${height}px]` : "h-0"
-  );
   
   
 
@@ -29,12 +24,16 @@ export default function LanguageSwitcher() {
         <Globe/>
         {t('locale', { locale: currentLocale })}
       </div>
-      <div ref={heightRef} className={`text-center overflow-hidden bg-[#A43046] transition-all ${heightStyle}`}>
+      <div 
+        ref={heightRef}
+        className={`text-center overflow-hidden bg-[#A43046] transition-all`}
+        style={open ? { height: `${height}px` } : { height: 0 }}
+      >
         {routing.locales.map((cur) => (
           <>
           {
             cur != currentLocale ? (
-              <a href={cur} hidden={cur == currentLocale} className='p-2 block w-full bg-[#A43046] transition-all hover:bg-white hover:text-black'>
+              <a href={cur} className='p-2 block w-full bg-[#A43046] transition-all hover:bg-white hover:text-black'>
                 {t('locale', { locale: cur })}
               </a>
             ):null
