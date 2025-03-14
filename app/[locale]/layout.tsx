@@ -47,7 +47,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth">
       <AOSInit />
       <body
         className={`${geistSans.className} antialiased`}
