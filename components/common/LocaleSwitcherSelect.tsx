@@ -29,7 +29,7 @@ export default function LocaleSwitcher() {
         className={`text-center overflow-hidden bg-[#A43046] transition-all`}
         style={open ? { height: `${height}px` } : { height: 0 }}
       >
-        {routing.locales.map((cur, index) => (
+        {routing.locales.map((cur) => (
           cur !== currentLocale && (
             <a
               key={cur}
