@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import StreamerStatus from "./common/StreamerStatus";
 interface socialMediaProps {
     link: string;
     logo: string;
@@ -29,6 +30,7 @@ export default function FooterSection() {
                     {t('copyright', { year: year })}
                 </p>
             </div>
+            <StreamerStatus streamerName="blacksmith3" />
         </footer>
     );
 }

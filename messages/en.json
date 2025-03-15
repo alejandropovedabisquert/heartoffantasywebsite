@@ -88,5 +88,8 @@
       "link": "https://blacksmith94.itch.io/heartoffantasy",
       "logo": "itchio"
     }
-  ]
+  ],
+  "TwitchPopup": {
+    "online": "is ONLINE"
+  }
 }

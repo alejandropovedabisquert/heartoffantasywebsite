@@ -5,7 +5,7 @@ export default function SliderSection() {
         <div className="relative h-screen">
             <div className="absolute top-0 h-screen w-full bg-[url(/bg_principal.jpg)] bg-center bg-cover bg-no-repeat"></div>
             <div className="absolute left-1/2 top-1/2 ease-in -translate-y-1/2 -translate-x-1/2 z-10">
-                <div className="w-[400px] h-[400px]">
+                <div className="w-[300px] h-[300px] sm:w-[400px] sm:h-[400px]">
                     <Image src={"/logo.png"} fill alt="logo" priority={true} />
                 </div>
             </div>
