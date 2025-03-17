@@ -39,7 +39,7 @@ export default function StreamerStatus(name: nameProps) {
                 data.data.length > 0 ? (
                     <div className="fixed bottom-4 right-4 z-30 bg-[#6441a5] rounded-xl">
                         <Link href={`https://www.twitch.tv/${data?.data[0].user_login}`} target="_blank">
-                            <div className="relative flex gap-4">
+                            <div className="relative flex">
                                 <div className="h-4 w-4 bg-red-700 animate-pulse absolute -left-1 -top-1 rounded-full"></div>
                                 <div className="flex justify-center items-center p-4 sm:pl-4">
                                     <Image src="/rrss_svg/twitch_white.svg" width={30} height={30} alt="" unoptimized={true}/>

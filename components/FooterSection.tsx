@@ -18,7 +18,7 @@ export default function FooterSection() {
                     rrssT.raw("SocialMedia").map((media: socialMediaProps, index: number) =>(
                         <div key={index}>
                             <a href={`${media.link}`} target="_blank">
-                                <Image src={`/rrss_svg/${media.logo}.svg`} className="w-10 h-10 transition-all duration-300 hover:animate-wiggle" alt="" width={40} height={40} unoptimized={true}/>
+                                <Image src={`/rrss_svg/${media.logo}.svg`} className="w-10 h-10 transition-all duration-300 hover:animate-wiggle" alt={media.logo} width={40} height={40} unoptimized={true}/>
                             </a>
                         </div>
                     ))
