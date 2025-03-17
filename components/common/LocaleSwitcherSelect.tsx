@@ -14,7 +14,7 @@ export default function LocaleSwitcher() {
 
   useEffect(() => {
     setHeight(heightRef.current?.scrollHeight)
-  });
+  }, [height]);
 
 
 

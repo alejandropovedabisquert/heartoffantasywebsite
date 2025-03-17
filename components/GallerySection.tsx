@@ -44,7 +44,7 @@ export default function GallerySection() {
     const modalStyles = clsx(
         "w-screen h-screen fixed left-0 top-0 opacity-0 scale-0 transition-all duration-500",
         {
-            "-z-10 invisible": !selectedImage,
+            "invisible": !selectedImage,
             "opacity-100 z-20 visible scale-100": selectedImage,
         }
     )

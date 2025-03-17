@@ -12,10 +12,10 @@ export default function Home() {
       <SliderSection/>
       <main className="relative overflow-hidden">
         <FirefliesEffect
-          count={100}
-          speed={3}
-          flicker={true}
-          colors={["#A43046", "#FFFFFF",]}
+          count={100} // Cuantas luciernagas apareceran
+          speed={3} // A que velocidad se mueven
+          flicker={true} // Activar parpadeo
+          colors={["#A43046", "#FFFFFF",]} // Colores de las luciernagas
           sizeRange={[3, 4]} // Tamaños entre 3px y 8px
           glow={true} // Activar glow
         />

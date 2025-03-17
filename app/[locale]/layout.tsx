@@ -7,6 +7,7 @@ import "../globals.css";
 import { AOSInit } from "@/components/common/AosInit";
 import FooterSection from "@/components/FooterSection";
 import LanguageSwitcher from "@/components/common/LocaleSwitcherSelect";
+import { Metadata } from 'next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,12 +15,13 @@ const geistSans = Geist({
 });
 
 // Función para generar el metadata dinámicamente
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // Cargar las traducciones para el idioma actual
   const {locale} = await params;
   const messages = (await import(`../../messages/${locale}.json`)).default;
 
   return {
+    metadataBase: new URL('https://heartoffantasywebsite.vercel.app'), // Asignamos dominio en produccion
     title: messages.Metadata.title,
     description: messages.Metadata.description,
     openGraph: {

@@ -9,7 +9,7 @@ interface nameProps {
     streamerName: string,
 }
 
-export default function StreamerStatus(streamerName: nameProps) {
+export default function StreamerStatus(name: nameProps) {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [data, setData] = useState<TwitchStreamResponse>();
     const t = useTranslations("TwitchPopup");
@@ -17,7 +17,7 @@ export default function StreamerStatus(streamerName: nameProps) {
     useEffect(() => {
         const fetchStreamerStatus = async () => {
             try {
-                const data = await checkIfStreamerIsLive(streamerName.streamerName);
+                const data = await checkIfStreamerIsLive(name.streamerName);
                 setData(data);
             } catch (error) {
                 console.error('Error fetching streamer status:', error);
@@ -27,7 +27,7 @@ export default function StreamerStatus(streamerName: nameProps) {
         };
 
         fetchStreamerStatus();
-    }, []);
+    }, [name.streamerName]);
 
     if (isLoading || !data) {
         return null;

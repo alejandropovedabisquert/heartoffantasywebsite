@@ -3,6 +3,7 @@ import YoutubeResponse, { Video } from "@/interfaces/interfacesYoutube";
 import { getYoutubeVideos } from "@/lib/getYoutubeVideos";
 import { useEffect, useState } from "react";
 import SkeletonGridVideo from "./skeleton/SkeletonGridVideo";
+import Image from "next/image";
 
 export default function GridVideo() {
     const [videos, setVideos] = useState<YoutubeResponse | null>(null);
@@ -41,7 +42,14 @@ export default function GridVideo() {
                     <div className="relative overflow-hidden group/image">
                         <a href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}&list=${video.snippet.playlistId}`} target="_blank">
                             <div className="absolute w-full h-full bg-black opacity-40 z-10 group-hover/image:opacity-20 transition-all"></div>
-                            <img className="group-hover/image:scale-110 transition-all" src={`${video.snippet.thumbnails.maxres.url}`} alt="" />
+                            <Image 
+                                className="group-hover/image:scale-110 transition-all" 
+                                src={`${video.snippet.thumbnails.maxres.url}`} 
+                                alt=""
+                                width={400}
+                                height={400}
+                                unoptimized={true} 
+                            />
                             <h3 className="font-bold text-white text-lg absolute top-0 p-4 z-20">
                                 {video.snippet.title}
                             </h3>

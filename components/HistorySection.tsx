@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Titulo } from "./common/Titulo";
+import Image from "next/image";
 
 export default function HistorySection() {
     const t = useTranslations('HistorySection');
@@ -17,7 +18,15 @@ export default function HistorySection() {
                     </p>
                 </div>
                 <div data-aos="fade-left" data-aos-delay="100" className="col-span-6 md:col-span-2">
-                    <img data-aos="fade-left" className="max-h-64 h-screen float-right" src="/heart.png" alt="" />
+                    <Image 
+                        data-aos="fade-left" 
+                        className="float-right" 
+                        src="/heart.png" 
+                        alt=""
+                        width={250}
+                        height={250}
+                        unoptimized={true} 
+                    />
                 </div>
             </div>
         </div>
