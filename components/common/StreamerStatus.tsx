@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Cookies from "js-cookie";
 import { BookmarkX } from "lucide-react";
 
 interface nameProps {
@@ -29,20 +28,11 @@ export default function StreamerStatus(name: nameProps) {
             }
         };
 
-        // Verificar si la cookie 'streamerPopup' está activa
-        const popupClosed = Cookies.get('streamerPopup') === 'true';
+        fetchStreamerStatus();
 
-        if (!popupClosed) {
-            fetchStreamerStatus();
-        } else {
-            setIsLoading(false); // Si la cookie está activada, no hacemos la llamada
-            setIsPopupVisible(false); // No mostrar el popup si la cookie está presente
-        }
     }, [name.streamerName]);
 
     const handleClosePopup = () => {
-        // Establecer la cookie 'streamerPopup' en true por 1 hroa
-        Cookies.set('streamerPopup', 'true', { expires: 1/24 }); // La cookie expirará en 1 hora
         setIsPopupVisible(false); // Ocultar el popup
     };
 
@@ -55,7 +45,7 @@ export default function StreamerStatus(name: nameProps) {
             {
                 data.data.length > 0 ? (
                     <div className="group/close fixed bottom-4 right-4 z-30 bg-[#6441a5] rounded-xl">
-                        <button 
+                        <button
                             onClick={handleClosePopup}
                             className="absolute -right-2 -top-6 z-10 transition-all opacity-0 group-hover/close:opacity-100 group-hover/close:-top-3"
                         >
