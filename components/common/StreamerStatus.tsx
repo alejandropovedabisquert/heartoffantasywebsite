@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Cookies from "js-cookie";
+import { BookmarkX } from "lucide-react";
 
 interface nameProps {
     streamerName: string,
@@ -11,6 +13,7 @@ interface nameProps {
 
 export default function StreamerStatus(name: nameProps) {
     const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [isPopupVisible, setIsPopupVisible] = useState<boolean>(true);
     const [data, setData] = useState<TwitchStreamResponse>();
     const t = useTranslations("TwitchPopup");
 
@@ -26,10 +29,24 @@ export default function StreamerStatus(name: nameProps) {
             }
         };
 
-        fetchStreamerStatus();
+        // Verificar si la cookie 'streamerPopup' está activa
+        const popupClosed = Cookies.get('streamerPopup') === 'true';
+
+        if (!popupClosed) {
+            fetchStreamerStatus();
+        } else {
+            setIsLoading(false); // Si la cookie está activada, no hacemos la llamada
+            setIsPopupVisible(false); // No mostrar el popup si la cookie está presente
+        }
     }, [name.streamerName]);
 
-    if (isLoading || !data) {
+    const handleClosePopup = () => {
+        // Establecer la cookie 'streamerPopup' en true por 1 hroa
+        Cookies.set('streamerPopup', 'true', { expires: 1/24 }); // La cookie expirará en 1 hora
+        setIsPopupVisible(false); // Ocultar el popup
+    };
+
+    if (isLoading || !data || !isPopupVisible) {
         return null;
     }
 
@@ -37,12 +54,18 @@ export default function StreamerStatus(name: nameProps) {
         <>
             {
                 data.data.length > 0 ? (
-                    <div className="fixed bottom-4 right-4 z-30 bg-[#6441a5] rounded-xl">
+                    <div className="group/close fixed bottom-4 right-4 z-30 bg-[#6441a5] rounded-xl">
+                        <button 
+                            onClick={handleClosePopup}
+                            className="absolute -right-2 -top-6 z-10 transition-all opacity-0 group-hover/close:opacity-100 group-hover/close:-top-3"
+                        >
+                            <BookmarkX width={32} height={32} className="text-[#A43046]" fill="white" />
+                        </button>
                         <Link href={`https://www.twitch.tv/${data?.data[0].user_login}`} target="_blank">
                             <div className="relative flex">
                                 <div className="h-4 w-4 bg-red-700 animate-pulse absolute -left-1 -top-1 rounded-full"></div>
                                 <div className="flex justify-center items-center p-4 sm:pl-4">
-                                    <Image src="/rrss_svg/twitch_white.svg" width={30} height={30} alt="" unoptimized={true}/>
+                                    <Image src="/rrss_svg/twitch_white.svg" width={30} height={30} alt="" unoptimized={true} />
                                 </div>
                                 <div className="py-4 pr-4 hidden md:block">
                                     <h3 className="font-bold">
