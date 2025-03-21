@@ -59,7 +59,7 @@ export default function StreamerStatus(name: nameProps) {
                                 </div>
                                 <div className="py-4 pr-4 hidden md:block">
                                     <h3 className="font-bold">
-                                        {data?.data[0].user_name} {t.rich("online")}
+                                        {data?.data[0].user_name} {t("online")}
                                     </h3>
                                     <h4 className="truncate max-w-64">
                                         {data?.data[0].title}

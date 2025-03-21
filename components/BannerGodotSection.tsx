@@ -18,7 +18,7 @@ export default function BannerGodotSection() {
                     data-aos="zoom-in"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-widest">
-                        {t.rich('title')}
+                        {t('title')}
                     </h2>
                     <div className="max-w-[500px] relative">
                         <Image src="logo_large_color_dark.svg" alt="Logo Godot Engine" width={500} height={500} unoptimized={true}/>

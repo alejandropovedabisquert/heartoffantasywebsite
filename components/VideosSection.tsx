@@ -7,7 +7,7 @@ export default function VideosSection() {
     return (
         <div className="relative my-24">
             <div data-aos="fade-right">
-                <Titulo as={"h2"} position="left" className="text-4xl font-bold my-4">{t.rich("title")}</Titulo>
+                <Titulo as={"h2"} position="left" className="text-4xl font-bold my-4">{t("title")}</Titulo>
             </div>
             <GridVideo/>
         </div>

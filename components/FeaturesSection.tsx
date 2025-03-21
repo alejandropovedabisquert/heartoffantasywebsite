@@ -11,7 +11,7 @@ export default function FeaturesSection() {
     return (
         <div className="my-24">
             <div data-aos="fade-right">
-                <Titulo as={"h2"} position="left" className="text-4xl font-bold my-4">{t.rich("title")}</Titulo>
+                <Titulo as={"h2"} position="left" className="text-4xl font-bold my-4">{t("title")}</Titulo>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {
@@ -20,9 +20,7 @@ export default function FeaturesSection() {
                             <h3 className="font-bold text-2xl">
                                 {feature.title}
                             </h3>
-                            <p>
-                                {feature.description}
-                            </p>
+                            <p dangerouslySetInnerHTML={{__html: feature.description}} />
                         </div>
                     ))
                 }
