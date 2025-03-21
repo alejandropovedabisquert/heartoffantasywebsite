@@ -46,8 +46,8 @@ export default function GridVideo() {
                                 className="group-hover/image:scale-110 transition-all" 
                                 src={`${video.snippet.thumbnails.maxres.url}`} 
                                 alt=""
-                                width={400}
-                                height={400}
+                                width={800}
+                                height={800}
                                 unoptimized={true} 
                             />
                             <h3 className="font-bold text-white text-lg absolute top-0 p-4 z-20">
