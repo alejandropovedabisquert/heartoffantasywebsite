@@ -1,41 +1,41 @@
 {
   "Metadata": {
     "title": "Heart of Fantasy | A permadeath MMORPG",
-    "description": "\"Heart of Fantasy\" is a permadeath survival MMORPG with a procedurally generated world featuring oceans, rivers, and mountains.",
+    "description": "\"Heart of Fantasy\" is a survival MMORPG with permadeath and a procedurally generated world featuring oceans, rivers, and mountains.",
     "openGraphImage": "/openGraph.png"
-  },  
-  "LocaleSwitcher":{
+  },
+  "LocaleSwitcher": {
     "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
   },
   "HistorySection": {
     "title": "About the game",
-    "description": "<strong>Lorem Ipsum</strong> is <a href='/my-page'>simply dummy</a> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    "description": "<strong>Heart of Fantasy</strong> is an MMORPG unlike anything you've ever experienced. In this persistent and cyclical world, darkness plays with the hearts of players. The Demon King is immortal, not by power, but by emptiness: he divided his heart into fragments and gave them to the darkness. <br> As long as these fragments are scattered across the world, he cannot die. Only those who gather them all can break his immortality and challenge him in a final battle. And if they defeat him, they must make a choice: destroy the cycle and begin an era of peace for all, or divide their own heart and surrender it to the darkness, becoming the new Demon King."
   },
   "FeaturesSection": {
     "title": "Features",
-    "features" : [
+    "features": [
       {
         "title": "Permadeath",
-        "description": "Every decision counts. Die, and you lose everything: character, gear, and progress. A high-stakes system that rewards strategy and turns every win into a legend. Dare to risk it all? 🗡️"
+        "description": "Every decision matters. If you die, you lose everything: character, gear, and progress. A high-risk system that rewards strategy and turns every victory into a legend. Will you dare to risk it all? 🗡️"
       },
       {
-        "title": "World Crafting",
-        "description": "Shape the world: build towns, terraform landscapes, design dungeons, and leave your mark. The environment evolves based on community actions, making every server unique! 🌱"
+        "title": "A changing world",
+        "description": "Shape the world: build, transform landscapes, and leave your mark. The environment evolves based on the actions of the community. 🌱"
       },
       {
-        "title": "Cyclic Boss",
-        "description": "Bosses grow stronger when defeated: they return with upgraded skills, shifting attack patterns, and exclusive rewards. The battle—and glory—never ends! ⚔️"
+        "title": "Infinite skill system",
+        "description": "Skills improve endlessly the more you use them: master your style, from weapons to magic, at your own pace and without limits. ⚔️"
       },
       {
-        "title": "Wraparound Map",
-        "description": "A borderless world: reach the edge, and you reappear on the opposite side. Explore endlessly, uncover hidden paths, and face looping dangers. Geography is an eternal loop! 🔄"
+        "title": "Immersive map",
+        "description": "A world without borders: when you reach the edge, you reappear on the opposite side. Explore without limits, by land or sea. Geography, like history, is an eternal loop! 🔄"
       }
     ]
   },
   "BannerGodotSection": {
     "title": "Made with"
   },
-  "VideosSection":{
+  "VideosSection": {
     "title": "Devblogs"
   },
   "GallerySection": [
@@ -45,7 +45,7 @@
     },
     {
       "src": "/gallery/Sunnyside_World_ExampleScene.png",
-      "alt": "Sunnyside example scene 1"
+      "alt": "Sunnyside sample scene 1"
     },
     {
       "src": "/gallery/fox.jpg",
@@ -53,7 +53,7 @@
     },
     {
       "src": "/gallery/Sunnyside_World_ExampleScene.png",
-      "alt": "Sunnyside example scene 2"
+      "alt": "Sunnyside sample scene 2"
     },
     {
       "src": "/gallery/fox2.jpg",
@@ -61,13 +61,13 @@
     },
     {
       "src": "/gallery/Sunnyside_World_ExampleScene.png",
-      "alt": "Sunnyside example scene 1"
+      "alt": "Sunnyside sample scene 1"
     }
   ],
   "FooterSection": {
-    "copyright": "Heart of Fantasy © {year} All Rights Reserved"
+    "copyright": "Heart of Fantasy © {year} All rights reserved"
   },
-  "SocialMedia" : [
+  "SocialMedia": [
     {
       "link": "https://www.twitch.tv/blacksmith3",
       "logo": "twitch"
@@ -90,6 +90,6 @@
     }
   ],
   "TwitchPopup": {
-    "online": "is ONLINE"
+    "online": "is LIVE"
   }
 }

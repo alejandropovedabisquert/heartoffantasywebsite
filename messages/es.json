@@ -9,7 +9,7 @@
   },
   "HistorySection": {
     "title": "Sobre el juego",
-    "description": "<strong>Lorem Ipsum</strong> es <a href='/my-page'>simplemente el texto</a> de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas \"Letraset\", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum."
+    "description": "<strong>Heart of Fantasy</strong> es un MMORPG diferente a todo lo que has vivido. En este mundo persistente y cíclico, la oscuridad juega con los corazones de los jugadores. El Rey Demonio es inmortal, no por poder, sino por vacío: dividió su corazón en fragmentos y los entregó a la oscuridad. Mientras estos fragmentos estén dispersos por el mundo, no puede morir. <br> Solo quien los reúna todos podrá romper su inmortalidad y desafiarlo en una batalla final. Y si lo derrota, deberá tomar una decisión: destruir el ciclo y empezar una era de paz para todos, o dividir su propio corazón y entregarlo a la oscuridad, convirtiéndose en el nuevo Rey Demonio."
   },
   "FeaturesSection": {
     "title": "Características",
@@ -19,16 +19,16 @@
         "description": "Cada decisión cuenta. Si mueres, lo pierdes todo: personaje, equipo y progreso. Un sistema de alto riesgo que premia la estrategia y convierte cada victoria en una leyenda. ¿Te atreves a arriesgarlo todo? 🗡️"
       },
       {
-        "title": "Creación del mundo",
-        "description": "Da forma al mundo: construye ciudades, transforma paisajes, diseña mazmorras y deja tu huella. El entorno evoluciona según las acciones de la comunidad, ¡haciendo que cada servidor sea único! 🌱"
+        "title": "Un mundo cambiante",
+        "description": "Da forma al mundo: construye, transforma paisajes y deja tu huella. El entorno evoluciona según las acciones de la comunidad. 🌱"
       },
       {
-        "title": "Jefe cíclico",
-        "description": "Los jefes se vuelven más fuertes al ser derrotados: regresan con habilidades mejoradas, nuevos patrones de ataque y recompensas exclusivas. ¡La batalla—y la gloria—nunca terminan! ⚔️"
+        "title": "Sistema de habilidades infinito",
+        "description": "Las habilidades mejoran sin límite cuanto más las usas: domina tu estilo, desde las armas a la magia, a tu ritmo y sin barreras. ⚔️"
       },
       {
         "title": "Mapa envolvente",
-        "description": "Un mundo sin fronteras: al llegar al borde, reapareces en el lado opuesto. Explora sin límites, descubre rutas ocultas y enfréntate a peligros recurrentes. ¡La geografía es un bucle eterno! 🔄"
+        "description": "Un mundo sin fronteras: al llegar al borde, reapareces en el lado opuesto. Explora sin límites, ya sea por tierra o por mar. ¡La geografía, al igual que la historia, es un bucle eterno! 🔄"
       }        
     ]
   },
