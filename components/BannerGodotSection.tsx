@@ -1,14 +1,17 @@
 "use client"
 import { useCustomParallax } from "@/lib/useCustomParallax";
+import clsx from "clsx";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function BannerGodotSection() {
     const { style } = useCustomParallax(-0.12);
     const t = useTranslations('BannerGodotSection');
+    const backgroundStyles = clsx(
+        "before:absolute before:top-0 before:h-full before:w-full before:bg-black before:opacity-70 before:z-10",
+    );
     return (
-        <div className="h-[500px]">
-            <div className="bg-gradient-to-b absolute top-0 h-full w-full bg-black opacity-70 z-10"></div>
+        <div className={`h-[500px] ${backgroundStyles}`}>
             <div className="absolute w-full h-[1000px]" style={style}>
                 <Image src="/gallery/Sunnyside_World_ExampleScene.png" alt="" className="translate-y-1/4 sm:translate-y-0 object-cover" fill unoptimized={true}/>
             </div>

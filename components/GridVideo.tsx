@@ -4,10 +4,15 @@ import { getYoutubeVideos } from "@/lib/getYoutubeVideos";
 import { useEffect, useState } from "react";
 import SkeletonGridVideo from "./skeleton/SkeletonGridVideo";
 import Image from "next/image";
+import clsx from "clsx";
 
 export default function GridVideo() {
     const [videos, setVideos] = useState<YoutubeResponse | null>(null);
     const [error, setError] = useState<string | null>(null);
+
+    const backgroundStyles = clsx(
+        "before:absolute before:w-full before:h-full before:bg-black before:opacity-40 before:z-10 before:group-hover/image:opacity-20 before:transition-all",
+    );
 
     useEffect(() => {
         async function fetchVideos() {
@@ -41,18 +46,20 @@ export default function GridVideo() {
                 <div className="col-span-2" key={video.id} data-aos="fade-up" data-aos-delay={(index + 1) * 50}>
                     <div className="relative overflow-hidden group/image">
                         <a href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}&list=${video.snippet.playlistId}`} target="_blank">
-                            <div className="absolute w-full h-full bg-black opacity-40 z-10 group-hover/image:opacity-20 transition-all"></div>
-                            <Image 
-                                className="group-hover/image:scale-110 transition-all" 
-                                src={`${video.snippet.thumbnails.maxres.url}`} 
-                                alt=""
-                                width={800}
-                                height={800}
-                                unoptimized={true} 
-                            />
-                            <h3 className="font-bold text-white text-lg absolute top-0 p-4 z-20">
-                                {video.snippet.title}
-                            </h3>
+                            {/* <div className="absolute w-full h-full bg-black opacity-40 z-10 group-hover/image:opacity-20 transition-all"></div> */}
+                            <div className={backgroundStyles}>
+                                <Image 
+                                    className="group-hover/image:scale-110 transition-all" 
+                                    src={`${video.snippet.thumbnails.maxres.url}`} 
+                                    alt=""
+                                    width={800}
+                                    height={800}
+                                    unoptimized={true} 
+                                />
+                                <h3 className="font-bold text-white text-lg absolute top-0 p-4 z-20">
+                                    {video.snippet.title}
+                                </h3>
+                            </div>
                         </a>
                     </div>
                 </div>
