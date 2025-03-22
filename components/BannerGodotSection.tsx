@@ -9,7 +9,7 @@ export default function BannerGodotSection() {
     return (
         <div className="h-[500px]">
             <div className="bg-gradient-to-b absolute top-0 h-full w-full bg-black opacity-70 z-10"></div>
-            <div className="absolute w-full h-[1000px]" style={{ ...style }}>
+            <div className="absolute w-full h-[1000px]" style={style}>
                 <Image src="/gallery/Sunnyside_World_ExampleScene.png" alt="" className="translate-y-1/4 sm:translate-y-0 object-cover" fill unoptimized={true}/>
             </div>
             <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-full">
