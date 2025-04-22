@@ -8,6 +8,7 @@ import { AOSInit } from "@/components/common/AosInit";
 import FooterSection from "@/components/FooterSection";
 import LanguageSwitcher from "@/components/common/LocaleSwitcherSelect";
 import { Metadata } from 'next';
+import BodyIdSetter from '@/components/common/BodyIdSetter';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +19,7 @@ const geistSans = Geist({
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // Cargar las traducciones para el idioma actual
   const {locale} = await params;
-  const messages = (await import(`../../messages/${locale}.json`)).default;
+  const messages = (await import(`@/messages/${locale}.json`)).default;
 
   return {
     metadataBase: new URL('https://heartoffantasywebsite.vercel.app'), // Asignamos dominio en produccion
@@ -51,10 +52,9 @@ export default async function RootLayout({
   return (
     <html lang={locale} className="scroll-smooth">
       <AOSInit />
-      <body
-        className={`${geistSans.className} antialiased`}
-      >
+      <body className={`${geistSans.className} antialiased`} >
         <NextIntlClientProvider messages={messages}>
+        <BodyIdSetter/>
           <LanguageSwitcher/>
           {children}
           <FooterSection />

@@ -1,10 +1,17 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import StreamerStatus from "./common/StreamerStatus";
+import { Link } from "@/i18n/navigation";
 interface socialMediaProps {
     link: string;
     logo: string;
 }
+interface legalNavProps {
+    text: string,
+    link : string,
+    locale: string,
+}
+
 
 export default function FooterSection() {
     const date = new Date();
@@ -25,10 +32,19 @@ export default function FooterSection() {
                 }
             </div>
             <hr />
-            <div className="py-8 text-center">
-                <p>
-                    {t('copyright', { year: year })}
-                </p>
+            <div className="flex flex-wrap justify-between">
+                <div className="py-8">
+                    <p>
+                        {t('copyright', { year: year })}
+                    </p>
+                </div>
+                <div className="py-8 flex flex-wrap gap-4">
+                    {
+                        t.raw("legalNav").map((item: legalNavProps, index: number) => (
+                            <Link key={index} href={item.link} locale={`${item.locale}`} className="transition-all hover:text-[#A43046]">{item.text}</Link>
+                        ))
+                    }
+                </div>
             </div>
             <StreamerStatus streamerName="blacksmith3" />
         </footer>

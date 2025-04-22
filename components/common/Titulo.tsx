@@ -13,7 +13,8 @@ export const Titulo = ({
   position?: string;
 }) => {
   const baseStyles = clsx(
-    "uppercase tracking-widest grid grid-cols-title grid-rows-title gap-4 mb-12",
+    "uppercase tracking-widest gap-4 mb-12",
+    "flex sm:grid sm:grid-cols-title sm:grid-rows-title",
     "before:content-[''] before:block before:border-b-2 before:border-transparent before:md:border-[#A43046]",
     "after:content-[''] after:block after:border-b-2",
     {

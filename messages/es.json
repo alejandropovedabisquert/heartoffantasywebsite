@@ -65,8 +65,19 @@
     }
   ],
   "FooterSection": {
-    "copyright": "Heart of Fantasy © {year} Todos los derechos reservados"
-
+    "copyright": "Heart of Fantasy © {year} Todos los derechos reservados",
+    "legalNav": [
+      {
+        "text": "Aviso legal",
+        "link": "/legal-notice",
+        "locale": "es"
+      },
+      {
+        "text": "Política de privacidad",
+        "link": "/privacy-policy",
+        "locale": "es"
+      }
+    ]
   },
   "SocialMedia" : [
     {
@@ -92,5 +103,88 @@
   ],
   "TwitchPopup": {
     "online": "está EN DIRECTO"
+  },
+  "LegalNoticeSection": {
+    "metadata": {
+      "title": "📄 Aviso Legal | Heart of Fantasy",
+      "description": "Consulta el aviso legal de [Nombre de tu empresa] con información sobre derechos, responsabilidades y uso del sitio web."
+    },
+    "title": "📄 Aviso Legal",
+    "update": "<strong>Última actualización:</strong> [15/04/2025]",
+    "parts": [
+      {
+        "title": "1. Información general",
+        "description": "<p>En cumplimiento con lo dispuesto en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se facilitan los siguientes datos:</p><ul><li><p><strong>Nombre del responsable:</strong> [Nombre del estudio o empresa]</p></li><li><p><strong>NIF / CIF:</strong> [Tu NIF o CIF]</p></li><li><p><strong>Domicilio social:</strong> [Dirección completa de la empresa o estudio]</p></li><li><p><strong>Correo electrónico:</strong> [tu_email@ejemplo.com]</p></li><li><p><strong>Teléfono de contacto:</strong> [Tu número de contacto]</p></li></ul>"
+      },
+      {
+        "title": "2. Propiedad intelectual e industrial",
+        "description": "<p>Todos los contenidos de este sitio web, incluyendo pero no limitándose a textos, imágenes, gráficos, logotipos, iconos, botones, software, nombres comerciales, marcas, o cualquier otro signo susceptible de utilización industrial y comercial, son propiedad del titular o, en su caso, de sus licenciantes.</p><p>El acceso a este sitio web no otorga al usuario derecho alguno sobre dichos contenidos, que están protegidos por las leyes de propiedad intelectual e industrial.</p>"
+      },
+      {
+        "title": "3. Uso de la web",
+        "description": "<p>El acceso y uso de la web está sujeto a la legislación vigente. El usuario se compromete a hacer un uso adecuado de los contenidos y servicios del sitio web, respetando la legislación vigente, la moral, el orden público, los derechos de terceros y las disposiciones contenidas en este Aviso Legal.</p>"
+      },
+      {
+        "title": "4. Responsabilidad",
+        "description": "<p>[Nombre del estudio o empresa] no será responsable de los daños y perjuicios derivados del uso de la web, de la imposibilidad de acceso a la misma, o de la presencia de virus u otros elementos que puedan causar daños en el sistema informático del usuario.</p><p>Asimismo, el titular no garantiza la disponibilidad y continuidad del funcionamiento de la web, aunque se compromete a realizar los esfuerzos necesarios para mantener su buen funcionamiento.</p>"
+      },
+      {
+        "title": "5. Enlaces a terceros",
+        "description": "<p>Este sitio web puede contener enlaces a sitios web de terceros. [Nombre del estudio o empresa] no se hace responsable del contenido de dichos sitios, ni de los servicios que puedan ofrecer. El uso de los enlaces es bajo el propio riesgo del usuario.</p>"
+      },
+      {
+        "title": "6. Modificaciones",
+        "description": "<p>El titular de la web se reserva el derecho a modificar cualquier parte de este Aviso Legal, la Política de Privacidad, o cualquier otro aspecto relacionado con la web. Estas modificaciones se aplicarán desde el momento de su publicación en este sitio web.</p>"
+      },
+      {
+        "title": "7. Legislación aplicable y jurisdicción",
+        "description": "<p>Este Aviso Legal se rige por la legislación española. Cualquier disputa que surja en relación con el uso de la web será resuelta por los tribunales competentes de [Ciudad], España.</p>"
+      }
+    ]
+  },
+  "PrivacyPolicySection": {
+    "metadata": {
+      "title": "📄 Política de Privacidad | Heart of Fantasy",
+      "description": "Descubre cómo Heart of Fantasy protege tus datos personales y cumple con la normativa de privacidad vigente."
+    },
+    "title": "📄 Política de Privacidad",
+    "update": "<strong>Última actualización:</strong> [15/04/2025]",
+    "parts": [
+      {
+        "title": "1. Responsable del tratamiento",
+        "description": "<p><strong>Nombre del responsable:</strong> [Nombre del estudio o empresa]</p><p><strong>Correo electrónico de contacto:</strong> [tu_email@ejemplo.com]</p>"
+      },
+      {
+        "title": "2. Datos que recopilamos",
+        "description": "<p>Cuando rellenas el formulario de prerregistro, recopilamos los siguientes datos personales:</p><ul><li>Nombre de usuario</li><li>Dirección de correo electrónico</li><li>Contraseña (almacenada en formato cifrado)</li></ul>"
+      },
+      {
+        "title": "3. Finalidad del tratamiento",
+        "description": "<p>Los datos serán utilizados únicamente para:</p><ul><li>Gestionar tu prerregistro y mantenerte informado sobre el desarrollo del juego.</li><li>Enviar comunicaciones relacionadas con el lanzamiento, la beta cerrada y las actualizaciones del juego.</li></ul>"
+      },
+      {
+        "title": "4. Base legal",
+        "description": "<p>La base legal para el tratamiento de tus datos es tu <strong>consentimiento expreso</strong>, otorgado al marcar la casilla correspondiente en el formulario.</p>"
+      },
+      {
+        "title": "5. Conservación de los datos",
+        "description": "<p>Tus datos serán conservados mientras dure el desarrollo del juego o hasta que solicites su supresión.</p>"
+      },
+      {
+        "title": "6. Destinatarios",
+        "description": "<p>No compartiremos tus datos con terceros, salvo obligación legal. Los datos se almacenarán en servidores seguros y, si corresponde, serán gestionados por proveedores que cumplan con el RGPD.</p>"
+      },
+      {
+        "title": "7. Derechos del usuario",
+        "description": "<p>Puedes ejercer tus derechos en cualquier momento, incluyendo:</p><ul><li>Acceso a tus datos personales.</li><li>Solicitud de rectificación o eliminación.</li><li>Solicitud de limitación u oposición al tratamiento.</li><li>Retirada del consentimiento.</li></ul><p>Para ejercer tus derechos, puedes escribirnos a [tu_email@ejemplo.com].</p>"
+      },
+      {
+        "title": "8. Seguridad de los datos",
+        "description": "<p>Aplicamos medidas técnicas y organizativas adecuadas para garantizar la seguridad de tus datos y evitar accesos no autorizados.</p>"
+      }
+    ]
+  },
+  "BackButton": {
+    "text": "Volver al inicio"
   }
 }
