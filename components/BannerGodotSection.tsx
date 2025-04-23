@@ -24,7 +24,7 @@ export default function BannerGodotSection() {
                         {t('title')}
                     </h2>
                     <div className="max-w-[500px] relative">
-                        <Image src="logo_large_color_dark.svg" alt="Logo Godot Engine" width={500} height={500} unoptimized={true}/>
+                        <Image src="/logo_large_color_dark.svg" alt="Logo Godot Engine" width={500} height={500} unoptimized={true}/>
                     </div>
                 </div>
             </div>
