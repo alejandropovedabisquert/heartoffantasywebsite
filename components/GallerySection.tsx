@@ -1,15 +1,28 @@
 "use client"
 import clsx from "clsx";
 import Image, { ImageProps } from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ModalComponent from "./common/ModalComponent";
 import { useTranslations } from "next-intl";
 
 export default function GallerySection() {
-    const [selectedImage, setSelectedImage] = useState<ImageProps  | null>(null);
+    const [selectedImage, setSelectedImage] = useState<ImageProps | null>(null);
     const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
     const t = useTranslations();
     const images = t.raw("GallerySection");
+
+    useEffect(() => {
+        const keyDownHandler = (event: KeyboardEvent) => {
+            if (event.code == "Escape") {
+                handleCloseModal();
+            }
+        };
+        document.addEventListener("keydown", keyDownHandler);
+        // Limpia el evento
+        return () => {
+            document.removeEventListener("keydown", keyDownHandler);
+        };
+    }, []);
 
     const handleOnClicked = (src: string, index: number) => {
         setSelectedImage(images[index]);
@@ -42,10 +55,10 @@ export default function GallerySection() {
     };
 
     const modalStyles = clsx(
-        "w-screen h-screen fixed left-0 top-0 opacity-0 scale-0 transition-all duration-500",
+        "w-screen h-screen fixed left-0 top-0 opacity-0 transition-all duration-300",
         {
             "invisible": !selectedImage,
-            "opacity-100 z-20 visible scale-100": selectedImage,
+            "opacity-100 z-20 visible": selectedImage,
         }
     )
 
