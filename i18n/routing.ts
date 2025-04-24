@@ -21,6 +21,10 @@ export const routing = defineRouting({
     '/privacy-policy': {
       en: '/privacy-policy',
       es: '/politica-privacidad'
+    },
+    '/pre-register': {
+      en: '/pre-register',
+      es: '/pre-registro'
     }
   }
 });

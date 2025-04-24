@@ -1,6 +1,6 @@
 import { Titulo } from "@/components/common/Titulo";
 import { useTranslations } from "next-intl";
-import LegalLayout from "../legal-layout/layout";
+import LandingLayout from "../landing-layout/layout";
 import { Metadata } from "next";
 import BackButton from "@/components/common/BackButton";
 
@@ -29,7 +29,7 @@ interface partsProps {
 export default function Page() {
     const t = useTranslations('LegalNoticeSection');
     return (
-        <LegalLayout>
+        <LandingLayout>
             <div className="container">
                 <div data-aos="fade-right">
                     <BackButton />
@@ -53,6 +53,6 @@ export default function Page() {
                     }
                 </div>
             </div>
-        </LegalLayout>
+        </LandingLayout>
     );
 }

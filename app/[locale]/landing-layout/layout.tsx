@@ -1,7 +1,7 @@
 import FirefliesEffect from "@/components/common/FirefliesEffect";
 import Image from "next/image";
 
-export default function LegalLayout({ children }: { children: React.ReactNode }) {
+export default function LandingLayout({ children }: { children: React.ReactNode }) {
     return (
         <div className="relative overflow-hidden">
             <header>
