@@ -22,7 +22,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
                 sizeRange={[3, 4]} // Tamaños entre 3px y 8px
                 glow={true} // Activar glow
             />
-            <main>{children}</main>
+            <main className="relative z-10">{children}</main>
         </div>
     );
 }

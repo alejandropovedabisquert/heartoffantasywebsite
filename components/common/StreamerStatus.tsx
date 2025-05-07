@@ -49,7 +49,7 @@ export default function StreamerStatus(name: nameProps) {
                             onClick={handleClosePopup}
                             className="absolute -right-2 -top-6 z-10 transition-all opacity-0 group-hover/close:opacity-100 group-hover/close:-top-3"
                         >
-                            <BookmarkX width={32} height={32} className="text-[#A43046]" fill="white" />
+                            <BookmarkX width={32} height={32} className="text-corporative" fill="white" />
                         </button>
                         <Link href={`https://www.twitch.tv/${data?.data[0].user_login}`} target="_blank">
                             <div className="relative flex">

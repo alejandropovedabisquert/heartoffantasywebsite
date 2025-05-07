@@ -184,6 +184,32 @@
       }
     ]
   },
+  "PreRegisterForm":{
+    "title": "Pre-register now!",
+    "inputs": {
+      "username": {
+        "placeholder": "Username",
+        "requiredError": "Username is required"
+      },
+      "email": {
+        "placeholder": "Email",
+        "requiredError": "Email is required",
+        "validError": "Please enter a valid email"
+      },
+      "password": {
+        "placeholder": "Password",
+        "requiredError": "Password is required",
+        "validError": "Password must be at least 6 characters"
+      },
+      "captcha": {
+        "placeholder": "Captcha",
+        "requiredError": "Captcha is required"
+      },
+      "submit": {
+        "placeholder": "Send"
+      }
+    }
+  },
   "BackButton": {
     "text": "Back to home"
   }

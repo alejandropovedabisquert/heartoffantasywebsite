@@ -26,7 +26,7 @@ export default function LocaleSwitcher() {
   return (
     <div className="absolute left-8 top-8 z-10">
       <div
-        className='flex gap-2 items-center justify-center bg-[#a43045] p-2 cursor-pointer transition-all hover:bg-white hover:text-black'
+        className='flex gap-2 items-center justify-center bg-corporative p-2 cursor-pointer transition-all hover:bg-white hover:text-black'
         onClick={() => isOpen(!open)}
       >
         <Globe />
@@ -35,7 +35,7 @@ export default function LocaleSwitcher() {
 
       <div
         ref={heightRef}
-        className={`text-center overflow-hidden bg-[#A43046] transition-all`}
+        className={`text-center overflow-hidden bg-corporative transition-all`}
         style={open ? { height: `${height}px` } : { height: 0 }}
       >
         {routing.locales.map((cur) => (
@@ -43,7 +43,7 @@ export default function LocaleSwitcher() {
             <button
               key={cur}
               onClick={() => handleLocaleChange(cur)}
-              className='p-2 block w-full bg-[#A43046] transition-all hover:bg-white hover:text-black'
+              className='p-2 block w-full bg-corporative transition-all hover:bg-white hover:text-black'
             >
               {t('locale', { locale: cur })}
             </button>

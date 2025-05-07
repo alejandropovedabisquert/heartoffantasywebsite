@@ -11,7 +11,7 @@ export function useCustomParallax(speed: number) {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  });
 
   return {
     style: {

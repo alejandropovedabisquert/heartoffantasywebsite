@@ -184,6 +184,32 @@
       }
     ]
   },
+  "PreRegisterForm": {
+    "title": "¡Pre-regístrate ahora!",
+    "inputs": {
+      "username": {
+        "placeholder": "Nombre de usuario",
+        "requiredError": "El nombre de usuario es obligatorio"
+      },
+      "email": {
+        "placeholder": "Correo electrónico",
+        "requiredError": "El correo electrónico es obligatorio",
+        "validError": "Por favor, introduce un correo electrónico válido"
+      },
+      "password": {
+        "placeholder": "Contraseña",
+        "requiredError": "La contraseña es obligatoria",
+        "validError": "La contraseña debe tener al menos 6 caracteres"
+      },
+      "captcha": {
+        "placeholder": "Captcha",
+        "requiredError": "El captcha es obligatorio"
+      },
+      "submit": {
+        "placeholder": "Enviar"
+      }
+    }
+  },
   "BackButton": {
     "text": "Volver al inicio"
   }

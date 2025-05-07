@@ -42,7 +42,7 @@ export default function FooterSection() {
                     {
                         t.raw("legalNav").map((item: legalNavProps, index: number) => (
                             // @ts-expect-error - item.link es seguro en este contexto
-                            <Link key={index} href={item.link} locale={`${item.locale}`} className="transition-all hover:text-[#A43046]">{item.text}</Link>
+                            <Link key={index} href={item.link} locale={`${item.locale}`} className="transition-all hover:text-corporative">{item.text}</Link>
                         ))
                     }
                 </div>

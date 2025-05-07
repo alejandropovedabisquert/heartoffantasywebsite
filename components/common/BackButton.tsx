@@ -7,6 +7,6 @@ export default function BackButton() {
     const t = useTranslations('BackButton');
     return (
         // @ts-expect-error - item.link es seguro en este contexto
-        <Link href={"/"} locale={locale} className="p-2 mb-8 bg-[#A43046] text-white block w-fit flex gap-2 transition-all hover:bg-white hover:text-black"><ArrowLeft /> {t("text")}</Link>
+        <Link href={"/"} locale={locale} className="p-2 mb-8 bg-corporative text-white block w-fit flex gap-2 transition-all hover:bg-white hover:text-black"><ArrowLeft /> {t("text")}</Link>
     );
 }

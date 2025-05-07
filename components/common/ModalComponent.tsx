@@ -18,7 +18,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
     return (
         <>
             <button
-                className="absolute top-0 right-0 text-[#A43046] p-8 hover:animate-wiggle"
+                className="absolute top-0 right-0 text-corporative p-8 hover:animate-wiggle"
                 onClick={onClose}
             >
                 <OctagonX width={34} height={34}/>
