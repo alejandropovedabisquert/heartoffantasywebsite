@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import { Titulo } from "./common/Titulo";
-import Image from "next/image";
+// import Image from "next/image";
+// import Heart from "./common/Heart";
+import HeartV2 from "./common/HeartV2";
 
 export default function HistorySection() {
     const t = useTranslations('HistorySection');
@@ -13,16 +15,8 @@ export default function HistorySection() {
                 <div className="col-span-6 md:col-span-4 flex items-center">
                     <p className="text-lg" dangerouslySetInnerHTML={{__html: t.raw('description')}} />
                 </div>
-                <div data-aos="fade-left" data-aos-delay="100" className="col-span-6 md:col-span-2">
-                    <Image 
-                        data-aos="fade-left" 
-                        className="float-right" 
-                        src="/heart.png" 
-                        alt=""
-                        width={250}
-                        height={250}
-                        unoptimized={true} 
-                    />
+                <div data-aos="fade-left" data-aos-delay="100" className="col-span-6 md:col-span-2 w-[160px] h-[160px] m-auto">
+                    <HeartV2/>
                 </div>
             </div>
         </div>
