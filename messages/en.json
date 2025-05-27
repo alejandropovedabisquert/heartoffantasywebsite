@@ -212,5 +212,9 @@
   },
   "BackButton": {
     "text": "Back to home"
+  },
+  "PageNotFound": {
+    "title": "404 | This page could not be found.",
+    "backButton": "Back to home"
   }
 }

@@ -1,6 +1,6 @@
 export default function HeartV2() {
     return (
-        <div className="relative">
+        <div className="relative heart">
             <img src="/heart/capa0.webp" alt="" className="animate-float-inner-right absolute" />
             <img src="/heart/capa1.webp" alt="" className="animate-float-inner-up-right absolute [animation-delay:220ms]" />
             <img src="/heart/capa2.webp" alt="" className="animate-float-inner-up-left absolute [animation-delay:190ms]" />
