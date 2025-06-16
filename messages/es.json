@@ -215,6 +215,7 @@
   },
   "PageNotFound": {
     "title": "404 | No se ha podido encontrar esta página.",
-    "backButton": "Volver al inicio"
+    "backButton": "Volver al inicio",
+    "locale": "es"
   }
 }

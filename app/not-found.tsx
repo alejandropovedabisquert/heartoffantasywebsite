@@ -12,7 +12,7 @@ export default function NotFound() {
                 <h1>
                     {t.raw('title')}
                 </h1>
-                <Link href="/">{t.raw('backButton')}</Link>
+                <Link href={`/${t('locale')}`}>{t.raw('backButton')}</Link>
             </div>
 
             <FirefliesEffect
