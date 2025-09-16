@@ -40,28 +40,28 @@
   },
   "GallerySection": [
     {
-      "src": "/gallery/cafe.jpg",
-      "alt": "Café en taza"
+      "src": "/gallery/1.webp",
+      "alt": "Placeholder image 1"
     },
     {
-      "src": "/gallery/Sunnyside_World_ExampleScene.png",
-      "alt": "Escena de ejemplo Sunnyside 1"
+      "src": "/gallery/2.webp",
+      "alt": "Placeholder image 2"
     },
     {
-      "src": "/gallery/fox.jpg",
-      "alt": "Zorro en la nieve"
+      "src": "/gallery/3.webp",
+      "alt": "Placeholder image 3"
     },
     {
-      "src": "/gallery/Sunnyside_World_ExampleScene.png",
-      "alt": "Escena de ejemplo Sunnyside 2"
+      "src": "/gallery/4.webp",
+      "alt": "Placeholder image 4"
     },
     {
-      "src": "/gallery/fox2.jpg",
-      "alt": "Zorro en el bosque"
+      "src": "/gallery/5.webp",
+      "alt": "Placeholder image 5"
     },
     {
-      "src": "/gallery/Sunnyside_World_ExampleScene.png",
-      "alt": "Escena de ejemplo Sunnyside 1"
+      "src": "/gallery/6.webp",
+      "alt": "Placeholder image 6"
     }
   ],
   "FooterSection": {

@@ -2,23 +2,16 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { Geist } from "next/font/google";
 import "../globals.css";
-import { AOSInit } from "@/components/common/AosInit";
 import FooterSection from "@/components/FooterSection";
 import LanguageSwitcher from "@/components/common/LocaleSwitcherSelect";
 import { Metadata } from 'next';
 import BodyIdSetter from '@/components/common/BodyIdSetter';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
 // Función para generar el metadata dinámicamente
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // Cargar las traducciones para el idioma actual
-  const {locale} = await params;
+  const { locale } = await params;
   const messages = (await import(`@/messages/${locale}.json`)).default;
 
   return {
@@ -50,16 +43,13 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="scroll-smooth">
-      <AOSInit />
-      <body className={`${geistSans.className} antialiased`} >
-        <NextIntlClientProvider messages={messages}>
-        <BodyIdSetter/>
-          <LanguageSwitcher/>
-          {children}
-          <FooterSection />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <>
+      <NextIntlClientProvider messages={messages}>
+        <BodyIdSetter />
+        <LanguageSwitcher />
+        {children}
+        <FooterSection />
+      </NextIntlClientProvider>
+    </>
   );
 }

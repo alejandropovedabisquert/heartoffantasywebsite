@@ -8,6 +8,7 @@ export const AOSInit = () => {
   useEffect(() => {
     AOS.init({
     //   easing: 'ease-out-quad',
+      once: true,
       duration: 500,
     });
   }, [])
