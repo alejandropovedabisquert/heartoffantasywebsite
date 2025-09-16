@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <AOSInit />
       <body className={`${geistSans.className} antialiased`}>
         {children}
-      <Analytics />
+        <Analytics mode="production"/>
       </body>
     </html>
   );
