@@ -7,6 +7,7 @@ import FooterSection from "@/components/FooterSection";
 import LanguageSwitcher from "@/components/common/LocaleSwitcherSelect";
 import { Metadata } from 'next';
 import BodyIdSetter from '@/components/common/BodyIdSetter';
+import { Analytics } from "@vercel/analytics/next";
 
 // Función para generar el metadata dinámicamente
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -45,6 +46,7 @@ export default async function RootLayout({
   return (
     <>
       <NextIntlClientProvider messages={messages}>
+        <Analytics/>
         <BodyIdSetter />
         <LanguageSwitcher />
         {children}
