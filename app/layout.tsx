@@ -12,10 +12,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const t = useTranslations('PageNotFound');
   return (
     <html lang={t('locale')} suppressHydrationWarning>
-      <Analytics />
       <AOSInit />
       <body className={`${geistSans.className} antialiased`}>
         {children}
+      <Analytics />
       </body>
     </html>
   );
