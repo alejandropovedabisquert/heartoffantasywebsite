@@ -1,3 +1,4 @@
+// TODO: Asegúrate de que estas server actions solo se llamen desde componentes de servidor o formularios con action.
 "use server"
 import { verify } from 'hcaptcha';
 

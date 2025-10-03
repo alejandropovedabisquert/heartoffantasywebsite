@@ -13,6 +13,7 @@ export default function BannerGodotSection() {
     return (
         <div className={`h-[500px] ${backgroundStyles}`}>
             <div className="absolute w-full h-[1000px]" style={style}>
+                {/* TODO: Revisa si realmente necesitas desactivar la optimización de imágenes (unoptimized={true}). Si no es necesario, elimina esta prop para aprovechar la optimización de Next.js. */}
                 <Image src="/banner_godot.webp" alt="" className="translate-y-1/4 sm:translate-y-0 object-cover" fill unoptimized={true}/>
             </div>
             <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-full">
@@ -24,6 +25,7 @@ export default function BannerGodotSection() {
                         {t('title')}
                     </h2>
                     <div className="max-w-[500px] relative">
+                        {/* TODO: Revisa si realmente necesitas desactivar la optimización de imágenes (unoptimized={true}). Si no es necesario, elimina esta prop para aprovechar la optimización de Next.js. */}
                         <Image src="/logo_large_color_dark.svg" alt="Logo Godot Engine" width={500} height={500} unoptimized={true}/>
                     </div>
                 </div>

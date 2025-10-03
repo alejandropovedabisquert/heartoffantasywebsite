@@ -1,3 +1,4 @@
+// TODO: Considera mover este hook personalizado a una carpeta "hooks/" para mayor claridad y organización.
 "use client";
 import { useState, useEffect } from "react";
 

@@ -1,3 +1,4 @@
+// TODO: Considera renombrar la carpeta "interfaces" a "types" para seguir la convención de Next.js y TypeScript.
 interface YoutubeResponse {
     items: Video[];
 };

@@ -1,3 +1,4 @@
+// TODO: Revisa si este layout debe aplicarse solo a ciertas páginas o a todo el sitio. Si es global, considera moverlo a app/[locale]/layout.tsx para simplificar la estructura.
 import FirefliesEffect from "@/components/common/FirefliesEffect";
 import Image from "next/image";
 

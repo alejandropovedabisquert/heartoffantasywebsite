@@ -8,7 +8,9 @@ import LanguageSwitcher from "@/components/common/LocaleSwitcherSelect";
 import { Metadata } from 'next';
 import BodyIdSetter from '@/components/common/BodyIdSetter';
 import { Analytics } from "@vercel/analytics/next";
+import { Geist } from 'next/font/google';
 
+// TODO: Implementar mejor el metadata https://next-intl.dev/docs/routing/setup#use-the-locale-param-in-metadata
 // Función para generar el metadata dinámicamente
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   // Cargar las traducciones para el idioma actual
@@ -24,6 +26,11 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     },
   };
 }
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
 export default async function RootLayout({
   children,
@@ -44,14 +51,18 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <>
-      <NextIntlClientProvider messages={messages}>
-        <Analytics/>
-        <BodyIdSetter />
-        <LanguageSwitcher />
-        {children}
-        <FooterSection />
-      </NextIntlClientProvider>
-    </>
+    <html lang={locale} suppressHydrationWarning>
+      <body className={`${geistSans.className} antialiased`}>
+        <NextIntlClientProvider messages={messages}>
+          <Analytics />
+          <BodyIdSetter />
+          <LanguageSwitcher />
+          <main>
+            {children}
+          </main>
+          <FooterSection />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }
