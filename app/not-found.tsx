@@ -11,7 +11,7 @@ const geistSans = Geist({
 export default function NotFound() {
     const t = useTranslations('PageNotFound');
     return (
-        <html>
+        <html suppressHydrationWarning>
             <body className={`${geistSans.className} antialiased`}>
                 <main>
                     <div id="bodyNotFound">

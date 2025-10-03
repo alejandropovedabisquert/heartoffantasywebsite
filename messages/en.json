@@ -5,7 +5,7 @@
     "openGraphImage": "/openGraph.png"
   },
   "LocaleSwitcher": {
-    "locale": "{locale, select, es {Español} en {English} other {Unknown}}"
+    "locale": "{locale, select, es {Español} en {English} ja {日本語} other {Unknown}}"
   },
   "HistorySection": {
     "title": "About the game",

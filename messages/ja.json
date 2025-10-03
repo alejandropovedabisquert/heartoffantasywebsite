@@ -1,0 +1,221 @@
+{
+  "Metadata": {
+    "title": "Heart of Fantasy | パーマデスMMORPG",
+    "description": "\"Heart of Fantasy\"は、パーマデスと自動生成された世界（海、川、山を含む）を特徴とするサバイバルMMORPGです。",
+    "openGraphImage": "/openGraph.png"
+  },
+  "LocaleSwitcher": {
+    "locale": "{locale, select, es {Español} en {English} ja {日本語} other {Unknown}}"
+  },
+  "HistorySection": {
+    "title": "ゲームについて",
+    "description": "<strong>Heart of Fantasy</strong>は、今までにないMMORPGです。この永続的かつ循環する世界では、闇がプレイヤーの心を弄びます。魔王は力ではなく、虚無によって不死です。彼は自分の心を断片に分け、それを闇に与えました。<br> これらの断片が世界中に散らばっている限り、彼は死ぬことができません。それらをすべて集めた者だけが彼の不死を破り、最後の戦いに挑むことができます。そして、もし彼を倒したなら、選択を迫られます。循環を破壊し、すべての人に平和の時代をもたらすか、自分の心を分けて闇に捧げ、新たな魔王となるか。"
+  },
+  "FeaturesSection": {
+    "title": "特徴",
+    "features": [
+      {
+        "title": "パーマデス",
+        "description": "すべての決断が重要です。死ぬと、キャラクター、装備、進行状況のすべてを失います。リスクの高いシステムで、戦略が報われ、すべての勝利が伝説となります。すべてを賭ける勇気はありますか？🗡️"
+      },
+      {
+        "title": "変化する世界",
+        "description": "世界を形作りましょう：建設し、風景を変え、あなたの足跡を残しましょう。環境はコミュニティの行動によって進化します。🌱"
+      },
+      {
+        "title": "無限スキルシステム",
+        "description": "スキルは使えば使うほど無限に成長します。武器から魔法まで、自分のペースで限界なく極めましょう。⚔️"
+      },
+      {
+        "title": "ループマップ",
+        "description": "境界のない世界：端に到達すると、反対側に再出現します。陸でも海でも、制限なく探索しましょう。地理も歴史も、永遠のループです！🔄"
+      }
+    ]
+  },
+  "BannerGodotSection": {
+    "title": "使用エンジン："
+  },
+  "VideosSection": {
+    "title": "開発ブログ"
+  },
+  "GallerySection": [
+    {
+      "src": "/gallery/1.webp",
+      "alt": "プレースホルダー画像 1"
+    },
+    {
+      "src": "/gallery/2.webp",
+      "alt": "プレースホルダー画像 2"
+    },
+    {
+      "src": "/gallery/3.webp",
+      "alt": "プレースホルダー画像 3"
+    },
+    {
+      "src": "/gallery/4.webp",
+      "alt": "プレースホルダー画像 4"
+    },
+    {
+      "src": "/gallery/5.webp",
+      "alt": "プレースホルダー画像 5"
+    },
+    {
+      "src": "/gallery/6.webp",
+      "alt": "プレースホルダー画像 6"
+    }
+  ],
+  "FooterSection": {
+    "copyright": "Heart of Fantasy © {year} 全著作権所有",
+    "legalNav": [
+      {
+        "text": "法的通知",
+        "link": "/法的通知",
+        "locale": "ja"
+      },
+      {
+        "text": "プライバシーポリシー",
+        "link": "/プライバシーポリシー",
+        "locale": "ja"
+      }
+    ]
+  },
+  "SocialMedia": [
+    {
+      "link": "https://www.twitch.tv/blacksmith3",
+      "logo": "twitch"
+    },
+    {
+      "link": "https://www.youtube.com/@blacksmith94",
+      "logo": "youtube"
+    },
+    {
+      "link": "https://discord.gg/Qmp4aqJcQ8",
+      "logo": "discord"
+    },
+    {
+      "link": "https://ko-fi.com/blacksmith3",
+      "logo": "kofi"
+    },
+    {
+      "link": "https://blacksmith94.itch.io/heartoffantasy",
+      "logo": "itchio"
+    }
+  ],
+  "TwitchPopup": {
+    "online": "ライブ中"
+  },
+  "LegalNoticeSection":{
+    "metadata": {
+      "title": "📄 法的通知 | Heart of Fantasy",
+      "description": "Heart of Fantasyの法的通知をお読みください。権利、責任、ウェブサイトの利用に関する情報が記載されています。"
+    },
+    "title": "📄 法的通知",
+    "update": "<strong>最終更新日:</strong> [15/04/2025]",
+    "parts": [
+      {
+        "title": "1. 一般情報",
+        "description": "<p>2002年7月11日付情報社会サービスおよび電子商取引法（LSSI-CE）第10条に準拠し、以下の詳細を提供します：</p><ul> <li><p><strong>責任者名：</strong> [Name of the studio or company]</p></li> <li><p><strong>納税者番号（NIF / CIF）：</strong> [Your NIF or CIF]</p></li><li><p><strong>登録住所：</strong> [Complete company or studio address]</p></li> <li><p><strong>メール：</strong> [your_email@example.com]</p></li> <li><p><strong>電話番号：</strong> [Your contact number]</p></li> </ul>"
+      },
+      {
+        "title": "2. 知的財産権および産業財産権",
+        "description": "<p>このウェブサイト上のすべてのコンテンツ（テキスト、画像、グラフィック、ロゴ、アイコン、ボタン、ソフトウェア、商号、商標、または産業的・商業的に使用できるその他の標識を含むがこれらに限定されない）は、所有者または該当する場合はライセンサーの財産です。</p> <p>本ウェブサイトへのアクセスは、ユーザーにこれらのコンテンツに対するいかなる権利も与えるものではなく、知的財産権および産業財産権法によって保護されています。</p>"
+      },
+      {
+        "title": "3. ウェブサイトの利用",
+        "description": "<p>ウェブサイトへのアクセスおよび利用は、現行法に従います。ユーザーは、適用法、道徳、公序良俗、第三者の権利、および本法的通知に記載された規定を尊重し、ウェブサイトのコンテンツおよびサービスを適切に利用することに同意します。</p>"
+      },
+      {
+        "title": "4. 責任",
+        "description": "<p>[Name of the studio or company]は、ウェブサイトの利用、アクセス不能、またはウイルスやその他の有害な要素の存在によってユーザーのコンピュータシステムに生じる損害について一切責任を負いません。</p><p>また、所有者はウェブサイトの稼働の可用性および継続性を保証しませんが、適切な運用を維持するために必要な努力を行うことを約束します。</p>"
+      },
+      {
+        "title": "5. 第三者リンク",
+        "description": "<p>本ウェブサイトには第三者のウェブサイトへのリンクが含まれている場合があります。[Name of the studio or company]は、これらのサイトの内容や提供されるサービスについて一切責任を負いません。これらのリンクの利用はユーザー自身の責任で行ってください。</p>"
+      },
+      {
+        "title": "6. 変更",
+        "description": "<p>ウェブサイトの所有者は、本法的通知、プライバシーポリシー、またはウェブサイトに関連するその他の側面のいずれかの部分を変更する権利を留保します。これらの変更は、本ウェブサイトに掲載された時点から適用されます。</p>"
+      },
+      {
+        "title": "7. 適用法および裁判管轄",
+        "description": "<p>本法的通知はスペイン法に準拠します。ウェブサイトの利用に関連して生じる紛争は、[City]（スペイン）の管轄裁判所で解決されます。</p>"
+      }
+    ]
+  },
+  "PrivacyPolicySection": {
+    "metadata": {
+      "title": "📄 プライバシーポリシー | Heart of Fantasy",
+      "description": "Heart of Fantasyがあなたの個人データをどのように保護し、現行のプライバシー規制に準拠しているかをご確認ください。"
+    },
+    "title": "📄 プライバシーポリシー",
+    "update": "<strong>最終更新日:</strong> [15/04/2025]",
+    "parts": [
+      {
+        "title": "1. データ管理者",
+        "description": "<p><strong>データ管理者名：</strong> [Name of the studio or company]</p><p><strong>連絡先メール：</strong> [your_email@example.com]</p>"
+      },
+      {
+        "title": "2. 収集するデータ",
+        "description": "<p>事前登録フォームに入力する際、以下の個人データを収集します：</p><ul><li>ユーザー名</li><li>メールアドレス</li><li>パスワード（暗号化形式で保存）</li></ul>"
+      },
+      {
+        "title": "3. データ処理の目的",
+        "description": "<p>データは以下の目的のみに使用されます：</p><ul><li>事前登録の管理およびゲーム開発に関する情報提供。</li><li>リリース、クローズドベータ、ゲームアップデートに関する連絡。</li></ul>"
+      },
+      {
+        "title": "4. 法的根拠",
+        "description": "<p>データ処理の法的根拠は、フォームの該当チェックボックスにチェックを入れることで与えられる<strong>明示的な同意</strong>です。</p>"
+      },
+      {
+        "title": "5. データ保存期間",
+        "description": "<p>ゲーム開発が続く限り、または削除を要求するまで、データは保持されます。</p>"
+      },
+      {
+        "title": "6. データ受領者",
+        "description": "<p>法令で要求されない限り、第三者にデータを共有しません。データは安全なサーバーに保存され、該当する場合はGDPRに準拠したプロバイダーによって管理されます。</p>"
+      },
+      {
+        "title": "7. ユーザーの権利",
+        "description": "<p>いつでも以下の権利を行使できます：</p><ul><li>個人データへのアクセス。</li><li>訂正または削除の要求。</li><li>処理の制限または異議の申し立て。</li><li>同意の撤回。</li></ul><p>権利を行使するには、[your_email@example.com]までご連絡ください。</p>"
+      },
+      {
+        "title": "8. データの安全性",
+        "description": "<p>データの安全性を確保し、不正アクセスを防ぐために、適切な技術的および組織的措置を実施しています。</p>"
+      }
+    ]
+  },
+  "PreRegisterForm":{
+    "title": "今すぐ事前登録！",
+    "inputs": {
+      "username": {
+        "placeholder": "ユーザー名",
+        "requiredError": "ユーザー名は必須です"
+      },
+      "email": {
+        "placeholder": "メールアドレス",
+        "requiredError": "メールアドレスは必須です",
+        "validError": "有効なメールアドレスを入力してください"
+      },
+      "password": {
+        "placeholder": "パスワード",
+        "requiredError": "パスワードは必須です",
+        "validError": "パスワードは6文字以上で入力してください"
+      },
+      "captcha": {
+        "placeholder": "キャプチャ",
+        "requiredError": "キャプチャは必須です"
+      },
+      "submit": {
+        "placeholder": "送信"
+      }
+    }
+  },
+  "BackButton": {
+    "text": "ホームに戻る"
+  },
+  "PageNotFound": {
+    "title": "404 | ページが見つかりませんでした。",
+    "backButton": "ホームに戻る",
+    "locale": "ja"
+  }
+}
