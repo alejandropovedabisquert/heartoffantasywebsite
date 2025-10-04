@@ -9,7 +9,13 @@
   },
   "HistorySection": {
     "title": "Sobre el juego",
-    "description": "<strong>Heart of Fantasy</strong> es un MMORPG diferente a todo lo que has vivido. En este mundo persistente y cíclico, la oscuridad juega con los corazones de los jugadores. El Rey Demonio es inmortal, no por poder, sino por vacío: dividió su corazón en fragmentos y los entregó a la oscuridad. Mientras estos fragmentos estén dispersos por el mundo, no puede morir. <br> Solo quien los reúna todos podrá romper su inmortalidad y desafiarlo en una batalla final. Y si lo derrota, deberá tomar una decisión: destruir el ciclo y empezar una era de paz para todos, o dividir su propio corazón y entregarlo a la oscuridad, convirtiéndose en el nuevo Rey Demonio."
+    "description": [
+      "<strong>Heart of Fantasy</strong> es un MMORPG diferente a todo lo que has vivido.",
+      "En este mundo persistente y cíclico, la oscuridad juega con los corazones de los jugadores.",
+      "El Rey Demonio es inmortal, no por poder, sino por vacío: dividió su corazón en fragmentos y los entregó a la oscuridad. Mientras estos fragmentos estén dispersos por el mundo, no puede morir.",
+      "Solo quien los reúna todos podrá romper su inmortalidad y desafiarlo en una batalla final.",
+      "Y si lo derrota, deberá tomar una decisión: destruir el ciclo y empezar una era de paz para todos, o dividir su propio corazón y entregarlo a la oscuridad, convirtiéndose en el nuevo Rey Demonio."
+    ]
   },
   "FeaturesSection": {
     "title": "Características",

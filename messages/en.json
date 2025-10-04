@@ -9,7 +9,13 @@
   },
   "HistorySection": {
     "title": "About the game",
-    "description": "<strong>Heart of Fantasy</strong> is an MMORPG unlike anything you've ever experienced. In this persistent and cyclical world, darkness plays with the hearts of players. The Demon King is immortal, not by power, but by emptiness: he divided his heart into fragments and gave them to the darkness. <br> As long as these fragments are scattered across the world, he cannot die. Only those who gather them all can break his immortality and challenge him in a final battle. And if they defeat him, they must make a choice: destroy the cycle and begin an era of peace for all, or divide their own heart and surrender it to the darkness, becoming the new Demon King."
+    "description": [
+      "<strong>Heart of Fantasy</strong> is an MMORPG unlike anything you've ever experienced.",
+      "In this persistent and cyclical world, darkness plays with the hearts of players.",
+      "The Demon King is immortal, not by power, but by emptiness: he divided his heart into fragments and gave them to the darkness. As long as these fragments are scattered across the world, he cannot die.",
+      "Only those who gather them all can break his immortality and challenge him in a final battle.",
+      "And if they defeat him, they must make a choice: destroy the cycle and begin an era of peace for all, or divide their own heart and surrender it to the darkness, becoming the new Demon King."
+    ]
   },
   "FeaturesSection": {
     "title": "Features",

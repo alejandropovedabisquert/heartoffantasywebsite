@@ -6,6 +6,7 @@ import HistorySection from "@/components/HistorySection";
 import SliderSection from "@/components/SliderSection";
 import VideosSection from "@/components/VideosSection";
 import clsx from "clsx";
+// TODO: Implementar async components para la internacionalización https://next-intl.dev/docs/environments/server-client-components#async-components
 
 export default function Home() {
   const gradientStyles = clsx(
