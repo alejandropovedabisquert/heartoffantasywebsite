@@ -1,12 +1,12 @@
-# Heart of Fantasy 🎮
-
-> Un MMORPG de supervivencia con permadeath y un mundo generado proceduralmente.  Página web oficial del proyecto.
-
-[🌐 Ver sitio web](https://heartoffantasywebsite.vercel.app)
-
 ## 🌟 Sobre el Proyecto
 
-Este repositorio contiene el sitio web oficial de **Heart of Fantasy**, desarrollado con Next.js, TypeScript y Tailwind CSS. El sitio presenta información sobre el juego y ofrece contenido multiidioma.
+Este es un proyecto en constante desarrollo, ya que el videojuego también lo está. Conforme el juego vaya ampliándose, esta web lo hará de la misma forma. La web de **Heart of Fantasy** está desarrollada con Next.js, TypeScript y Tailwind CSS. La web presenta información sobre el juego y ofrece contenido multiidioma.
+
+# Heart of Fantasy 🎮
+
+> Un MMORPG de supervivencia con permadeath y un mundo generado proceduralmente. Página web oficial del proyecto.
+
+[🌐 Ver sitio web](https://heartoffantasywebsite.vercel.app)
 
 ### Características Principales del Sitio
 
@@ -22,16 +22,16 @@ Este repositorio contiene el sitio web oficial de **Heart of Fantasy**, desarrol
 
 ### Core
 - **[Next.js](https://nextjs.org/)**
-- **[React 19](https://react.dev/)**
-- **[TypeScript 5](https://www.typescriptlang.org/)**
+- **[React](https://react.dev/)**
+- **[TypeScript](https://www.typescriptlang.org/)**
 
 ### Styling
-- **[Tailwind CSS 3.4](https://tailwindcss.com/)**
+- **[Tailwind CSS](https://tailwindcss.com/)**
 - **[AOS](https://michalsnik.github.io/aos/)**
 - **[clsx](https://github.com/lukeed/clsx)**
 
 ### Internacionalización
-- **[next-intl 4.1](https://next-intl-docs.vercel.app/)**
+- **[next-intl](https://next-intl-docs.vercel.app/)**
 
 ## 👤 Autor
 
