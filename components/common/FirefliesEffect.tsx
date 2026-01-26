@@ -2,7 +2,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { Firefly, FirefliesConfig } from "@/lib/fireflies";
 
-interface FirefliesEffectProps {
+type FirefliesEffectProps = {
   count?: number;
   speed?: number;
   flicker?: boolean;

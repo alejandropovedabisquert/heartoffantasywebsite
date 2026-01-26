@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     };
 }
 
-interface partsProps {
+type partsProps = {
     title: string;
     description: string;
     contentList: string;

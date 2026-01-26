@@ -1,7 +1,7 @@
 import { useLocale, useTranslations } from "next-intl";
 import { Titulo } from "./common/Titulo";
 
-interface featureProps {
+type featureProps = {
     title: string;
     description: string;
 }

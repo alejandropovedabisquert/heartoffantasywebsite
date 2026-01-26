@@ -5,8 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BookmarkX } from "lucide-react";
+import { TwitchStreamResponse } from "@/types/twitch";
 
-interface nameProps {
+type nameProps = {
     streamerName: string,
 }
 

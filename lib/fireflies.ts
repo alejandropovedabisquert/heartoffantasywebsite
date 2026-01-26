@@ -1,4 +1,4 @@
-export interface FirefliesConfig {
+export type FirefliesConfig = {
     count: number;      // Cantidad de luciérnagas
     speed: number;      // Velocidad de movimiento
     flicker: boolean;   // Activar parpadeo (true/false)

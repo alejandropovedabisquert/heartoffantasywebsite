@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
-// TODO: Ajustar altura del video para hacerlo mas usable para usuarios y ponerle minimo de altura
+
 export default function SliderSection() {
       const gradientStyles = clsx(
         "before:bg-gradient-to-b before:absolute before:top-0 before:h-screen before:max-h-[40vh] before:w-full before:from-black before:to-transparent before:z-[1]",

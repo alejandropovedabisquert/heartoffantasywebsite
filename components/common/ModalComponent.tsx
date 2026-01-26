@@ -2,7 +2,7 @@ import React from "react";
 import Image, { ImageProps } from "next/image";
 import { OctagonX } from "lucide-react";
 
-interface ImageViewerProps {
+type ImageViewerProps = {
     selectedImage: ImageProps;
     onNext?: () => void;
     onPrev?: () => void;

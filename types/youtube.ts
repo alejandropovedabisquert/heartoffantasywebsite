@@ -1,9 +1,8 @@
-// TODO: Considera renombrar la carpeta "interfaces" a "types" para seguir la convención de Next.js y TypeScript.
-interface YoutubeResponse {
+type YoutubeResponse = {
     items: Video[];
 };
 
-export interface Video {
+export type Video = {
     id: string;
     snippet: {
         title: string;

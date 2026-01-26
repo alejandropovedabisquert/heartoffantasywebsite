@@ -2,11 +2,11 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import StreamerStatus from "./common/StreamerStatus";
 import { Link } from "@/i18n/navigation";
-interface socialMediaProps {
+type socialMediaProps = {
     link: string;
     logo: string;
 }
-interface legalNavProps {
+type legalNavProps = {
     text: string,
     link : string,
     locale: string,

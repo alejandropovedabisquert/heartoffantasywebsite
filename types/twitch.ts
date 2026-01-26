@@ -1,4 +1,4 @@
-interface Stream {
+type Stream = {
     id: string;
     user_id: string;
     user_login: string;
@@ -16,11 +16,11 @@ interface Stream {
     is_mature: boolean;
 }
 
-interface Pagination {
+type Pagination = {
     cursor: string;
 }
 
-interface TwitchStreamResponse {
+export type TwitchStreamResponse = {
     data: Stream[];
     pagination: Pagination;
 }
