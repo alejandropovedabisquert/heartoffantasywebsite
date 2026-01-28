@@ -1,11 +1,13 @@
 // TODO: Revisa si este layout debe aplicarse solo a ciertas páginas o a todo el sitio. Si es global, considera moverlo a app/[locale]/layout.tsx para simplificar la estructura.
 import FirefliesEffect from "@/components/common/FirefliesEffect";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
     return (
         <div className="relative overflow-hidden">
             <header>
+                <Link href="/" aria-label="Heart of Fantasy Home">
                 <Image 
                     src={"/logo.png"} 
                     width={250} 
@@ -13,7 +15,8 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
                     alt="logo" 
                     priority={true} 
                     className="mx-auto my-10 z-[1] relative"
-                />
+                    />
+                </Link>
             </header>
             <FirefliesEffect
                 count={100} // Cuantas luciernagas apareceran

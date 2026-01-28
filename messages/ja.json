@@ -9,7 +9,7 @@
   },
   "HistorySection": {
     "title": "ゲームについて",
-    "description":  [
+    "description": [
       "『Heart of Fantasy』<br> 闇と輪廻の物語",
       "それは、ただのMMORPGではない。<br> プレイヤーが足を踏み入れるのは、時を超えて循環し続ける世界。<br> そこで蠢くのは、光を嘲り、心を試す“闇”である。",
       "魔王は不滅。力ゆえではない。<br> 彼は心を全て闇へと捧げた。<br> すると、闇は魔王の心を打ち砕き、世界中に散りばめた。",
@@ -77,11 +77,6 @@
     "copyright": "Heart of Fantasy © {year} 全著作権所有",
     "legalNav": [
       {
-        "text": "法的通知",
-        "link": "/法的通知",
-        "locale": "ja"
-      },
-      {
         "text": "プライバシーポリシー",
         "link": "/プライバシーポリシー",
         "locale": "ja"
@@ -113,7 +108,7 @@
   "TwitchPopup": {
     "online": "ライブ中"
   },
-  "LegalNoticeSection":{
+  "LegalNoticeSection": {
     "metadata": {
       "title": "📄 法的通知 | Heart of Fantasy",
       "description": "Heart of Fantasyの法的通知をお読みください。権利、責任、ウェブサイトの利用に関する情報が記載されています。"
@@ -154,51 +149,52 @@
   "PrivacyPolicySection": {
     "metadata": {
       "title": "📄 プライバシーポリシー | Heart of Fantasy",
-      "description": "Heart of Fantasyがあなたの個人データをどのように保護し、現行のプライバシー規制に準拠しているかをご確認ください。"
+      "description": "Heart of Fantasyがどのように個人データを保護し、現行のプライバシー規制を遵守しているかをご確認ください。"
     },
     "title": "📄 プライバシーポリシー",
-    "update": "<strong>最終更新日:</strong> [15/04/2025]",
+    "update": "<strong>最終更新日:</strong> [2026/01/28]",
     "parts": [
       {
-        "title": "1. データ管理者",
-        "description": "<p><strong>データ管理者名：</strong> [Name of the studio or company]</p><p><strong>連絡先メール：</strong> [your_email@example.com]</p>"
+        "title": "1. 収集するデータ",
+        "description": "<p>登録フォームに入力する際、以下の個人情報を収集します：</p><ul><li>ユーザー名</li><li>メールアドレス</li><li>パスワード（暗号化形式で保存）</li></ul>"
       },
       {
-        "title": "2. 収集するデータ",
-        "description": "<p>事前登録フォームに入力する際、以下の個人データを収集します：</p><ul><li>ユーザー名</li><li>メールアドレス</li><li>パスワード（暗号化形式で保存）</li></ul>"
+        "title": "2. 利用目的",
+        "description": "<p>データは以下の目的のみに使用されます：</p><ul><li>登録の管理およびゲームアルファへのアクセス提供。</li></ul>"
       },
       {
-        "title": "3. データ処理の目的",
-        "description": "<p>データは以下の目的のみに使用されます：</p><ul><li>事前登録の管理およびゲーム開発に関する情報提供。</li><li>リリース、クローズドベータ、ゲームアップデートに関する連絡。</li></ul>"
+        "title": "3. 法的根拠",
+        "description": "<p>データ処理の法的根拠は、フォームの該当欄にチェックを入れることで与えられる<strong>明示的な同意</strong>です。</p>"
       },
       {
-        "title": "4. 法的根拠",
-        "description": "<p>データ処理の法的根拠は、フォームの該当チェックボックスにチェックを入れることで与えられる<strong>明示的な同意</strong>です。</p>"
+        "title": "4. データの保存期間",
+        "description": "<p>データはゲーム開発期間中、または削除を希望されるまで保存されます。</p>"
       },
       {
-        "title": "5. データ保存期間",
-        "description": "<p>ゲーム開発が続く限り、または削除を要求するまで、データは保持されます。</p>"
+        "title": "5. 提供先",
+        "description": "<p>法的義務がある場合を除き、第三者にデータを共有しません。データは安全なサーバーに保存され、必要に応じてGDPR準拠のプロバイダーによって管理されます。</p>"
       },
       {
-        "title": "6. データ受領者",
-        "description": "<p>法令で要求されない限り、第三者にデータを共有しません。データは安全なサーバーに保存され、該当する場合はGDPRに準拠したプロバイダーによって管理されます。</p>"
+        "title": "6. ユーザーの権利",
+        "description": "<p>いつでも以下の権利を行使できます：</p><ul><li>個人データへのアクセス</li><li>訂正または削除の要求</li><li>処理の制限または反対の要求</li><li>同意の撤回</li></ul><p>権利行使の際は、Discordでご連絡ください：<a href=\"https://discord.gg/Qmp4aqJcQ8\">https://discord.gg/Qmp4aqJcQ8</a></p>"
       },
       {
-        "title": "7. ユーザーの権利",
-        "description": "<p>いつでも以下の権利を行使できます：</p><ul><li>個人データへのアクセス。</li><li>訂正または削除の要求。</li><li>処理の制限または異議の申し立て。</li><li>同意の撤回。</li></ul><p>権利を行使するには、[your_email@example.com]までご連絡ください。</p>"
-      },
-      {
-        "title": "8. データの安全性",
-        "description": "<p>データの安全性を確保し、不正アクセスを防ぐために、適切な技術的および組織的措置を実施しています。</p>"
+        "title": "7. データの安全性",
+        "description": "<p>データの安全性を確保し、不正アクセスを防ぐために、適切な技術的および組織的対策を講じています。</p>"
       }
     ]
   },
-  "PreRegisterForm":{
-    "title": "今すぐ事前登録！",
+  "RegisterForm": {
+    "title": "今すぐ登録！",
+    "disclaimer": {
+      "title": "重要:",
+      "text": "この登録により、ゲームのアルファテストに参加できます。<br>ゲームは現在も開発中で、リリース日はまだ確定していません。<br>アルファアクセスの管理やテスターとの連絡に必要な情報（メールアドレスやユーザー名など）のみを収集します。あなたのデータが第三者に販売または共有されることはなく、開発およびテストの目的のみに使用されます。<br>安全のため、他のウェブサイトやサービスで使用しているパスワードは使用しないでください。<br>データの削除を希望する場合やご質問がある場合は、Discordサーバー（<a href=\"https://discord.gg/Qmp4aqJcQ8\">https://discord.gg/Qmp4aqJcQ8</a>）からご連絡いただけます。<br/>テストとゲームの改善にご協力いただき、ありがとうございます！"
+    },
     "inputs": {
       "username": {
         "placeholder": "ユーザー名",
-        "requiredError": "ユーザー名は必須です"
+        "requiredError": "ユーザー名は必須です",
+        "validError": "ユーザー名にスペースを使用しないでください"
       },
       "email": {
         "placeholder": "メールアドレス",
@@ -214,8 +210,25 @@
         "placeholder": "キャプチャ",
         "requiredError": "キャプチャは必須です"
       },
+      "conditions": {
+        "label": "私は<a href=\"/ja/プライバシーポリシー\" class=\"underline hover:text-corporative\" target=\"_blank\" rel=\"noopener noreferrer\">プライバシーポリシー</a>を読み、同意します。",
+        "requiredError": "プライバシーポリシーに同意する必要があります"
+      },
+      "successMessage": {
+        "text": "アカウントが正常に作成されました。クライアントにログインできます。"
+      },
+      "usernameExists": {
+        "text": "ユーザー名は既に存在します。別のものを選んでください。"
+      },
+      "emailExists": {
+        "text": "メールアドレスは既に存在します。別のメールアドレスを使用してください。"
+      },
+      "errorMessage": {
+        "text": "リクエストを完了できませんでした。サーバーがメンテナンス中の可能性があります。"
+      },
       "submit": {
-        "placeholder": "送信"
+        "placeholder": "送信",
+        "loading": "アカウントを作成中..."
       }
     }
   },

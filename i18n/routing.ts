@@ -14,6 +14,11 @@ export const routing = defineRouting({
   pathnames: {
     // If all locales use the same pathname, a single
     // external path can be used for all locales
+    "/": {
+      en: '/',
+      es: '/',
+      ja: '/'
+    },
     '/legal-notice': {
       en: '/legal-notice',
       es: '/aviso-legal',
@@ -24,10 +29,10 @@ export const routing = defineRouting({
       es: '/politica-privacidad',
       ja: '/プライバシーポリシー'
     },
-    '/pre-register': {
-      en: '/pre-register',
-      es: '/pre-registro',
-      ja: '/事前登録'
+    '/register': {
+      en: '/register',
+      es: '/registro',
+      ja: '/登録'
     }
   }
 });

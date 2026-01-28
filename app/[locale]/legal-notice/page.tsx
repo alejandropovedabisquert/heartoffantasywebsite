@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import LandingLayout from "../landing-layout/layout";
 import { Metadata } from "next";
 import BackButton from "@/components/common/BackButton";
+import { notFound } from "next/navigation";
 
 // Función para generar el metadata dinámicamente
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -27,6 +28,8 @@ type partsProps = {
 }
 
 export default function Page() {
+    notFound();
+
     const t = useTranslations('LegalNoticeSection');
     return (
         <LandingLayout>

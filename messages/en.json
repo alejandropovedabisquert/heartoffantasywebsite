@@ -74,11 +74,6 @@
     "copyright": "Heart of Fantasy © {year} All rights reserved",
     "legalNav": [
       {
-        "text": "Legal notice",
-        "link": "/legal-notice",
-        "locale": "en"
-      },
-      {
         "text": "Privacy Policy",
         "link": "/privacy-policy",
         "locale": "en"
@@ -110,7 +105,7 @@
   "TwitchPopup": {
     "online": "is LIVE"
   },
-  "LegalNoticeSection":{
+  "LegalNoticeSection": {
     "metadata": {
       "title": "📄 Legal Notice | Heart of Fantasy",
       "description": "Read the legal notice of Heart of Fantasy with information about rights, responsibilities, and website usage."
@@ -154,48 +149,49 @@
       "description": "Learn how Heart of Fantasy protects your personal data and complies with current privacy regulations."
     },
     "title": "📄 Privacy Policy",
-    "update": "<strong>Last updated:</strong> [15/04/2025]",
+    "update": "<strong>Last update:</strong> [01/28/2026]",
     "parts": [
       {
-        "title": "1. Data Controller",
-        "description": "<p><strong>Name of the data controller:</strong> [Name of the studio or company]</p><p><strong>Contact email:</strong> [your_email@example.com]</p>"
+        "title": "1. Data We Collect",
+        "description": "<p>When you fill out the registration form, we collect the following personal data:</p><ul><li>Username</li><li>Email address</li><li>Password (stored in encrypted format)</li></ul>"
       },
       {
-        "title": "2. Data We Collect",
-        "description": "<p>When you fill out the pre-registration form, we collect the following personal data:</p><ul><li>Username</li><li>Email address</li><li>Password (stored in an encrypted format)</li></ul>"
+        "title": "2. Purpose of Processing",
+        "description": "<p>Your data will be used solely to:</p><ul><li>Manage your registration and grant you access to the game alpha.</li></ul>"
       },
       {
-        "title": "3. Purpose of Data Processing",
-        "description": "<p>The data will be used solely for:</p><ul><li>Managing your pre-registration and keeping you informed about the development of the game.</li><li>Sending communications related to the launch, closed beta, and game updates.</li></ul>"
+        "title": "3. Legal Basis",
+        "description": "<p>The legal basis for processing your data is your <strong>explicit consent</strong>, given by checking the corresponding box in the form.</p>"
       },
       {
-        "title": "4. Legal Basis",
-        "description": "<p>The legal basis for processing your data is your <strong>explicit consent</strong>, given by ticking the corresponding checkbox in the form.</p>"
+        "title": "4. Data Retention",
+        "description": "<p>Your data will be retained for as long as the game is in development or until you request its deletion.</p>"
       },
       {
-        "title": "5. Data Retention",
-        "description": "<p>Your data will be retained for as long as the game development continues or until you request its deletion.</p>"
+        "title": "5. Recipients",
+        "description": "<p>We will not share your data with third parties, except when legally required. Data will be stored on secure servers and, if applicable, managed by providers compliant with GDPR.</p>"
       },
       {
-        "title": "6. Data Recipients",
-        "description": "<p>We will not share your data with third parties unless required by law. Data will be stored on secure servers and, if applicable, managed by providers that comply with GDPR.</p>"
+        "title": "6. User Rights",
+        "description": "<p>You may exercise your rights at any time, including:</p><ul><li>Access to your personal data.</li><li>Request for rectification or deletion.</li><li>Request for restriction or objection to processing.</li><li>Withdrawal of consent.</li></ul><p>To exercise your rights, you can contact us via Discord: <a href=\"https://discord.gg/Qmp4aqJcQ8\">https://discord.gg/Qmp4aqJcQ8</a>.</p>"
       },
       {
-        "title": "7. User Rights",
-        "description": "<p>You can exercise your rights at any time, including:</p><ul><li>Access to your personal data.</li><li>Requesting rectification or deletion.</li><li>Requesting limitation or objection to the processing.</li><li>Withdrawing your consent.</li></ul><p>To exercise your rights, you can contact us at [your_email@example.com].</p>"
-      },
-      {
-        "title": "8. Data Security",
-        "description": "<p>We implement appropriate technical and organizational measures to ensure the security of your data and prevent unauthorized access.</p>"
+        "title": "7. Data Security",
+        "description": "<p>We apply appropriate technical and organizational measures to ensure the security of your data and prevent unauthorized access.</p>"
       }
     ]
   },
-  "PreRegisterForm":{
-    "title": "Pre-register now!",
+  "RegisterForm": {
+    "title": "Register now!",
+    "disclaimer": {
+      "title": "IMPORTANT:",
+      "text": "This registration will give you access to the alpha test of the game.<br>The game is still in active development and there is currently no confirmed release date.<br>Only the information necessary to manage alpha access and communication with testers is collected (such as your email and username). Your data will not be sold or shared with third parties and will only be used for development and testing purposes.<br>For your security, do not use a password that you use on other websites or services.<br>If you would like your data to be removed or have any questions, you can contact through our Discord server: <a href=\"https://discord.gg/Qmp4aqJcQ8\">https://discord.gg/Qmp4aqJcQ8</a><br/>Thank you for helping test and improve the game!"
+    },
     "inputs": {
       "username": {
         "placeholder": "Username",
-        "requiredError": "Username is required"
+        "requiredError": "Username is required",
+        "validError": "Please do not use spaces in the username"
       },
       "email": {
         "placeholder": "Email",
@@ -211,8 +207,25 @@
         "placeholder": "Captcha",
         "requiredError": "Captcha is required"
       },
+      "conditions": {
+        "label": "I have read and accept the <a href=\"/privacy-policy\" class=\"underline hover:text-corporative\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>.",
+        "requiredError": "You must accept the Privacy Policy"
+      },
+      "successMessage": {
+        "text": "Account created successfully, you can now log in to the client."
+      },
+      "usernameExists": {
+        "text": "Username already exists. Please choose another one."
+      },
+      "emailExists": {
+        "text": "Email already exists. Please use another email."
+      },
+      "errorMessage": {
+        "text": "Could not complete the request. The server may be under maintenance."
+      },
       "submit": {
-        "placeholder": "Send"
+        "placeholder": "Send",
+        "loading": "Creating account..."
       }
     }
   },

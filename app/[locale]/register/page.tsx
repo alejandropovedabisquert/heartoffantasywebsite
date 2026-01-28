@@ -1,5 +1,5 @@
 "use client"
-import PreRegisterForm from "@/components/common/PreRegisterForm";
+import RegisterForm from "@/components/common/RegisterForm";
 import LandingLayout from "../landing-layout/layout";
 
 
@@ -7,7 +7,7 @@ export default function Page() {
 
     return (
         <LandingLayout>
-            <PreRegisterForm/>
+            <RegisterForm/>
         </LandingLayout>
     );
 }

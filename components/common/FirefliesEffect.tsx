@@ -1,6 +1,6 @@
 "use client";
 import { useLayoutEffect, useRef } from "react";
-import { Firefly, FirefliesConfig } from "@/lib/fireflies";
+import { Firefly, FirefliesConfig } from "@/lib/actions/fireflies";
 
 type FirefliesEffectProps = {
   count?: number;

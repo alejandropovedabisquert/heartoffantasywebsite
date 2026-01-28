@@ -4,7 +4,7 @@
     "description": "\"Heart of Fantasy\" es un MMORPG de supervivencia con permadeath y un mundo generado proceduralmente que incluye océanos, ríos y montañas.",
     "openGraphImage": "/openGraph.png"
   },
-  "LocaleSwitcher":{
+  "LocaleSwitcher": {
     "locale": "{locale, select, es {Español} en {English} ja {日本語} other {Unknown}}"
   },
   "HistorySection": {
@@ -19,7 +19,7 @@
   },
   "FeaturesSection": {
     "title": "Características",
-    "features" : [
+    "features": [
       {
         "title": "Permadeath",
         "description": "Cada decisión cuenta. Si mueres, lo pierdes todo: personaje, equipo y progreso. Un sistema de alto riesgo que premia la estrategia y convierte cada victoria en una leyenda. ¿Te atreves a arriesgarlo todo? 🗡️"
@@ -35,13 +35,13 @@
       {
         "title": "Mapa envolvente",
         "description": "Un mundo sin fronteras: al llegar al borde, reapareces en el lado opuesto. Explora sin límites, ya sea por tierra o por mar. ¡La geografía, al igual que la historia, es un bucle eterno! 🔄"
-      }        
+      }
     ]
   },
   "BannerGodotSection": {
     "title": "Hecho con"
   },
-  "VideosSection":{
+  "VideosSection": {
     "title": "Devblogs"
   },
   "GallerySection": [
@@ -74,18 +74,13 @@
     "copyright": "Heart of Fantasy © {year} Todos los derechos reservados",
     "legalNav": [
       {
-        "text": "Aviso legal",
-        "link": "/legal-notice",
-        "locale": "es"
-      },
-      {
         "text": "Política de privacidad",
         "link": "/privacy-policy",
         "locale": "es"
       }
     ]
   },
-  "SocialMedia" : [
+  "SocialMedia": [
     {
       "link": "https://www.twitch.tv/blacksmith3",
       "logo": "twitch"
@@ -154,48 +149,49 @@
       "description": "Descubre cómo Heart of Fantasy protege tus datos personales y cumple con la normativa de privacidad vigente."
     },
     "title": "📄 Política de Privacidad",
-    "update": "<strong>Última actualización:</strong> [15/04/2025]",
+    "update": "<strong>Última actualización:</strong> [28/01/2026]",
     "parts": [
       {
-        "title": "1. Responsable del tratamiento",
-        "description": "<p><strong>Nombre del responsable:</strong> [Nombre del estudio o empresa]</p><p><strong>Correo electrónico de contacto:</strong> [tu_email@ejemplo.com]</p>"
+        "title": "1. Datos que recopilamos",
+        "description": "<p>Cuando rellenas el formulario de registro, recopilamos los siguientes datos personales:</p><ul><li>Nombre de usuario</li><li>Dirección de correo electrónico</li><li>Contraseña (almacenada en formato cifrado)</li></ul>"
       },
       {
-        "title": "2. Datos que recopilamos",
-        "description": "<p>Cuando rellenas el formulario de prerregistro, recopilamos los siguientes datos personales:</p><ul><li>Nombre de usuario</li><li>Dirección de correo electrónico</li><li>Contraseña (almacenada en formato cifrado)</li></ul>"
+        "title": "2. Finalidad del tratamiento",
+        "description": "<p>Los datos serán utilizados únicamente para:</p><ul><li>Gestionar tu registro y darte acceso al alfa del juego.</li></ul>"
       },
       {
-        "title": "3. Finalidad del tratamiento",
-        "description": "<p>Los datos serán utilizados únicamente para:</p><ul><li>Gestionar tu prerregistro y mantenerte informado sobre el desarrollo del juego.</li><li>Enviar comunicaciones relacionadas con el lanzamiento, la beta cerrada y las actualizaciones del juego.</li></ul>"
-      },
-      {
-        "title": "4. Base legal",
+        "title": "3. Base legal",
         "description": "<p>La base legal para el tratamiento de tus datos es tu <strong>consentimiento expreso</strong>, otorgado al marcar la casilla correspondiente en el formulario.</p>"
       },
       {
-        "title": "5. Conservación de los datos",
+        "title": "4. Conservación de los datos",
         "description": "<p>Tus datos serán conservados mientras dure el desarrollo del juego o hasta que solicites su supresión.</p>"
       },
       {
-        "title": "6. Destinatarios",
+        "title": "5. Destinatarios",
         "description": "<p>No compartiremos tus datos con terceros, salvo obligación legal. Los datos se almacenarán en servidores seguros y, si corresponde, serán gestionados por proveedores que cumplan con el RGPD.</p>"
       },
       {
-        "title": "7. Derechos del usuario",
-        "description": "<p>Puedes ejercer tus derechos en cualquier momento, incluyendo:</p><ul><li>Acceso a tus datos personales.</li><li>Solicitud de rectificación o eliminación.</li><li>Solicitud de limitación u oposición al tratamiento.</li><li>Retirada del consentimiento.</li></ul><p>Para ejercer tus derechos, puedes escribirnos a [tu_email@ejemplo.com].</p>"
+        "title": "6. Derechos del usuario",
+        "description": "<p>Puedes ejercer tus derechos en cualquier momento, incluyendo:</p><ul><li>Acceso a tus datos personales.</li><li>Solicitud de rectificación o eliminación.</li><li>Solicitud de limitación u oposición al tratamiento.</li><li>Retirada del consentimiento.</li></ul><p>Para ejercer tus derechos, puedes escribirnos por Discord: <a href=\"https://discord.gg/Qmp4aqJcQ8\">https://discord.gg/Qmp4aqJcQ8</a>.</p>"
       },
       {
-        "title": "8. Seguridad de los datos",
+        "title": "7. Seguridad de los datos",
         "description": "<p>Aplicamos medidas técnicas y organizativas adecuadas para garantizar la seguridad de tus datos y evitar accesos no autorizados.</p>"
       }
     ]
   },
-  "PreRegisterForm": {
-    "title": "¡Pre-regístrate ahora!",
+  "RegisterForm": {
+    "title": "¡Regístrate ahora!",
+    "disclaimer": {
+      "title": "IMPORTANTE:",
+      "text": "Este registro te dará acceso a la prueba alfa del juego.<br>El juego sigue en desarrollo activo y actualmente no hay una fecha de lanzamiento confirmada.<br>Solo se recopila la información necesaria para gestionar el acceso al alfa y la comunicación con los testers (como tu correo electrónico y nombre de usuario). Tus datos no se venderán ni compartirán con terceros y solo se utilizarán para fines de desarrollo y pruebas.<br>Por tu seguridad, no utilices una contraseña que uses en otros sitios web o servicios.<br>Si deseas que tus datos sean eliminados o tienes alguna pregunta, puedes contactarnos a través de nuestro servidor de Discord: <a href=\"https://discord.gg/Qmp4aqJcQ8\">https://discord.gg/Qmp4aqJcQ8</a><br/>¡Gracias por ayudar a probar y mejorar el juego!"
+    },
     "inputs": {
       "username": {
         "placeholder": "Nombre de usuario",
-        "requiredError": "El nombre de usuario es obligatorio"
+        "requiredError": "El nombre de usuario es obligatorio",
+        "validError": "Por favor, no uses espacios en el nombre de usuario"
       },
       "email": {
         "placeholder": "Correo electrónico",
@@ -211,8 +207,25 @@
         "placeholder": "Captcha",
         "requiredError": "El captcha es obligatorio"
       },
+      "conditions": {
+        "label": "He leído y acepto la <a href=\"/es/politica-privacidad\" class=\"underline hover:text-corporative\" target=\"_blank\" rel=\"noopener noreferrer\">Política de Privacidad</a>.",
+        "requiredError": "Debes aceptar la Política de Privacidad"
+      },
+      "successMessage": {
+        "text": "Cuenta creada correctamente, ya puedes iniciar sesión en el cliente."
+      },
+      "usernameExists": {
+        "text": "El nombre de usuario ya existe. Por favor, elige otro."
+      },
+      "emailExists": {
+        "text": "El correo electrónico ya existe. Por favor, utiliza otro correo."
+      },
+      "errorMessage": {
+        "text": "No se pudo completar la petición. El servidor puede estar en mantenimiento."
+      },
       "submit": {
-        "placeholder": "Enviar"
+        "placeholder": "Enviar",
+        "loading": "Creando cuenta..."
       }
     }
   },

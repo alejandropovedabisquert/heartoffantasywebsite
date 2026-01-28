@@ -1,5 +1,5 @@
 "use client"
-import { checkIfStreamerIsLive } from "@/lib/apiTwitch";
+import { checkIfStreamerIsLive } from "@/lib/api/apiTwitch";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
