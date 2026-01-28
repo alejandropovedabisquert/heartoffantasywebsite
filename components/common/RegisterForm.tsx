@@ -61,9 +61,7 @@ export default function RegisterForm() {
   const validateForm = () => {
     const formErrors = validateRegisterForm({ username, email, password }, t);
     const captchaError = validateCaptcha(captchaToken || "", t);
-    const termsError = !acceptedTerms
-      ? { terms: { message: t("inputs.conditions.requiredError"), success: false } }
-      : {};
+    const termsError = !acceptedTerms && { terms: { message: t("inputs.conditions.requiredError"), success: false } };
     const newErrors = { ...formErrors, ...captchaError, ...termsError };
     setErrors(newErrors);
     captchaRef.current?.resetCaptcha();
