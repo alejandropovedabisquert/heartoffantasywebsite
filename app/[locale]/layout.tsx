@@ -18,11 +18,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const messages = (await import(`@/messages/${locale}.json`)).default;
 
   return {
-    metadataBase: new URL('https://heartoffantasywebsite.vercel.app'), // Asignamos dominio en produccion
+    metadataBase: new URL('https://www.heartoffantasy.com'), // Asignamos dominio en produccion
     title: messages.Metadata.title,
     description: messages.Metadata.description,
     openGraph: {
       images: messages.Metadata.openGraphImage,
+    },
+    verification: {
+      google: 'M35Kr9isjr9ui3oxc63rCnGr5v2gcLlqL5PRpba6N8A',
     },
   };
 }
