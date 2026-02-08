@@ -1,6 +1,6 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
+import { notFound, useSearchParams } from "next/navigation";
 import LandingLayout from "../landing-layout/layout";
 import { useUserActivate } from "@/lib/hooks/useUserActivate";
 import { useEffect } from "react";
@@ -9,14 +9,13 @@ export default function Activate() {
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
     const { activate, isLoading, message } = useUserActivate();
+    if (!token) {
+        notFound();
+    }
     useEffect(() => {
-        if (token) {
-            activate(token).then(result => {
-                alert(result?.message);
-            });
-        } else {
-            alert("No token provided");
-        }
+        activate(token).then(result => {
+            alert(result?.message);
+        });
     }, []);
 
   return (
