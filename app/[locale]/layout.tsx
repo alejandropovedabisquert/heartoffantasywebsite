@@ -1,5 +1,5 @@
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import "../globals.css";
@@ -10,19 +10,16 @@ import BodyIdSetter from '@/components/common/BodyIdSetter';
 import { Analytics } from "@vercel/analytics/next";
 import { Geist } from 'next/font/google';
 
-// TODO: Implementar mejor el metadata https://next-intl.dev/docs/routing/setup#use-the-locale-param-in-metadata
-// Función para generar el metadata dinámicamente
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  // Cargar las traducciones para el idioma actual
-  const { locale } = await params;
-  const messages = (await import(`@/messages/${locale}.json`)).default;
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'Metadata'});
 
   return {
-    metadataBase: new URL('https://www.heartoffantasy.com'), // Asignamos dominio en produccion
-    title: messages.Metadata.title,
-    description: messages.Metadata.description,
+    metadataBase: new URL('https://www.heartoffantasy.com'),
+    title: t('title'),
+    description: t('description'),
     openGraph: {
-      images: messages.Metadata.openGraphImage,
+      images: t('openGraphImage'),
     },
     verification: {
       google: 'M35Kr9isjr9ui3oxc63rCnGr5v2gcLlqL5PRpba6N8A',

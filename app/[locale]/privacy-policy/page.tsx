@@ -3,19 +3,18 @@ import { useTranslations } from "next-intl";
 import LandingLayout from "../landing-layout/layout";
 import { Metadata } from 'next';
 import BackButton from "@/components/common/BackButton";
+import { getTranslations } from "next-intl/server";
 
-// Función para generar el metadata dinámicamente
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-    // Cargar las traducciones para el idioma actual
-    const { locale } = await params;
-    const messages = (await import(`@/messages/${locale}.json`)).default;
+    const {locale} = await params;
+    const t = await getTranslations({locale, namespace: 'PrivacyPolicySection'});
 
     return {
-        metadataBase: new URL('https://www.heartoffantasy.com'), // Asignamos dominio en produccion
-        title: messages.PrivacyPolicySection.metadata.title,
-        description: messages.PrivacyPolicySection.metadata.description,
+        metadataBase: new URL('https://www.heartoffantasy.com'),
+        title: t('metadata.title'),
+        description: t('metadata.description'),
         openGraph: {
-            images: messages.Metadata.openGraphImage,
+            images: t('metadata.openGraphImage'),
         },
     };
 }

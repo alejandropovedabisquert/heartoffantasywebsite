@@ -8,4 +8,9 @@ export const usersApi = {
             method: "POST",
             body: JSON.stringify({ username, email, password }),
         }),
+    activateUser: (token: string) =>
+        fetchApi<{ message: string, success: boolean }>(`${ENDPOINTBASE}/activate`, {
+            method: "POST",
+            body: JSON.stringify({ token }),
+        }),
 };

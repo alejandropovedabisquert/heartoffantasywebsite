@@ -33,7 +33,7 @@ export const routing = defineRouting({
       en: '/register',
       es: '/registro',
       ja: '/登録'
-    }
+    },
   }
 });
 
