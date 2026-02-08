@@ -13,14 +13,12 @@ export default function Activate() {
         notFound();
     }
     useEffect(() => {
-        activate(token).then(result => {
-            alert(result?.message);
-        });
+        activate(token);
     }, []);
 
   return (
     <LandingLayout>
-      <div>
+      <div className="container mx-auto px-4 pt-24 overflow-hidden">
         {isLoading ? <p>Activating...</p> : (
             <>
                 <h1>Activate Account</h1>
