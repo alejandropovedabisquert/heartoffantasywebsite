@@ -6,14 +6,14 @@ Este es un proyecto en constante desarrollo, ya que el videojuego también lo es
 
 > Un MMORPG de supervivencia con permadeath y un mundo generado proceduralmente. Página web oficial del proyecto.
 
-[🌐 Ver sitio web](https://heartoffantasywebsite.vercel.app)
+[🌐 Ver sitio web](https://www.heartoffantasy.com/)
 
 ### Características Principales del Sitio
 
 - 🌐 **Multiidioma**: Soporte completo para Español, Inglés y Japonés
 - 📱 **Diseño Responsive**: Optimizado para todos los dispositivos
 - ✨ **Animaciones**: Efectos visuales con AOS (Animate On Scroll) y efectos personalizados de luciérnagas
-- 🔒 **Formulario de Pre-registro**: Incluye validación y protección con hCaptcha (Todavía no funcional)
+- 🔒 **Formulario de Registro**: Incluye validación y protección con hCaptcha
 - 🎨 **UI/UX Moderna**: Diseño inmersivo con gradientes y efectos visuales temáticos
 - 📸 **Galería de Imágenes**:  Visualización de capturas del juego con modal interactivo
 - 🎥 **Sección de Devblogs**: Contenido actualizado sobre el desarrollo del juego

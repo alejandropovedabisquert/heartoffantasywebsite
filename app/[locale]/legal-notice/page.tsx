@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const messages = (await import(`@/messages/${locale}.json`)).default;
 
     return {
-        metadataBase: new URL('https://heartoffantasywebsite.vercel.app'), // Asignamos dominio en produccion
+        metadataBase: new URL('https://www.heartoffantasy.com'), // Asignamos dominio en produccion
         title: messages.LegalNoticeSection.metadata.title,
         description: messages.LegalNoticeSection.metadata.description,
         openGraph: {

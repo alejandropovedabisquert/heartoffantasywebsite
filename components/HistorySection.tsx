@@ -7,7 +7,7 @@ export default function HistorySection() {
     return (
         <div className="my-24">
             <div data-aos="fade-right">
-                <Titulo as={"h2"} position="left" className="text-4xl font-bold my-4">{t('title')}</Titulo>
+                <Titulo as={"h2"} position="left" className="text-2xl sm:text-4xl font-bold my-4">{t('title')}</Titulo>
             </div>
             <div data-aos="fade-right" data-aos-delay="100" className="grid grid-cols-6">
                 <div className="col-span-6 md:col-span-4 flex flex-col">
