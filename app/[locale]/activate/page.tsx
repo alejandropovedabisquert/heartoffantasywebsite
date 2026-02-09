@@ -19,9 +19,6 @@ export default function Activate() {
   useEffect(() => {
     activate(token);
   }, []);
-  if (response.success === false) {
-    notFound();
-  }
   return (
     <LandingLayout>
       <div className="container mx-auto px-4 overflow-hidden min-h-[500px] flex flex-col items-center justify-center">
@@ -32,7 +29,11 @@ export default function Activate() {
             <CircleCheck size={60} />
             <p className="text-xl" dangerouslySetInnerHTML={{ __html: t.raw('success') }} />
           </div>
-        ) : null}
+        ) : response?.message === "Error to obtain data" ? (
+          <p>{t('errorObtainingData')}</p>
+        ) : (
+          <p>{response?.message}</p>
+        )}
       </div>
     </LandingLayout>
   );
