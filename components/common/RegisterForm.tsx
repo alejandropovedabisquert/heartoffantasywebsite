@@ -65,7 +65,7 @@ export default function RegisterForm() {
   };
 
   // Function to render error messages
-  const renderServerResponse = (response: FormErrors | undefined | null) => (
+  const renderServerResponse = (response: FormErrors | undefined | null, email?: string) => (
     <div
       className={clsx(
         "text-center",
@@ -78,7 +78,7 @@ export default function RegisterForm() {
       ) : response?.message === "Email already exists." ? (
         <p>{t("inputs.emailExists.text")}</p>
       ) : response?.success === true ? (
-        <p>{t("inputs.successMessage.text")}</p>
+        <p>{t("inputs.successMessage.text", { email: email || "undefined" })}</p>
       ) : response?.message === "Error to obtain data" ? (
         <p>{t("inputs.errorMessage.text")}</p>
       ) : (
@@ -191,7 +191,7 @@ export default function RegisterForm() {
             )}
           </div>
           <div>
-            {response.success === true && renderServerResponse(response)}
+            {response.success === true && renderServerResponse(response, email)}
           </div>
           <div data-aos="fade-up" className="mt-4">
             <div className="flex gap-4 flex-wrap items-center">

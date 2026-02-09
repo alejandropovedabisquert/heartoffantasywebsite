@@ -215,7 +215,7 @@
         "requiredError": "プライバシーポリシーに同意する必要があります"
       },
       "successMessage": {
-        "text": "アカウントが正常に作成されました。クライアントにログインできます。"
+        "text": "確認メールを{email}に送信しました。受信トレイまたは迷惑メールフォルダを確認して、アカウントを有効化してください。"
       },
       "usernameExists": {
         "text": "ユーザー名は既に存在します。別のものを選んでください。"
@@ -231,6 +231,14 @@
         "loading": "アカウントを作成中..."
       }
     }
+  },
+  "ActivatePage": {
+    "metadata": {
+      "title": "アカウントの有効化 | Heart of Fantasy",
+      "description": "Heart of Fantasyのアカウントを有効化し、冒険と危険の世界を探索する準備をしましょう。"
+    },
+    "activatingAccount": "アカウントを有効化しています...",
+    "success": "アカウントが正常に有効化されました。<br>以下のリンクからゲームをダウンロードできます: <a href=\"https://api.heartoffantasy.com/api/launcher\" download={true} class=\"underline\" >Heart of Fantasyをダウンロード</a>"
   },
   "BackButton": {
     "text": "ホームに戻る"

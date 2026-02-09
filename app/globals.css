@@ -63,3 +63,6 @@ body#privacy-policy ul, body#legal-notice ul{
   width: 160px;
   height: 160px;
 }
+#activate .underline{
+  text-decoration: underline;
+}

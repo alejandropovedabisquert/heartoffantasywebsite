@@ -13,9 +13,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         metadataBase: new URL('https://www.heartoffantasy.com'),
         title: t('metadata.title'),
         description: t('metadata.description'),
-        openGraph: {
-            images: t('metadata.openGraphImage'),
-        },
+        // openGraph: {
+        //     images: t('metadata.openGraphImage'),
+        // },
     };
 }
 

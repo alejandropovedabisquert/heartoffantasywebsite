@@ -212,7 +212,7 @@
         "requiredError": "You must accept the Privacy Policy"
       },
       "successMessage": {
-        "text": "Account created successfully, you can now log in to the client."
+        "text": "Sent a confirmation email to {email}. Please check your inbox or spam folder to activate your account."
       },
       "usernameExists": {
         "text": "Username already exists. Please choose another one."
@@ -228,6 +228,14 @@
         "loading": "Creating account..."
       }
     }
+  },
+  "ActivatePage": {
+    "metadata": {
+      "title": "Account Activation | Heart of Fantasy",
+      "description": "Activate your account for Heart of Fantasy and get ready to explore a world of adventure and danger."
+    },
+    "activatingAccount": "Activating account...",
+    "success": "Your account has been activated successfully. <br>You can download the game at the following link: <a href=\"https://api.heartoffantasy.com/api/launcher\" download={true} class=\"underline\" >Download Heart of Fantasy</a>"
   },
   "BackButton": {
     "text": "Back to home"
