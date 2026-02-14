@@ -7,6 +7,22 @@
   "LocaleSwitcher": {
     "locale": "{locale, select, es {Español} en {English} ja {日本語} other {Unknown}}"
   },
+  "HeaderNav": {
+    "navigation": [
+      {
+        "text": "Inicio",
+        "link": "/"
+      },
+      {
+        "text": "Registrarse",
+        "link": "/register"
+      }
+    ],
+    "download": {
+      "text": "Descargar",
+      "link": "https://api.heartoffantasy.com/api/launcher"
+    }
+  },
   "HistorySection": {
     "title": "Sobre el juego",
     "description": [

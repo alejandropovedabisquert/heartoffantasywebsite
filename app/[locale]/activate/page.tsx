@@ -29,11 +29,7 @@ export default function Activate() {
             <CircleCheck size={60} />
             <p className="text-xl" dangerouslySetInnerHTML={{ __html: t.raw('success') }} />
           </div>
-        ) : response?.message === "Error to obtain data" ? (
-          <p>{t('errorObtainingData')}</p>
-        ) : (
-          <p>{response?.message}</p>
-        )}
+        ) : response.success === false ? notFound() : null}
       </div>
     </LandingLayout>
   );
