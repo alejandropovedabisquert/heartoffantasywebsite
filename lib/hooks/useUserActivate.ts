@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { usersApi } from "../api/users";
+import { notFound } from "next/navigation";
 
 // Hook for user activation from token in query parameters /activate?token=abc123
 export function useUserActivate() {
@@ -14,7 +15,8 @@ export function useUserActivate() {
         try {
             const response = await usersApi.activateUser(token);
             if (response.data?.message) {
-                setResponse({ success: false, message: response.data?.message });    
+                // setResponse({ success: false, message: response.data?.message });  
+                notFound();  
             } else{
                 setResponse({ success: true, message: "Activation successful" });
             }
