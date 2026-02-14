@@ -10,6 +10,12 @@ import { validateCaptcha } from "@/lib/formValidations/captchaValidation";
 import { useRegister } from "@/lib/hooks/useRegister";
 import { Loader2 } from "lucide-react";
 
+const API_ERRORS = {
+  USERNAME_EXISTS: "Username already exists.",
+  EMAIL_EXISTS: "Email already exists.",
+  DATA_ERROR: "Error to obtain data",
+} as const;
+
 export type FormErrors = {
   message?: string;
   success?: boolean;
@@ -73,13 +79,13 @@ export default function RegisterForm() {
         { "bg-green-600 px-6 py-2 text-green-200": response?.success === true }
       )}
     >
-      {response?.message === "Username already exists." ? (
+      {response?.message === API_ERRORS.USERNAME_EXISTS ? (
         <p>{t("inputs.usernameExists.text")}</p>
-      ) : response?.message === "Email already exists." ? (
+      ) : response?.message === API_ERRORS.EMAIL_EXISTS ? (
         <p>{t("inputs.emailExists.text")}</p>
       ) : response?.success === true ? (
         <p>{t("inputs.successMessage.text", { email: email || "undefined" })}</p>
-      ) : response?.message === "Error to obtain data" ? (
+      ) : response?.message === API_ERRORS.DATA_ERROR ? (
         <p>{t("inputs.errorMessage.text")}</p>
       ) : (
         <p>{response?.message}</p>
@@ -102,6 +108,7 @@ export default function RegisterForm() {
       <div className="max-w-2xl mx-auto">
         <div className="bg-gray-800 text-white p-4 mb-6" data-aos="fade-up">
           <h3 className="font-bold mb-2">{t("disclaimer.title")}</h3>
+          {/* Content is from trusted i18n translation files, not user input */}
           <p
             className="text-base"
             dangerouslySetInnerHTML={{ __html: t.raw("disclaimer.text") }}
@@ -110,6 +117,7 @@ export default function RegisterForm() {
         <form ref={ref} onSubmit={handleFormSubmit}>
           <div data-aos="fade-left">
             <Input
+              id="username"
               type="text"
               placeholder={t("inputs.username.placeholder")}
               value={username}
@@ -125,6 +133,7 @@ export default function RegisterForm() {
 
           <div data-aos="fade-right">
             <Input
+              id="email"
               type="text"
               placeholder={t("inputs.email.placeholder")}
               value={email}
@@ -140,6 +149,7 @@ export default function RegisterForm() {
 
           <div data-aos="fade-left">
             <Input
+              id="password"
               type="password"
               placeholder={t("inputs.password.placeholder")}
               value={password}
@@ -164,6 +174,7 @@ export default function RegisterForm() {
                   setErrors((prev) => ({ ...prev, terms: undefined }));
                 }}
               />
+              {/* Content is from trusted i18n translation files, not user input */}
               <span
                 className="text-base"
                 dangerouslySetInnerHTML={{
@@ -179,7 +190,7 @@ export default function RegisterForm() {
             <div className="py-4">
               <HCaptcha
                 theme={"dark"}
-                sitekey="bb18a7e6-0478-4bb4-bbcc-6cf814367412"
+                sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY!}
                 onVerify={onCaptchaChange}
                 ref={captchaRef}
                 onExpire={onCaptchaExpire}

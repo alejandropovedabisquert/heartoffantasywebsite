@@ -4,11 +4,11 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import "../globals.css";
 import FooterSection from "@/components/FooterSection";
-import LanguageSwitcher from "@/components/common/LocaleSwitcherSelect";
 import { Metadata } from 'next';
 import BodyIdSetter from '@/components/common/BodyIdSetter';
 import { Analytics } from "@vercel/analytics/next";
 import { Geist } from 'next/font/google';
+import HeaderSection from '@/components/HeaderSection';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const {locale} = await params;
@@ -49,14 +49,15 @@ export default async function RootLayout({
   // Providing all messages to the client
   // side is the easiest way to get started
   const messages = await getMessages();
-
+  // TODO: Create a context for the bodyidsetter and pass the id from the page to avoid passing all the messages to the client side
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={`${geistSans.className} antialiased`}>
+    <html lang={locale} suppressHydrationWarning className='overflow-x-hidden'>
+      <body className={`${geistSans.className} antialiased overflow-x-hidden`}>
         <NextIntlClientProvider messages={messages}>
           <Analytics />
           <BodyIdSetter />
-          <LanguageSwitcher />
+          {/* <LanguageSwitcher /> */}
+          <HeaderSection/>
           <main>
             {children}
           </main>

@@ -27,13 +27,10 @@ export default function Activate() {
         ) : response.success === true ? (
           <div className="bg-green-500 text-white p-4 flex flex-row items-center justify-center gap-4 w-full">
             <CircleCheck size={60} />
+            {/* HTML seguro: contenido de traducciones controladas por el desarrollador */}
             <p className="text-xl" dangerouslySetInnerHTML={{ __html: t.raw('success') }} />
           </div>
-        ) : response?.message === "Error to obtain data" ? (
-          <p>{t('errorObtainingData')}</p>
-        ) : (
-          <p>{response?.message}</p>
-        )}
+        ) : response.success === false ? notFound() : null}
       </div>
     </LandingLayout>
   );

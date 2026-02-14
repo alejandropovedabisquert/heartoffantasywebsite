@@ -2,13 +2,17 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import StreamerStatus from "./common/StreamerStatus";
 import { Link } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
+
+type AppPathname = keyof typeof routing.pathnames;
+
 type socialMediaProps = {
     link: string;
     logo: string;
 }
 type legalNavProps = {
     text: string,
-    link : string,
+    link: AppPathname,
     locale: string,
 }
 
@@ -41,7 +45,6 @@ export default function FooterSection() {
                 <div className="py-8 flex flex-wrap gap-4">
                     {
                         t.raw("legalNav").map((item: legalNavProps, index: number) => (
-                            // @ts-expect-error - item.link es seguro en este contexto
                             <Link key={index} href={item.link} locale={`${item.locale}`} className="transition-all hover:text-corporative">{item.text}</Link>
                         ))
                     }

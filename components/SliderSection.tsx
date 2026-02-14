@@ -7,15 +7,15 @@ export default function SliderSection() {
         "after:bg-gradient-to-t after:absolute after:bottom-0 after:h-screen after:max-h-[40vh] after:w-full after:from-black after:to-transparent after:z-[1]",
       );
     return (
-        <div className={`min-h-[500px] relative ${gradientStyles}`}>
-            <div className="absolute top-0 min-h-[500px] w-full bg-[url(/bg_principal.jpg)] bg-center bg-cover bg-no-repeat" />
-            <div className="absolute left-1/2 top-1/2 ease-in -translate-y-1/2 -translate-x-1/2 z-10">
+        <div className={`min-h-[700px] relative ${gradientStyles}`}>
+            <div className="absolute top-0 min-h-[700px] w-full bg-[url(/bg_principal.jpg)] bg-center bg-cover bg-no-repeat" />
+            <div className="absolute left-1/2 top-1/2 ease-in -translate-y-1/2 -translate-x-1/2 z-[5]">
                 <div className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px]">
                     <Image src={"/logo.png"} fill alt="logo" priority={true} />
                 </div>
             </div>
             <video
-                className="absolute top-0 w-full h-[500px] object-cover"
+                className="absolute top-0 w-full h-[700px] object-cover"
                 preload="none" aria-label="Video player" autoPlay controls={false} loop muted playsInline
             >
                 <source src={"/bg_video.mp4"} type="video/mp4" />

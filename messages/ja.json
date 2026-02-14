@@ -7,6 +7,22 @@
   "LocaleSwitcher": {
     "locale": "{locale, select, es {Español} en {English} ja {日本語} other {Unknown}}"
   },
+  "HeaderNav": {
+    "navigation": [
+      {
+        "text": "ホーム",
+        "link": "/"
+      },
+      {
+        "text": "登録",
+        "link": "/register"
+      }
+    ],
+    "download": {
+      "text": "ダウンロード",
+      "link": "https://api.heartoffantasy.com/api/launcher"
+    }
+  },
   "HistorySection": {
     "title": "ゲームについて",
     "description": [
@@ -50,27 +66,27 @@
   "GallerySection": [
     {
       "src": "/gallery/1.webp",
-      "alt": "プレースホルダー画像 1"
+      "alt": "Heart of Fantasy ゲームスクリーンショット 1"
     },
     {
       "src": "/gallery/2.webp",
-      "alt": "プレースホルダー画像 2"
+      "alt": "Heart of Fantasy ゲームスクリーンショット 2"
     },
     {
       "src": "/gallery/3.webp",
-      "alt": "プレースホルダー画像 3"
+      "alt": "Heart of Fantasy ゲームスクリーンショット 3"
     },
     {
       "src": "/gallery/4.webp",
-      "alt": "プレースホルダー画像 4"
+      "alt": "Heart of Fantasy ゲームスクリーンショット 4"
     },
     {
       "src": "/gallery/5.webp",
-      "alt": "プレースホルダー画像 5"
+      "alt": "Heart of Fantasy ゲームスクリーンショット 5"
     },
     {
       "src": "/gallery/6.webp",
-      "alt": "プレースホルダー画像 6"
+      "alt": "Heart of Fantasy ゲームスクリーンショット 6"
     }
   ],
   "FooterSection": {
@@ -211,7 +227,7 @@
         "requiredError": "キャプチャは必須です"
       },
       "conditions": {
-        "label": "私は<a href=\"/ja/プライバシーポリシー\" class=\"underline hover:text-corporative\" target=\"_blank\" rel=\"noopener noreferrer\">プライバシーポリシー</a>を読み、同意します。",
+        "label": "私は<a href=\"/privacy-policy\" class=\"underline hover:text-corporative\" target=\"_blank\" rel=\"noopener noreferrer\">プライバシーポリシー</a>を読み、同意します。",
         "requiredError": "プライバシーポリシーに同意する必要があります"
       },
       "successMessage": {
@@ -247,5 +263,10 @@
     "title": "404 | ページが見つかりませんでした。",
     "backButton": "ホームに戻る",
     "locale": "ja"
+  },
+  "Error": {
+    "title": "エラーが発生しました",
+    "description": "予期しないエラーが発生しました。",
+    "retry": "もう一度試す"
   }
 }

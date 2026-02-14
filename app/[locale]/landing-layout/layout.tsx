@@ -1,4 +1,4 @@
-// TODO: Revisa si este layout debe aplicarse solo a ciertas páginas o a todo el sitio. Si es global, considera moverlo a app/[locale]/layout.tsx para simplificar la estructura.
+// Este layout se aplica a las paginas de contenido legal, registro y activacion
 import FirefliesEffect from "@/components/common/FirefliesEffect";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
     return (
         <div className="relative overflow-hidden">
-            <header>
+            <div className="min-h-[300px] md:min-h-[500px] flex items-end justify-center">
                 <Link href="/" aria-label="Heart of Fantasy Home">
                 <Image 
                     src={"/logo.png"} 
@@ -17,7 +17,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
                     className="mx-auto my-10 z-[1] relative"
                     />
                 </Link>
-            </header>
+            </div>
             <FirefliesEffect
                 count={100} // Cuantas luciernagas apareceran
                 speed={3} // A que velocidad se mueven
@@ -26,7 +26,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
                 sizeRange={[3, 4]} // Tamaños entre 3px y 8px
                 glow={true} // Activar glow
             />
-            <main className="relative z-10">{children}</main>
+            <div>{children}</div>
         </div>
     );
 }

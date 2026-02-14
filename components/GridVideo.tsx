@@ -25,8 +25,6 @@ export default function GridVideo() {
                 } else {
                     setError('An unexpected error ocurred');
                 }
-            } finally {
-
             }
         }
         fetchVideos();
@@ -46,15 +44,13 @@ export default function GridVideo() {
                 <div className="col-span-2" key={video.id} data-aos="fade-up" data-aos-delay={(index + 1) * 50}>
                     <div className="relative overflow-hidden group/image">
                         <a href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}&list=${video.snippet.playlistId}`} target="_blank">
-                            {/* <div className="absolute w-full h-full bg-black opacity-40 z-10 group-hover/image:opacity-20 transition-all"></div> */}
                             <div className={backgroundStyles}>
-                                <Image 
-                                    className="group-hover/image:scale-110 transition-all" 
-                                    src={`${video.snippet.thumbnails.maxres.url}`} 
-                                    alt=""
+                                <Image
+                                    className="group-hover/image:scale-110 transition-all"
+                                    src={`${video.snippet.thumbnails.maxres.url}`}
+                                    alt={video.snippet.title}
                                     width={800}
                                     height={800}
-                                    unoptimized={true} 
                                 />
                                 <h3 className="font-bold text-white text-lg absolute top-0 p-4 z-20">
                                     {video.snippet.title}

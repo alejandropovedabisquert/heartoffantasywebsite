@@ -13,6 +13,7 @@ export default function HistorySection() {
                 <div className="col-span-6 md:col-span-4 flex flex-col">
                     {
                         t.raw('description').map((line: string, index: number) => (
+                            // HTML seguro: contenido de traducciones controladas por el desarrollador
                             <p key={index} className="text-lg mb-4" dangerouslySetInnerHTML={{__html: line}} />
                         ))
                     }
