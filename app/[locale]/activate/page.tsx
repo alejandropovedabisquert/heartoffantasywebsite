@@ -30,7 +30,7 @@ export default function Activate() {
             {/* HTML seguro: contenido de traducciones controladas por el desarrollador */}
             <p className="text-xl" dangerouslySetInnerHTML={{ __html: t.raw('success') }} />
           </div>
-        ) : response.success === false ? notFound() : null}
+        ) : null}
       </div>
     </LandingLayout>
   );
