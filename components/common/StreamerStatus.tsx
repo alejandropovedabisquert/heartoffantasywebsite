@@ -56,7 +56,7 @@ export default function StreamerStatus(name: nameProps) {
                             <div className="relative flex">
                                 <div className="h-4 w-4 bg-red-700 animate-pulse absolute -left-1 -top-1 rounded-full"></div>
                                 <div className="flex justify-center items-center p-4 sm:pl-4">
-                                    <Image src="/rrss_svg/twitch_white.svg" width={30} height={30} alt="" unoptimized={true} />
+                                    <Image src="/rrss_svg/twitch_white.svg" width={30} height={30} alt="Twitch" unoptimized={true} />
                                 </div>
                                 <div className="py-4 pr-4 hidden md:block">
                                     <h3 className="font-bold">

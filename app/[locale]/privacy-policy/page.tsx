@@ -37,6 +37,7 @@ export default function Page() {
                     <Titulo as={"h2"} position="left" className="text-3xl sm:text-4xl font-bold my-4">{t("title")}</Titulo>
                 </div>
                 <div data-aos="fade-right" className="mb-6">
+                    {/* HTML seguro: contenido de traducciones controladas por el desarrollador */}
                     <p dangerouslySetInnerHTML={{ __html: t.raw("update") }} />
                 </div>
                 <div>
@@ -46,6 +47,7 @@ export default function Page() {
                                 <h3 className="font-bold text-2xl">
                                     {feature.title}
                                 </h3>
+                                {/* HTML seguro: contenido de traducciones controladas por el desarrollador */}
                                 <div dangerouslySetInnerHTML={{ __html: feature.description }} />
                             </div>
                         ))

@@ -35,6 +35,7 @@
   },
   "FeaturesSection": {
     "title": "Características",
+    "subtitle": "",
     "features": [
       {
         "title": "Permadeath",
@@ -52,7 +53,8 @@
         "title": "Mapa envolvente",
         "description": "Un mundo sin fronteras: al llegar al borde, reapareces en el lado opuesto. Explora sin límites, ya sea por tierra o por mar. ¡La geografía, al igual que la historia, es un bucle eterno! 🔄"
       }
-    ]
+    ],
+    "conclusion": ""
   },
   "BannerGodotSection": {
     "title": "Hecho con"
@@ -63,27 +65,27 @@
   "GallerySection": [
     {
       "src": "/gallery/1.webp",
-      "alt": "Placeholder image 1"
+      "alt": "Captura de pantalla del juego Heart of Fantasy 1"
     },
     {
       "src": "/gallery/2.webp",
-      "alt": "Placeholder image 2"
+      "alt": "Captura de pantalla del juego Heart of Fantasy 2"
     },
     {
       "src": "/gallery/3.webp",
-      "alt": "Placeholder image 3"
+      "alt": "Captura de pantalla del juego Heart of Fantasy 3"
     },
     {
       "src": "/gallery/4.webp",
-      "alt": "Placeholder image 4"
+      "alt": "Captura de pantalla del juego Heart of Fantasy 4"
     },
     {
       "src": "/gallery/5.webp",
-      "alt": "Placeholder image 5"
+      "alt": "Captura de pantalla del juego Heart of Fantasy 5"
     },
     {
       "src": "/gallery/6.webp",
-      "alt": "Placeholder image 6"
+      "alt": "Captura de pantalla del juego Heart of Fantasy 6"
     }
   ],
   "FooterSection": {
@@ -224,7 +226,7 @@
         "requiredError": "El captcha es obligatorio"
       },
       "conditions": {
-        "label": "He leído y acepto la <a href=\"/es/politica-privacidad\" class=\"underline hover:text-corporative\" target=\"_blank\" rel=\"noopener noreferrer\">Política de Privacidad</a>.",
+        "label": "He leído y acepto la <a href=\"/privacy-policy\" class=\"underline hover:text-corporative\" target=\"_blank\" rel=\"noopener noreferrer\">Política de Privacidad</a>.",
         "requiredError": "Debes aceptar la Política de Privacidad"
       },
       "successMessage": {
@@ -260,5 +262,10 @@
     "title": "404 | No se ha podido encontrar esta página.",
     "backButton": "Volver al inicio",
     "locale": "es"
+  },
+  "Error": {
+    "title": "Algo ha salido mal",
+    "description": "Ha ocurrido un error inesperado.",
+    "retry": "Intentar de nuevo"
   }
 }

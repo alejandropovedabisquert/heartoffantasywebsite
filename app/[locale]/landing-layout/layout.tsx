@@ -1,4 +1,4 @@
-// TODO: Revisa si este layout debe aplicarse solo a ciertas páginas o a todo el sitio. Si es global, considera moverlo a app/[locale]/layout.tsx para simplificar la estructura.
+// Este layout se aplica a las paginas de contenido legal, registro y activacion
 import FirefliesEffect from "@/components/common/FirefliesEffect";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";

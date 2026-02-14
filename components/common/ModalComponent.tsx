@@ -4,15 +4,11 @@ import { OctagonX } from "lucide-react";
 
 type ImageViewerProps = {
     selectedImage: ImageProps;
-    onNext?: () => void;
-    onPrev?: () => void;
     onClose: () => void;
 }
 
 const ImageViewer: React.FC<ImageViewerProps> = ({
     selectedImage,
-    // onNext,
-    // onPrev,
     onClose,
 }) => {
     return (
@@ -30,21 +26,7 @@ const ImageViewer: React.FC<ImageViewerProps> = ({
                     width={1920}
                     height={1080}
                     className="py-2"
-                    unoptimized={true}
                 />
-
-                {/* <button
-                    className="absolute top-1/2 transform -translate-y-1/2 left-0 text-white py-14 px-4 md:py-28 md:px-5 text-3xl md:text-5xl"
-                    onClick={onPrev}
-                >
-                    &lt;
-                </button>
-                <button
-                    className="absolute top-1/2 transform -translate-y-1/2 right-0 text-white py-14 px-4 md:py-28 md:px-5 text-3xl md:text-5xl"
-                    onClick={onNext}
-                >
-                    &gt;
-                </button> */}
             </div>
             <div className="absolute w-screen bottom-[20%] md:bottom-4">
                 <h3 className="text-white font-bold text-2xl text-center">

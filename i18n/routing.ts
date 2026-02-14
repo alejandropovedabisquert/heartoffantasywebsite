@@ -34,6 +34,11 @@ export const routing = defineRouting({
       es: '/registro',
       ja: '/登録'
     },
+    '/activate': {
+      en: '/activate',
+      es: '/activate',
+      ja: '/activate'
+    },
   }
 });
 

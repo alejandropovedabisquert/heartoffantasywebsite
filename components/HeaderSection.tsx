@@ -1,31 +1,31 @@
 "use client";
 import { Link } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 import LanguageSwitcher from "@/components/common/LocaleSwitcherSelect";
 import { Download } from "lucide-react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
+import { useBodyScrollLock } from "@/lib/hooks/useBodyScrollLock";
+
+type AppPathname = keyof typeof routing.pathnames;
 
 type navProps = {
   text: string;
-  link: string;
+  link: AppPathname;
 };
 
 export default function HeaderSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations("HeaderNav");
   const locale = useLocale();
+
+  useBodyScrollLock(isMenuOpen);
+
   const toggleMenu = () => {
-    const body = document.body;
-    if (!isMenuOpen) {
-      body.style.overflow = "hidden";
-      document.documentElement.style.overflow = "hidden";
-    } else {
-      body.style.removeProperty("overflow");
-      document.documentElement.style.removeProperty("overflow");
-    }
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prev) => !prev);
   };
+
   return (
     <header className="z-10 relative md:absolute md:container top-4 left-1/2 -translate-x-1/2 w-full px-8 md:px-0">
       <div className="text-white p-4 w-full flex justify-between items-center relative after:content-[''] after:block after:absolute after:inset-0 after:bg-black/50 after:-z-10 after:border-2 after:border-corporative">
@@ -52,7 +52,6 @@ export default function HeaderSection() {
                 {t.raw("navigation").map((item: navProps, index: number) => (
                   <li key={index}>
                     <Link
-                      // @ts-expect-error - item.link es seguro en este contexto
                       href={item.link}
                       locale={locale}
                       className="transition-all hover:text-corporative"
@@ -87,7 +86,6 @@ export default function HeaderSection() {
                 {t.raw("navigation").map((item: navProps, index: number) => (
                   <li key={index}>
                     <Link
-                      // @ts-expect-error - item.link es seguro en este contexto
                       href={item.link}
                       locale={locale}
                       className="transition-all hover:text-corporative"

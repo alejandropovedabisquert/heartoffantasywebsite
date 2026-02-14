@@ -1,4 +1,3 @@
-// TODO: Asegúrate de que estas server actions solo se llamen desde componentes de servidor o formularios con action.
 "use server"
 // Obtener el Access Token de Twitch
 export async function getAccessToken() {
