@@ -20,7 +20,7 @@ export type FormErrors = {
   message?: string;
   success?: boolean;
 };
-
+// TODO: PENSAR EN UTILIZAR EL CAPTCHA DE CLOUDFARE QUE ES MÁS LIGERO Y NO REQUIERE CARGAR UN SCRIPT EXTERNO, ADEMÁS DE SER MÁS PERSONALIZABLE
 export default function RegisterForm() {
   const t = useTranslations("RegisterForm");
   const ref = useRef<HTMLFormElement>(null);

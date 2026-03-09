@@ -11,7 +11,7 @@ export default function SliderSection() {
             <div className="absolute top-0 min-h-[700px] w-full bg-[url(/bg_principal.jpg)] bg-center bg-cover bg-no-repeat" />
             <div className="absolute left-1/2 top-1/2 ease-in -translate-y-1/2 -translate-x-1/2 z-[5]">
                 <div className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px]">
-                    <Image src={"/logo.png"} fill alt="logo" priority={true} />
+                    <Image src={"/logo.webp"} fill alt="logo" priority={true} />
                 </div>
             </div>
             <video

@@ -56,8 +56,8 @@ export default function GallerySection() {
                         >
                             <Image
                                 {...image}
-                                width={320}
-                                height={200}
+                                width={800}
+                                height={800}
                                 alt={image.alt}
                                 className="h-full w-full object-cover transition-all cursor-pointer hover:scale-110"
                                 onClick={() => handleOnClicked(image.src as string, index)}

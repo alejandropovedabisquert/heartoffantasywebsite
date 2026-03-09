@@ -9,7 +9,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
             <div className="min-h-[300px] md:min-h-[500px] flex items-end justify-center">
                 <Link href="/" aria-label="Heart of Fantasy Home">
                 <Image 
-                    src={"/logo.png"} 
+                    src={"/logo.webp"} 
                     width={250} 
                     height={250} 
                     alt="logo" 
