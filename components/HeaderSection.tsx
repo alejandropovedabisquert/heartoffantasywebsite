@@ -89,6 +89,7 @@ export default function HeaderSection() {
                       href={item.link}
                       locale={locale}
                       className="transition-all hover:text-corporative"
+                      onClick={toggleMenu}
                     >
                       {item.text}
                     </Link>
@@ -101,6 +102,7 @@ export default function HeaderSection() {
                 className="flex gap-2 items-center justify-center p-2 bg-white text-black transition-all hover:bg-corporative hover:text-white"
                 href={t("download.link")}
                 download={true}
+                onClick={toggleMenu}
               >
                 <Download />
                 {t("download.text")}
