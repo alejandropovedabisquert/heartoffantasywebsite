@@ -24,7 +24,7 @@ export default function Home() {
           sizeRange={[3, 4]} // Tamaños entre 3px y 8px
           glow={true} // Activar glow
         />
-        <div className="container mx-auto px-4 pt-24 overflow-hidden">
+        <div className="container mx-auto px-4 pt-24 overflow-hidden relative z-20">
           <HistorySection />
           <GallerySection/>
           <FeaturesSection />
@@ -32,7 +32,7 @@ export default function Home() {
         <div className="relative overflow-hidden">
           <BannerGodotSection/>
         </div>
-        <div className="container mx-auto px-4 overflow-hidden">
+        <div className="container mx-auto px-4 overflow-hidden relative z-20">
           <VideosSection />
         </div>
       </main>

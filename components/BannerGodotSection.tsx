@@ -1,6 +1,7 @@
 "use client"
 import { useCustomParallax } from "@/lib/hooks/useCustomParallax";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -16,9 +17,12 @@ export default function BannerGodotSection() {
                 <Image src="/banner_godot.webp" alt="" className="translate-y-1/4 sm:translate-y-0 object-cover" fill/>
             </div>
             <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 z-10 w-full">
-                <div
+                <motion.div
                     className="flex justify-center items-center flex-col lg:flex-row"
-                    data-aos="zoom-in"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: .3, ease: "easeOut" }}
                 >
                     <h2 className="text-4xl md:text-5xl font-bold uppercase tracking-widest">
                         {t('title')}
@@ -26,7 +30,7 @@ export default function BannerGodotSection() {
                     <div className="max-w-[500px] relative">
                         <Image src="/logo_large_color_dark.svg" alt="Logo Godot Engine" width={500} height={500}/>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import SkeletonGridVideo from "./skeleton/SkeletonGridVideo";
 import Image from "next/image";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 export default function GridVideo() {
     const [videos, setVideos] = useState<YoutubeResponse | null>(null);
@@ -41,7 +42,13 @@ export default function GridVideo() {
     return (
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {videos?.items.map((video: Video, index: number) => (
-                <div className="col-span-2" key={video.id} data-aos="fade-up" data-aos-delay={(index + 1) * 50}>
+                <motion.div 
+                className="col-span-2" key={video.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: .3, ease: "easeOut", delay: index * 0.1 }}
+                >
                     <div className="relative overflow-hidden group/image">
                         <a href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}&list=${video.snippet.playlistId}`} target="_blank">
                             <div className={backgroundStyles}>
@@ -58,7 +65,7 @@ export default function GridVideo() {
                             </div>
                         </a>
                     </div>
-                </div>
+                </motion.div>
             ))}
         </div>
     );

@@ -24,7 +24,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-body#privacy-policy ul, body#legal-notice ul{
+body#privacy-policy main ul, body#legal-notice main ul{
   list-style: disc;
   padding-left: 25px;
 }

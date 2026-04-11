@@ -12,7 +12,7 @@ Este es un proyecto en constante desarrollo, ya que el videojuego también lo es
 
 - 🌐 **Multiidioma**: Soporte completo para Español, Inglés y Japonés
 - 📱 **Diseño Responsive**: Optimizado para todos los dispositivos
-- ✨ **Animaciones**: Efectos visuales con AOS (Animate On Scroll) y efectos personalizados de luciérnagas
+- ✨ **Animaciones**: Efectos visuales con Motion y efectos personalizados de luciérnagas
 - 🔒 **Formulario de Registro**: Incluye validación y protección con hCaptcha
 - 🎨 **UI/UX Moderna**: Diseño inmersivo con gradientes y efectos visuales temáticos
 - 📸 **Galería de Imágenes**:  Visualización de capturas del juego con modal interactivo
@@ -27,7 +27,7 @@ Este es un proyecto en constante desarrollo, ya que el videojuego también lo es
 
 ### Styling
 - **[Tailwind CSS](https://tailwindcss.com/)**
-- **[AOS](https://michalsnik.github.io/aos/)**
+- **[Motion](https://motion.dev/)**
 - **[clsx](https://github.com/lukeed/clsx)**
 
 ### Internacionalización

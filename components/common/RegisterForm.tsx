@@ -9,6 +9,7 @@ import { validateRegisterForm } from "@/lib/formValidations/registerValidation";
 import { validateCaptcha } from "@/lib/formValidations/captchaValidation";
 import { useRegister } from "@/lib/hooks/useRegister";
 import { Loader2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const API_ERRORS = {
   USERNAME_EXISTS: "Username already exists.",
@@ -95,7 +96,11 @@ export default function RegisterForm() {
 
   return (
     <div className="container">
-      <div data-aos="fade-down">
+      <motion.div 
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: .3, ease: "easeOut" }}>
         <Titulo
           as={"h2"}
           position="center"
@@ -104,18 +109,28 @@ export default function RegisterForm() {
           {t("title")}
           <span className="text-corporative">#</span>
         </Titulo>
-      </div>
+      </motion.div>
       <div className="max-w-2xl mx-auto">
-        <div className="bg-gray-800 text-white p-4 mb-6" data-aos="fade-up">
+        <motion.div 
+          className="bg-gray-800 text-white p-4 mb-6"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: .3, ease: "easeOut" }}
+        >
           <h3 className="font-bold mb-2">{t("disclaimer.title")}</h3>
-          {/* Content is from trusted i18n translation files, not user input */}
           <p
             className="text-base"
             dangerouslySetInnerHTML={{ __html: t.raw("disclaimer.text") }}
           />
-        </div>
+        </motion.div>
         <form ref={ref} onSubmit={handleFormSubmit}>
-          <div data-aos="fade-left">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: .3, ease: "easeOut" }}
+          >
             <Input
               id="username"
               type="text"
@@ -129,9 +144,14 @@ export default function RegisterForm() {
             {errors.username && (
               <div className="text-red-600"><p>{errors.username.message}</p></div>
             )}
-          </div>
+          </motion.div>
 
-          <div data-aos="fade-right">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: .3, ease: "easeOut" }}
+          >
             <Input
               id="email"
               type="text"
@@ -145,9 +165,14 @@ export default function RegisterForm() {
             {errors.email && (
               <div className="text-red-600"><p>{errors.email.message}</p></div>
             )}
-          </div>
+          </motion.div>
 
-          <div data-aos="fade-left">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: .3, ease: "easeOut" }}
+          >
             <Input
               id="password"
               type="password"
@@ -161,9 +186,14 @@ export default function RegisterForm() {
             {errors.password && (
               <div className="text-red-600"><p>{errors.password.message}</p></div>
             )}
-          </div>
+          </motion.div>
 
-          <div data-aos="fade-up">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: .3, ease: "easeOut" }}
+          >
             <label className="flex items-center my-4">
               <input
                 type="checkbox"
@@ -185,7 +215,7 @@ export default function RegisterForm() {
             {errors.terms && (
               <div className="text-red-600"><p>{errors.terms.message}</p></div>
             )}
-          </div>
+          </motion.div>
           <div>
             <div className="py-4">
               <HCaptcha
@@ -204,7 +234,13 @@ export default function RegisterForm() {
           <div>
             {response.success === true && renderServerResponse(response, email)}
           </div>
-          <div data-aos="fade-up" className="mt-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: .3, ease: "easeOut" }}
+            className="mt-4"
+          >
             <div className="flex gap-4 flex-wrap items-center">
               <div>
                 <button
@@ -225,7 +261,7 @@ export default function RegisterForm() {
                 {response.success === false && renderServerResponse(response)}
               </div>
             </div>
-          </div>
+          </motion.div>
         </form>
       </div>
     </div>
