@@ -123,44 +123,6 @@
   "TwitchPopup": {
     "online": "is LIVE"
   },
-  "LegalNoticeSection": {
-    "metadata": {
-      "title": "📄 Legal Notice | Heart of Fantasy",
-      "description": "Read the legal notice of Heart of Fantasy with information about rights, responsibilities, and website usage."
-    },
-    "title": "📄 Legal Notice",
-    "update": "<strong>Last updated:</strong> [15/04/2025]",
-    "parts": [
-      {
-        "title": "1. General Information",
-        "description": "<p>In compliance with Article 10 of Law 34/2002, of July 11, on Information Society Services and Electronic Commerce (LSSI-CE), the following details are provided:</p><ul> <li><p><strong>Name of the responsible entity:</strong> [Name of the studio or company]</p></li> <li><p><strong>Tax Identification Number (NIF / CIF):</strong> [Your NIF or CIF]</p></li><li><p><strong>Registered address:</strong> [Complete company or studio address]</p></li> <li><p><strong>Email:</strong> [your_email@example.com]</p></li> <li><p><strong>Contact phone number:</strong> [Your contact number]</p></li> </ul>"
-      },
-      {
-        "title": "2. Intellectual and Industrial Property",
-        "description": "<p>All content on this website, including but not limited to texts, images, graphics, logos, icons, buttons, software, trade names, trademarks, or any other sign that can be used industrially or commercially, is the property of the owner or, where applicable, its licensors.</p> <p>Access to this website does not grant the user any rights over such content, which is protected by intellectual and industrial property laws.</p>"
-      },
-      {
-        "title": "3. Use of the Website",
-        "description": "<p>Access to and use of the website are subject to current legislation. The user agrees to make proper use of the website’s content and services, respecting the applicable laws, morals, public order, third-party rights, and the provisions contained in this Legal Notice.</p>"
-      },
-      {
-        "title": "4. Liability",
-        "description": "<p>[Name of the studio or company] is not responsible for any damages arising from the use of the website, inability to access it, or the presence of viruses or other elements that may cause harm to the user’s computer system.</p><p>Additionally, the owner does not guarantee the availability and continuity of the website’s operation, although it commits to making necessary efforts to maintain its proper functioning.</p>"
-      },
-      {
-        "title": "5. Third-Party Links",
-        "description": "<p>This website may contain links to third-party websites. [Name of the studio or company] is not responsible for the content of these sites or the services they may offer. The use of these links is at the user's own risk.</p>"
-      },
-      {
-        "title": "6. Modifications",
-        "description": "<p>The website owner reserves the right to modify any part of this Legal Notice, Privacy Policy, or any other aspect related to the website. These modifications will apply from the moment of their publication on this website.</p>"
-      },
-      {
-        "title": "7. Applicable Law and Jurisdiction",
-        "description": "<p>This Legal Notice is governed by Spanish law. Any disputes arising in relation to the use of the website will be resolved by the competent courts of [City], Spain.</p>"
-      }
-    ]
-  },
   "PrivacyPolicySection": {
     "metadata": {
       "title": "📄 Privacy Policy | Heart of Fantasy",

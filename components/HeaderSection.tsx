@@ -48,7 +48,7 @@ export default function HeaderSection() {
             className='hidden md:flex gap-6 justify-center items-center flex-row flex-wrap'
           >
             <nav>
-              <ul className="flex space-x-4">
+              <ul className="flex space-x-4 list-none">
                 {t.raw("navigation").map((item: navProps, index: number) => (
                   <li key={index}>
                     <Link

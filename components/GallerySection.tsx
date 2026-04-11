@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import ModalComponent from "./common/ModalComponent";
 import { useTranslations } from "next-intl";
 import { useBodyScrollLock } from "@/lib/hooks/useBodyScrollLock";
+import { motion } from "framer-motion";
 
 export default function GallerySection() {
     const [selectedImage, setSelectedImage] = useState<ImageProps | null>(null);
@@ -47,12 +48,15 @@ export default function GallerySection() {
             <div className="grid grid-cols-3 grid-rows-3 gap-8 mt-8">
                 {
                     images.map((image: ImageProps, index: number) => (
-                        <div
+                        <motion.div
                             key={index}
-                            data-aos="fade-up" data-aos-delay={(index + 1) * 50}
                             className={clsx("col-span-3 row-span-1 overflow-hidden",
                                 index === 0 ? "sm:col-span-2 sm:row-span-2" : "sm:col-span-1 sm:row-span-1"
                             )}
+                            initial={{ opacity: 0, y: -20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: .3, ease: "easeOut", delay: (index + 1) * 0.1 }}
                         >
                             <Image
                                 {...image}
@@ -62,7 +66,7 @@ export default function GallerySection() {
                                 className="h-full w-full object-cover transition-all cursor-pointer hover:scale-110"
                                 onClick={() => handleOnClicked(image.src as string, index)}
                             />
-                        </div>
+                        </motion.div>
                     ))
                 }
             </div>
