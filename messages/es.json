@@ -2,7 +2,7 @@
   "Metadata": {
     "title": "Heart of Fantasy | Un MMORPG con permadeath",
     "description": "\"Heart of Fantasy\" es un MMORPG de supervivencia con permadeath y un mundo generado proceduralmente que incluye océanos, ríos y montañas.",
-    "openGraphImage": "/openGraph.png"
+    "openGraphImage": "/openGraph.webp"
   },
   "LocaleSwitcher": {
     "locale": "{locale, select, es {Español} en {English} ja {日本語} other {Unknown}}"

@@ -2,7 +2,7 @@
   "Metadata": {
     "title": "Heart of Fantasy | パーマデスMMORPG",
     "description": "\"Heart of Fantasy\"は、パーマデスと自動生成された世界（海、川、山を含む）を特徴とするサバイバルMMORPGです。",
-    "openGraphImage": "/openGraph.png"
+    "openGraphImage": "/openGraph.webp"
   },
   "LocaleSwitcher": {
     "locale": "{locale, select, es {Español} en {English} ja {日本語} other {Unknown}}"

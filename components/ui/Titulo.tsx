@@ -15,12 +15,12 @@ export const Titulo = ({
   const baseStyles = clsx(
     "uppercase tracking-widest gap-4 mb-12",
     "flex sm:grid sm:grid-cols-title sm:grid-rows-title",
-    "before:content-[''] before:block before:border-b-2 before:border-transparent before:md:border-corporative",
-    "after:content-[''] after:block after:border-b-2 after:border-transparent after:md:border-corporative",
+    "before:content-[''] before:block before:border-b-2 before:border-transparent md:before:border-corporative",
+    "after:content-[''] after:block after:border-b-2 after:border-transparent md:after:border-corporative",
     {
-      "md:grid-cols-left-side after:border-transparent after:md:border-transparent": position == "left",
+      "md:grid-cols-left-side after:border-transparent md:after:border-transparent": position == "left",
       "md:grid-cols-right-side": position == "right",
-      "after:md:border-corporative": position == "center",
+      "md:after:border-corporative": position == "center",
     }
   );
 

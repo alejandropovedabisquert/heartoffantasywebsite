@@ -27,7 +27,7 @@ const Input: React.FC<{
       value={value}
       placeholder={placeholder}
       aria-label={placeholder}
-      className={clsx("px-6 py-4 my-4 border w-full text-white bg-neutral-800 border-corporative transition-all duration-500 focus:scale-[1.02] focus:bg-[#372F2F] outline-none", className)}
+      className={clsx("px-6 py-4 my-4 border w-full text-white bg-neutral-800 border-corporative transition-all duration-500 focus:scale-[1.02] focus:bg-[#372F2F] outline-hidden", className)}
       onChange={onChange}
       required={required}
     />

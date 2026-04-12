@@ -12,7 +12,7 @@ export default function GridVideo() {
     const [error, setError] = useState<string | null>(null);
 
     const backgroundStyles = clsx(
-        "before:absolute before:w-full before:h-full before:bg-black before:opacity-40 before:z-10 before:group-hover/image:opacity-20 before:transition-all",
+        "before:absolute before:w-full before:h-full before:bg-black before:opacity-40 before:z-10 group-hover/image:before:opacity-20 before:transition-all",
     );
 
     useEffect(() => {

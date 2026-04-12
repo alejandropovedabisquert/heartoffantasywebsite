@@ -10,7 +10,7 @@ import clsx from "clsx";
 
 export default function Home() {
   const gradientStyles = clsx(
-    "before:bg-gradient-to-b before:absolute before:top-0 before:h-screen before:max-h-[600px] before:w-full before:from-black before:to-transparent"
+    "before:bg-linear-to-b before:absolute before:top-0 before:h-screen before:max-h-[600px] before:w-full before:from-black before:to-transparent"
   );
   return (
     <>

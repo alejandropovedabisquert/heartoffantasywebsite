@@ -1,6 +1,235 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 600px) {
+    max-width: 600px;
+  }
+  @media (width >= 728px) {
+    max-width: 728px;
+  }
+  @media (width >= 984px) {
+    max-width: 984px;
+  }
+  @media (width >= 1000px) {
+    max-width: 1000px;
+  }
+  @media (width >= 1200px) {
+    max-width: 1200px;
+  }
+}
+
+@theme {
+  --grid-template-columns-title: 1fr auto 1fr;
+  --grid-template-columns-left-side: 0.1fr auto 1fr;
+  --grid-template-columns-right-side: 1fr auto 0.1fr;
+
+  --grid-template-rows-title: 22px 0;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-corporative: #a43046;
+
+  --animate-wiggle: wiggle 1s linear infinite;
+  --animate-float-up: float-up 4s ease-in-out infinite;
+  --animate-float-up-less: float-up 4s ease-in-out infinite;
+  --animate-float-down: float-down 4s ease-in-out infinite;
+  --animate-float-inner-down: float-inner-down 4s ease-in-out infinite;
+  --animate-float-left: float-left 4s ease-in-out infinite;
+  --animate-float-inner-left: float-inner-left 4s ease-in-out infinite;
+  --animate-float-right: float-right 4s ease-in-out infinite;
+  --animate-float-inner-right: float-inner-right 4s ease-in-out infinite;
+  --animate-float-up-left: float-up-left 4s ease-in-out infinite;
+  --animate-float-inner-up-left: float-inner-up-left 4s ease-in-out infinite;
+  --animate-float-up-right: float-up-right 4s ease-in-out infinite;
+  --animate-float-inner-up-right: float-inner-up-right 4s ease-in-out infinite;
+  --animate-float-down-left: float-down-left 4s ease-in-out infinite;
+  --animate-float-inner-down-left: float-inner-down-left 4s ease-in-out infinite;
+  --animate-float-down-right: float-down-right 4s ease-in-out infinite;
+
+  @keyframes wiggle {
+    0%,
+    7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%,
+    100% {
+      transform: rotateZ(-0);
+    }
+  }
+  @keyframes float-up {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  @keyframes float-up-less {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-2px);
+    }
+  }
+  @keyframes float-down {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(20px);
+    }
+  }
+  @keyframes float-inner-down {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(1px);
+    }
+  }
+  @keyframes float-left {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-20px);
+    }
+  }
+  @keyframes float-inner-left {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-1px);
+    }
+  }
+  @keyframes float-right {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+  }
+  @keyframes float-inner-right {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(1px);
+    }
+  }
+  @keyframes float-up-left {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-15px, -15px);
+    }
+  }
+  @keyframes float-inner-up-left {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-1px, -1px);
+    }
+  }
+  @keyframes float-up-right {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(15px, -15px);
+    }
+  }
+  @keyframes float-inner-up-right {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(1px, -1px);
+    }
+  }
+  @keyframes float-down-left {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-15px, 15px);
+    }
+  }
+  @keyframes float-inner-down-left {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-1px, 1px);
+    }
+  }
+  @keyframes float-down-right {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(15px, 15px);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 /* :root {
   --background: #F2E8E7;

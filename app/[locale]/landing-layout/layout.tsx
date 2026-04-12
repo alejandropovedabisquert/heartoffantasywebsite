@@ -14,7 +14,7 @@ export default function LandingLayout({ children }: { children: React.ReactNode 
                     height={250} 
                     alt="logo" 
                     priority={true} 
-                    className="mx-auto my-10 z-[1] relative"
+                    className="mx-auto my-10 z-1 relative"
                     />
                 </Link>
             </div>
