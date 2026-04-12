@@ -3,12 +3,12 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import "../globals.css";
-import FooterSection from "@/components/FooterSection";
+import FooterSection from "@/components/sections/FooterSection";
 import { Metadata } from 'next';
 import BodyIdSetter from '@/components/common/BodyIdSetter';
 import { Analytics } from "@vercel/analytics/next";
 import { Geist } from 'next/font/google';
-import HeaderSection from '@/components/HeaderSection';
+import HeaderSection from '@/components/sections/HeaderSection';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const {locale} = await params;

@@ -1,8 +1,8 @@
 "use client";
 import React, { useRef, useState } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
-import Input from "@/components/common/Input";
-import { Titulo } from "@/components/common/Titulo";
+import Input from "@/components/ui/Input";
+import { Titulo } from "@/components/ui/Titulo";
 import clsx from "clsx";
 import { useLocale, useTranslations } from "next-intl";
 import { validateRegisterForm } from "@/lib/formValidations/registerValidation";

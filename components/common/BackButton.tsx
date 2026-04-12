@@ -1,11 +1,11 @@
-import { Link } from "@/i18n/navigation";
 import { ArrowLeft } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import LinkCustom from "../ui/LinkCustom";
 
 export default function BackButton() {
     const locale = useLocale();
     const t = useTranslations('BackButton');
     return (
-        <Link href={"/"} locale={locale} className="p-2 mb-8 bg-corporative text-white block w-fit flex gap-2 transition-all hover:bg-white hover:text-black"><ArrowLeft /> {t("text")}</Link>
+        <LinkCustom href={"/"} locale={locale} variant="corporative" className="flex gap-2"><ArrowLeft /> {t("text")}</LinkCustom>
     );
 }

@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { Titulo } from "./common/Titulo";
+import { Titulo } from "../ui/Titulo";
 import { motion } from "framer-motion";
 
 type featureProps = {

@@ -1,6 +1,6 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { Titulo } from "./common/Titulo";
+import { Titulo } from "../ui/Titulo";
 import GridVideo from "./GridVideo";
 import { motion } from "framer-motion";
 

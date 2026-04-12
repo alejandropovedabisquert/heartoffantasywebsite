@@ -1,10 +1,10 @@
-import BannerGodotSection from "@/components/BannerGodotSection";
+import BannerGodotSection from "@/components/sections/BannerGodotSection";
 import FirefliesEffect from "@/components/common/FirefliesEffect";
-import FeaturesSection from "@/components/FeaturesSection";
-import GallerySection from "@/components/GallerySection";
-import HistorySection from "@/components/HistorySection";
-import SliderSection from "@/components/SliderSection";
-import VideosSection from "@/components/VideosSection";
+import FeaturesSection from "@/components/sections/FeaturesSection";
+import GallerySection from "@/components/sections/GallerySection";
+import HistorySection from "@/components/sections/HistorySection";
+import SliderSection from "@/components/sections/SliderSection";
+import VideosSection from "@/components/sections/VideosSection";
 import clsx from "clsx";
 // TODO: Implementar async components para la internacionalización https://next-intl.dev/docs/environments/server-client-components#async-components
 

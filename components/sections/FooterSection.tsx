@@ -1,8 +1,9 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import StreamerStatus from "./common/StreamerStatus";
-import { Link } from "@/i18n/navigation";
+import StreamerStatus from "../common/StreamerStatus";
 import { routing } from "@/i18n/routing";
+import LinkCustom from "../ui/LinkCustom";
+import Link from "next/link";
 
 type AppPathname = keyof typeof routing.pathnames;
 
@@ -28,9 +29,9 @@ export default function FooterSection() {
                 {
                     rrssT.raw("SocialMedia").map((media: socialMediaProps, index: number) =>(
                         <div key={index}>
-                            <a href={`${media.link}`} target="_blank">
+                            <Link href={`${media.link}`} target="_blank">
                                 <Image src={`/rrss_svg/${media.logo}.svg`} className="w-10 h-10 transition-all duration-300 hover:animate-wiggle" alt={media.logo} width={40} height={40} unoptimized={true}/>
-                            </a>
+                            </Link>
                         </div>
                     ))
                 }
@@ -45,7 +46,7 @@ export default function FooterSection() {
                 <div className="py-8 flex flex-wrap gap-4">
                     {
                         t.raw("legalNav").map((item: legalNavProps, index: number) => (
-                            <Link key={index} href={item.link} locale={`${item.locale}`} className="transition-all hover:text-corporative">{item.text}</Link>
+                            <LinkCustom key={index} href={item.link} locale={`${item.locale}`}>{item.text}</LinkCustom>
                         ))
                     }
                 </div>

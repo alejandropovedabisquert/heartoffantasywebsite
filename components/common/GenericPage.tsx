@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Titulo } from "@/components/common/Titulo";
+import { Titulo } from "@/components/ui/Titulo";
 import { useTranslations } from "next-intl";
 import BackButton from "./BackButton";
 

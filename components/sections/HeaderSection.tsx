@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { useBodyScrollLock } from "@/lib/hooks/useBodyScrollLock";
+import LinkCustom from "../ui/LinkCustom";
 
 type AppPathname = keyof typeof routing.pathnames;
 
@@ -51,27 +52,27 @@ export default function HeaderSection() {
               <ul className="flex space-x-4 list-none">
                 {t.raw("navigation").map((item: navProps, index: number) => (
                   <li key={index}>
-                    <Link
+                    <LinkCustom
                       href={item.link}
                       locale={locale}
-                      className="transition-all hover:text-corporative"
                     >
                       {item.text}
-                    </Link>
+                    </LinkCustom>
                   </li>
                 ))}
               </ul>
             </nav>
             <div className="flex items-center  gap-4">
               <LanguageSwitcher />
-              <a
-                className="flex gap-2 items-center justify-center p-2 bg-white text-black transition-all hover:bg-corporative hover:text-white"
+              <LinkCustom
+                variant="contrast"
+                className="flex gap-2"
                 href={t("download.link")}
                 download={true}
               >
                 <Download />
                 {t("download.text")}
-              </a>
+              </LinkCustom>
             </div>
           </div>
           <div
@@ -85,28 +86,28 @@ export default function HeaderSection() {
               <ul className="flex flex-col items-center gap-4">
                 {t.raw("navigation").map((item: navProps, index: number) => (
                   <li key={index}>
-                    <Link
+                    <LinkCustom
                       href={item.link}
                       locale={locale}
-                      className="transition-all hover:text-corporative"
                       onClick={toggleMenu}
                     >
                       {item.text}
-                    </Link>
+                    </LinkCustom>
                   </li>
                 ))}
               </ul>
             </nav>
             <div className="flex items-center flex-col gap-4">
-              <a
-                className="flex gap-2 items-center justify-center p-2 bg-white text-black transition-all hover:bg-corporative hover:text-white"
+              <LinkCustom
+                variant="contrast"
+                className="flex gap-2"
                 href={t("download.link")}
                 download={true}
                 onClick={toggleMenu}
               >
                 <Download />
                 {t("download.text")}
-              </a>
+              </LinkCustom>
               <LanguageSwitcher />
             </div>
           </div>

@@ -2,7 +2,7 @@
 import clsx from "clsx";
 import Image, { ImageProps } from "next/image";
 import { useEffect, useState } from "react";
-import ModalComponent from "./common/ModalComponent";
+import ModalComponent from "../ui/ModalComponent";
 import { useTranslations } from "next-intl";
 import { useBodyScrollLock } from "@/lib/hooks/useBodyScrollLock";
 import { motion } from "framer-motion";

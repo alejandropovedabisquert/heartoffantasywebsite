@@ -1,5 +1,5 @@
 import FirefliesEffect from "@/components/common/FirefliesEffect";
-import HeartV2 from "@/components/common/HeartV2";
+import HeartV2 from "@/components/ui/HeartV2";
 import { useTranslations } from "next-intl";
 import { Geist } from "next/font/google";
 import Link from "next/link";

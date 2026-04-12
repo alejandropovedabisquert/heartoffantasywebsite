@@ -1,7 +1,7 @@
 "use client";
 import { useTranslations } from "next-intl";
-import { Titulo } from "./common/Titulo";
-import HeartV2 from "./common/HeartV2";
+import { Titulo } from "../ui/Titulo";
+import HeartV2 from "../ui/HeartV2";
 import { motion } from "framer-motion";
 
 export default function HistorySection() {
