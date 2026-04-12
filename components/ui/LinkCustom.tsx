@@ -3,7 +3,7 @@ import clsx from "clsx";
 import React, { PropsWithChildren } from "react";
 
 type LinkCustomProps = {
-    variant?: "link" | "corporativo" | "contraste";
+    variant?: "link" | "corporative" | "contrast";
     className?: string;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
