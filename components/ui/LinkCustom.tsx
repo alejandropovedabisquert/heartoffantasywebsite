@@ -5,6 +5,7 @@ import React, { PropsWithChildren } from "react";
 type LinkCustomProps = {
     variant?: "link" | "corporativo" | "contraste";
     className?: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [key: string]: any;
 };
 
