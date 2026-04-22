@@ -56,6 +56,8 @@ export default async function RootLayout({
       <head>
         <Script
           src='https://challenges.cloudflare.com/turnstile/v0/api.js'
+          async
+          defer
         />
       </head>
       <body className={`${geistSans.className} antialiased overflow-x-hidden`}>
