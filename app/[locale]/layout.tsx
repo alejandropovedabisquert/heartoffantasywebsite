@@ -53,13 +53,11 @@ export default async function RootLayout({
   // TODO: Create a context for the bodyidsetter and pass the id from the page to avoid passing all the messages to the client side
   return (
     <html lang={locale} suppressHydrationWarning className='overflow-x-hidden'>
-      <head>
+      <body className={`${geistSans.className} antialiased overflow-x-hidden`}>
         <Script
           src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
           strategy='afterInteractive'
         />
-      </head>
-      <body className={`${geistSans.className} antialiased overflow-x-hidden`}>
         <NextIntlClientProvider messages={messages}>
           <Analytics />
           <BodyIdSetter />

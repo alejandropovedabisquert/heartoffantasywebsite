@@ -53,7 +53,7 @@ export function useCloudflareTurnstile(siteKey: string, language?: string) {
 
         const renderWidget = () => {
             const turnstile = window.turnstile;
-            if (!turnstile || !refCloudflare.current) return;
+            if (!turnstile || !refCloudflare.current || widgetIdRef.current !== null) return;
             cleanupId = turnstile.render(refCloudflare.current, {
                 sitekey: siteKey,
                 callback: handleVerify,
