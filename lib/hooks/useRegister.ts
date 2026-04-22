@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FormErrors } from "@/components/common/RegisterForm";
 import { usersApi } from "../api/users";
-import { verifyCaptcha } from "../actions/verifyCaptcha";
+import { verifyTurnstile } from "../actions/verifyCaptchaCloudflare";
 
 export function useRegister() {
     const [isLoading, setIsLoading] = useState(false);
@@ -31,7 +31,7 @@ export function useRegister() {
             return data;
         }
 
-        const captchaValid = await verifyCaptcha(token);
+        const captchaValid = await verifyTurnstile(token);
         if (!captchaValid) {
             const data = { message: 'Invalid captcha', success: false };
             setResponse(data);

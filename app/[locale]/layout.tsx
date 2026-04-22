@@ -2,13 +2,14 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import "../globals.css";
+import "@/app/globals.css";
 import FooterSection from "@/components/sections/FooterSection";
 import { Metadata } from 'next';
 import BodyIdSetter from '@/components/common/BodyIdSetter';
 import { Analytics } from "@vercel/analytics/next";
 import { Geist } from 'next/font/google';
 import HeaderSection from '@/components/sections/HeaderSection';
+import Script from 'next/script';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const {locale} = await params;
@@ -52,6 +53,12 @@ export default async function RootLayout({
   // TODO: Create a context for the bodyidsetter and pass the id from the page to avoid passing all the messages to the client side
   return (
     <html lang={locale} suppressHydrationWarning className='overflow-x-hidden'>
+      <head>
+        <Script
+          src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
+          strategy='afterInteractive'
+        />
+      </head>
       <body className={`${geistSans.className} antialiased overflow-x-hidden`}>
         <NextIntlClientProvider messages={messages}>
           <Analytics />
