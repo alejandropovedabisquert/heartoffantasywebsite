@@ -55,8 +55,7 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning className='overflow-x-hidden'>
       <head>
         <Script
-          src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
-          strategy='beforeInteractive'
+          src='https://challenges.cloudflare.com/turnstile/v0/api.js'
         />
       </head>
       <body className={`${geistSans.className} antialiased overflow-x-hidden`}>
