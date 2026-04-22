@@ -1,13 +1,13 @@
 "use client";
 import React, { useRef, useState } from "react";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Input from "@/components/ui/Input";
 import { Titulo } from "@/components/ui/Titulo";
 import clsx from "clsx";
 import { useLocale, useTranslations } from "next-intl";
 import { validateRegisterForm } from "@/lib/formValidations/registerValidation";
+import { validateCaptcha } from "@/lib/formValidations/captchaValidation";
 import { useRegister } from "@/lib/hooks/useRegister";
-import { useCloudflareTurnstile } from "@/lib/hooks/useCloudflareTurnstile";
-import { verifyTurnstile } from "@/lib/actions/verifyCaptchaCloudflare";
 import { Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -21,11 +21,12 @@ export type FormErrors = {
   message?: string;
   success?: boolean;
 };
+// TODO: PENSAR EN UTILIZAR EL CAPTCHA DE CLOUDFARE QUE ES MÁS LIGERO Y NO REQUIERE CARGAR UN SCRIPT EXTERNO, ADEMÁS DE SER MÁS PERSONALIZABLE
 export default function RegisterForm() {
-  const locale = useLocale();
-  const { refCloudflare, token: captchaToken, verified, reset: resetTurnstile } = useCloudflareTurnstile(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!, locale);
   const t = useTranslations("RegisterForm");
   const ref = useRef<HTMLFormElement>(null);
+  const captchaRef = useRef<HCaptcha | null>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
   const [username, setUsername] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -35,26 +36,30 @@ export default function RegisterForm() {
   }>({});
 
   const { register, isLoading, response } = useRegister();
+  const locale = useLocale();
 
-  const validateForm = async () => {
+  const onCaptchaChange = (token: string) => {
+    setCaptchaToken(token);
+    setErrors((prev) => ({ ...prev, captcha: undefined }));
+  };
+  const onCaptchaExpire = () => setCaptchaToken(null);
+
+  const validateForm = () => {
     const formErrors = validateRegisterForm({ username, email, password }, t);
+    const captchaError = validateCaptcha(captchaToken || "", t);
     const termsError = !acceptedTerms && {
       terms: { message: t("inputs.conditions.requiredError"), success: false },
     };
-    const captchaValid = await verifyTurnstile(captchaToken || "");
-    const turnstileError = !captchaValid
-      ? { captcha: { message: t("inputs.captcha.requiredError"), success: false } }
-      : {};
-
-    const newErrors = { ...formErrors, ...turnstileError, ...termsError };
+    const newErrors = { ...formErrors, ...captchaError, ...termsError };
     setErrors(newErrors);
-    if (!captchaValid) resetTurnstile();
+    captchaRef.current?.resetCaptcha();
+    setCaptchaToken(null);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (!(await validateForm())) return;
+    if (!validateForm()) return;
 
     if (ref.current) {
       const formData = new FormData(ref.current);
@@ -63,7 +68,6 @@ export default function RegisterForm() {
       formData.append("email", email);
       formData.append("password", password);
       await register(formData);
-      resetTurnstile();
     }
   };
 
@@ -91,7 +95,7 @@ export default function RegisterForm() {
   );
 
   return (
-    <div className="container relative z-10">
+    <div className="container">
       <motion.div 
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -200,6 +204,7 @@ export default function RegisterForm() {
                   setErrors((prev) => ({ ...prev, terms: undefined }));
                 }}
               />
+              {/* Content is from trusted i18n translation files, not user input */}
               <span
                 className="text-base"
                 dangerouslySetInnerHTML={{
@@ -213,7 +218,14 @@ export default function RegisterForm() {
           </motion.div>
           <div>
             <div className="py-4">
-              <div ref={refCloudflare}></div>
+              <HCaptcha
+                theme={"dark"}
+                sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY!}
+                onVerify={onCaptchaChange}
+                ref={captchaRef}
+                onExpire={onCaptchaExpire}
+                languageOverride={locale}
+              />
             </div>
             {errors.captcha && (
               <div className="text-red-600"><p>{errors.captcha.message}</p></div>
@@ -233,8 +245,7 @@ export default function RegisterForm() {
               <div>
                 <button
                   type="submit"
-                  className="px-6 py-4 text-lg flex items-center justify-center gap-2 cursor-pointer bg-corporative text-white transition-all hover:bg-white hover:text-black disabled:bg-gray-400 disabled:text-gray-700 disabled:cursor-not-allowed"
-                  disabled={!verified || isLoading}
+                  className="px-6 py-4 text-lg flex items-center justify-center gap-2 bg-corporative text-white transition-all hover:bg-white hover:text-black"
                 >
                   {isLoading ? (
                     <>
