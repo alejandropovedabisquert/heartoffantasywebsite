@@ -14,7 +14,7 @@ export default function SliderSection() {
                 "absolute left-1/2 top-1/2 ease-in -translate-y-1/2 -translate-x-1/2 z-5",
                 "after:content-[''] after:absolute after:inset-1 after:bg-radial after:from-black after:from-20% after:to-transparent after:rounded-full after:blur-xl after:w-120 after:h-120 after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2"
             )}>
-                <div className="w-50 h-50 sm:w-75 sm:h-75 relative z-10">
+                <div className="w-50 h-50] sm:w-75 sm:h-75 relative z-10">
                     <Image src={"/logo.webp"} fill alt="logo" priority={true} />
                 </div>
             </div>
