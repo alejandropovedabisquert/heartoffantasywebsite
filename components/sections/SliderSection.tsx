@@ -8,7 +8,7 @@ export default function SliderSection() {
     );
     return (
         <div className={`min-h-200 relative ${gradientStyles}`}>
-            <div className="absolute top-0 min-h-200 w-full bg-[url(/bg_principal.jpg)] bg-center bg-cover bg-no-repeat" />
+            <div className="absolute top-0 min-h-200 w-full bg-[url(/bg_principal.webp)] bg-center bg-cover bg-no-repeat" />
             <div 
             className={clsx(
                 "absolute left-1/2 top-1/2 ease-in -translate-y-1/2 -translate-x-1/2 z-5",
@@ -18,13 +18,13 @@ export default function SliderSection() {
                     <Image src={"/logo.webp"} fill alt="logo" priority={true} />
                 </div>
             </div>
-            <video
+            {/* <video
                 className="absolute top-0 w-full h-200 object-cover"
                 preload="none" aria-label="Video player" autoPlay controls={false} loop muted playsInline
             >
                 <source src={"/bg_video.mp4"} type="video/mp4" />
                 Your browser does not support the video tag.
-            </video>
+            </video> */}
         </div>
     );
 }
