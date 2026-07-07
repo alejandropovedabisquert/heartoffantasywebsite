@@ -29,7 +29,7 @@ export default function GenericPage({ translationsKey }: { translationsKey: stri
                 viewport={{ once: true }}
                 transition={{ duration: .3, ease: "easeOut", delay: .1 }}
             >
-                <Titulo as={"h2"} position="left" className="text-3xl sm:text-4xl font-bold my-4">{t("title")}</Titulo>
+                <Titulo as={"h2"} position="left" className="text-3xl sm:text-4xl font-bold mt-10">{t("title")}</Titulo>
             </motion.div>
             <motion.div
                 initial={{ opacity: 0, x: -20 }}

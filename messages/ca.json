@@ -1,0 +1,233 @@
+{
+  "Metadata": {
+    "title": "Heart of Fantasy | Un MMORPG amb permadeath",
+    "description": "\"Heart of Fantasy\" és un MMORPG de supervivència amb permadeath i un món generat de manera procedimental que inclou oceans, rius i muntanyes.",
+    "openGraphImage": "/openGraph.webp"
+  },
+  "LocaleSwitcher": {
+    "locale": "{locale, select, es {Español} ca {Català} en {English} ja {日本語} other {Unknown}}"
+  },
+  "HeaderNav": {
+    "navigation": [
+      {
+        "text": "Inici",
+        "link": "/"
+      },
+      {
+        "text": "Registrar-se",
+        "link": "/registre"
+      }
+    ],
+    "download": {
+      "text": "Descarregar",
+      "link": "https://api.heartoffantasy.com/api/launcher"
+    }
+  },
+  "HistorySection": {
+    "title": "Sobre el joc",
+    "description": [
+      "<strong>Heart of Fantasy</strong> és un MMORPG diferent de tot el que has viscut.",
+      "En aquest món persistent i cíclic, la foscor juga amb els cors dels jugadors.",
+      "El Rei Dimoni és immortal, no per poder, sinó per buit: va dividir el seu cor en fragments i els va lliurar a la foscor. Mentre aquests fragments estiguin dispersos pel món, no pot morir.",
+      "Només qui els reuneixi tots podrà trencar la seva immortalitat i desafiar-lo en una batalla final.",
+      "I si el derrota, haurà de prendre una decisió: destruir el cicle i començar una era de pau per a tots, o dividir el seu propi cor i lliurar-lo a la foscor, convertint-se en el nou Rei Dimoni."
+    ]
+  },
+  "FeaturesSection": {
+    "title": "Característiques",
+    "subtitle": "",
+    "features": [
+      {
+        "title": "Permadeath",
+        "description": "Cada decisió compta. Si mors, ho perds tot: personatge, equip i progrés. Un sistema d'alt risc que premia l'estratègia i converteix cada victòria en una llegenda. T'atreveixes a arriscar-ho tot? 🗡️"
+      },
+      {
+        "title": "Un món canviant",
+        "description": "Dona forma al món: construeix, transforma paisatges i deixa la teva empremta. L'entorn evoluciona segons les accions de la comunitat. 🌱"
+      },
+      {
+        "title": "Sistema d'habilitats infinit",
+        "description": "Les habilitats milloren sense límit com més les fas servir: domina el teu estil, des de les armes fins a la màgia, al teu ritme i sense barreres. ⚔️"
+      },
+      {
+        "title": "Mapa envoltant",
+        "description": "Un món sense fronteres: en arribar a la vora, reapareixes al costat oposat. Explora sense límits, ja sigui per terra o per mar. La geografia, igual que la història, és un bucle etern! 🔄"
+      }
+    ],
+    "conclusion": ""
+  },
+  "BannerGodotSection": {
+    "title": "Fet amb"
+  },
+  "VideosSection": {
+    "title": "Devblogs"
+  },
+  "GallerySection": [
+    {
+      "src": "/gallery/1.webp",
+      "alt": "Captura de pantalla del joc Heart of Fantasy 1"
+    },
+    {
+      "src": "/gallery/2.webp",
+      "alt": "Captura de pantalla del joc Heart of Fantasy 2"
+    },
+    {
+      "src": "/gallery/3.webp",
+      "alt": "Captura de pantalla del joc Heart of Fantasy 3"
+    },
+    {
+      "src": "/gallery/4.webp",
+      "alt": "Captura de pantalla del joc Heart of Fantasy 4"
+    },
+    {
+      "src": "/gallery/5.webp",
+      "alt": "Captura de pantalla del joc Heart of Fantasy 5"
+    },
+    {
+      "src": "/gallery/6.webp",
+      "alt": "Captura de pantalla del joc Heart of Fantasy 6"
+    }
+  ],
+  "FooterSection": {
+    "copyright": "Heart of Fantasy © {year} Tots els drets reservats",
+    "legalNav": [
+      {
+        "text": "Política de privacitat",
+        "link": "/privacy-policy",
+        "locale": "ca"
+      }
+    ]
+  },
+  "SocialMedia": [
+    {
+      "link": "https://www.twitch.tv/blacksmith3",
+      "logo": "twitch"
+    },
+    {
+      "link": "https://www.youtube.com/@blacksmith94",
+      "logo": "youtube"
+    },
+    {
+      "link": "https://discord.gg/Qmp4aqJcQ8",
+      "logo": "discord"
+    },
+    {
+      "link": "https://ko-fi.com/blacksmith3",
+      "logo": "kofi"
+    },
+    {
+      "link": "https://blacksmith94.itch.io/heartoffantasy",
+      "logo": "itchio"
+    }
+  ],
+  "TwitchPopup": {
+    "online": "està EN DIRECTE"
+  },
+  "PrivacyPolicySection": {
+    "metadata": {
+      "title": "📄 Política de Privacitat | Heart of Fantasy",
+      "description": "Descobreix com Heart of Fantasy protegeix les teves dades personals i compleix amb la normativa de privacitat vigent."
+    },
+    "title": "📄 Política de Privacitat",
+    "update": "<strong>Última actualització:</strong> [28/01/2026]",
+    "parts": [
+      {
+        "title": "1. Dades que recopilem",
+        "description": "<p>Quan emplenes el formulari de registre, recopilem les dades personals següents:</p><ul><li>Nom d'usuari</li><li>Adreça de correu electrònic</li><li>Contrasenya (emmagatzemada en format xifrat)</li></ul>"
+      },
+      {
+        "title": "2. Finalitat del tractament",
+        "description": "<p>Les dades s'utilitzaran únicament per a:</p><ul><li>Gestionar el teu registre i donar-te accés a l'alfa del joc.</li></ul>"
+      },
+      {
+        "title": "3. Base legal",
+        "description": "<p>La base legal per al tractament de les teves dades és el teu <strong>consentiment exprés</strong>, atorgat en marcar la casella corresponent en el formulari.</p>"
+      },
+      {
+        "title": "4. Conservació de les dades",
+        "description": "<p>Les teves dades es conservaran mentre duri el desenvolupament del joc o fins que en sol·licitis la supressió.</p>"
+      },
+      {
+        "title": "5. Destinataris",
+        "description": "<p>No compartirem les teves dades amb tercers, tret d'obligació legal. Les dades s'emmagatzemaran en servidors segurs i, si escau, seran gestionades per proveïdors que compleixin amb el RGPD.</p>"
+      },
+      {
+        "title": "6. Drets de l'usuari",
+        "description": "<p>Pots exercir els teus drets en qualsevol moment, incloent-hi:</p><ul><li>Accés a les teves dades personals.</li><li>Sol·licitud de rectificació o supressió.</li><li>Sol·licitud de limitació o oposició al tractament.</li><li>Retirada del consentiment.</li></ul><p>Per exercir els teus drets, pots escriure'ns per Discord: <a href=\"https://discord.gg/Qmp4aqJcQ8\">https://discord.gg/Qmp4aqJcQ8</a>.</p>"
+      },
+      {
+        "title": "7. Seguretat de les dades",
+        "description": "<p>Apliquem mesures tècniques i organitzatives adequades per garantir la seguretat de les teves dades i evitar accessos no autoritzats.</p>"
+      }
+    ]
+  },
+  "RegisterForm": {
+    "title": "Registra't ara!",
+    "disclaimer": {
+      "title": "IMPORTANT:",
+      "text": "Aquest registre et donarà accés a la prova alfa del joc.<br>El joc segueix en desenvolupament actiu i actualment no hi ha una data de llançament confirmada.<br>Només es recopila la informació necessària per gestionar l'accés a l'alfa i la comunicació amb els testers (com el teu correu electrònic i nom d'usuari). Les teves dades no es vendran ni compartiran amb tercers i només s'utilitzaran per a finalitats de desenvolupament i proves.<br>Per la teva seguretat, no utilitzis una contrasenya que facis servir en altres llocs web o serveis.<br>Si desitges que les teves dades siguin eliminades o tens alguna pregunta, pots contactar-nos a través del nostre servidor de Discord: <a href=\"https://discord.gg/Qmp4aqJcQ8\">https://discord.gg/Qmp4aqJcQ8</a><br/>Gràcies per ajudar a provar i millorar el joc!"
+    },
+    "inputs": {
+      "username": {
+        "placeholder": "Nom d'usuari",
+        "requiredError": "El nom d'usuari és obligatori",
+        "validError": "Si us plau, no facis servir espais en el nom d'usuari"
+      },
+      "email": {
+        "placeholder": "Correu electrònic",
+        "requiredError": "El correu electrònic és obligatori",
+        "validError": "Si us plau, introdueix un correu electrònic vàlid"
+      },
+      "password": {
+        "placeholder": "Contrasenya",
+        "requiredError": "La contrasenya és obligatòria",
+        "validError": "La contrasenya ha de tenir almenys 6 caràcters"
+      },
+      "captcha": {
+        "placeholder": "Captcha",
+        "requiredError": "El captcha és obligatori"
+      },
+      "conditions": {
+        "label": "He llegit i accepto la <a href=\"/privacy-policy\" class=\"underline hover:text-corporative\" target=\"_blank\" rel=\"noopener noreferrer\">Política de Privacitat</a>.",
+        "requiredError": "Has d'acceptar la Política de Privacitat"
+      },
+      "successMessage": {
+        "text": "S'ha enviat un correu de confirmació al correu {email}. Si us plau, revisa la teva safata d'entrada o la carpeta de correu brossa per activar el teu compte."
+      },
+      "usernameExists": {
+        "text": "El nom d'usuari ja existeix. Si us plau, tria'n un altre."
+      },
+      "emailExists": {
+        "text": "El correu electrònic ja existeix. Si us plau, utilitza un altre correu."
+      },
+      "errorMessage": {
+        "text": "No s'ha pogut completar la petició. El servidor pot estar en manteniment."
+      },
+      "submit": {
+        "placeholder": "Enviar",
+        "loading": "Creant compte..."
+      }
+    }
+  },
+  "ActivatePage": {
+    "metadata": {
+      "title": "Activació de compte | Heart of Fantasy",
+      "description": "Activa el teu compte per a Heart of Fantasy i prepara't per explorar un món d'aventura i perill."
+    },
+    "activatingAccount": "Activant compte...",
+    "success": "El compte s'ha activat correctament.<br> Pots descarregar el joc en el següent enllaç: <a href=\"https://api.heartoffantasy.com/api/launcher\" download={true} class=\"underline\" >Descarregar Heart of Fantasy</a>"
+  },
+  "BackButton": {
+    "text": "Tornar a l'inici"
+  },
+  "PageNotFound": {
+    "title": "404 | No s'ha pogut trobar aquesta pàgina.",
+    "backButton": "Tornar a l'inici",
+    "locale": "ca"
+  },
+  "Error": {
+    "title": "Alguna cosa ha sortit malament",
+    "description": "Ha ocorregut un error inesperat.",
+    "retry": "Tornar a intentar"
+  }
+}

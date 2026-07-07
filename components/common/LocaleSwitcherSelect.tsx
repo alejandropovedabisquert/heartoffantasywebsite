@@ -72,7 +72,7 @@ export default function LocaleSwitcher() {
               <button
                 key={cur}
                 onClick={() => handleLocaleChange(cur)}
-                className="p-2 block w-full bg-corporative transition-all hover:bg-white hover:text-black"
+                className="p-2 cursor-pointer block w-full bg-corporative transition-all hover:bg-white hover:text-black"
               >
                 {t("locale", { locale: cur })}
               </button>

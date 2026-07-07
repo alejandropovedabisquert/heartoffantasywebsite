@@ -95,7 +95,7 @@ export default function RegisterForm() {
   );
 
   return (
-    <div className="container">
+    <div className="container relative z-10">
       <motion.div 
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}

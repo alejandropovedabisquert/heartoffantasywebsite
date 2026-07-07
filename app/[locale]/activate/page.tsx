@@ -12,22 +12,26 @@ export default function Activate() {
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
   const { activate, isLoading, response } = useUserActivate();
-  const t = useTranslations('ActivatePage');
+  const t = useTranslations("ActivatePage");
+
+  useEffect(() => {
+    if (!token) return;
+    void activate(token);
+  }, [activate, token]);
+
   if (!token) {
     notFound();
   }
-  useEffect(() => {
-    activate(token);
-  }, []);
+
   return (
     <LandingLayout>
-      <div className="container mx-auto px-4 overflow-hidden min-h-[500px] flex flex-col items-center justify-center">
+      <div className="container mx-auto px-4 overflow-hidden min-h-125 flex flex-col items-center justify-center">
         {isLoading ? (
-          <p>{t('activatingAccount')}</p>
+          <p>{t("activatingAccount")}</p>
         ) : response.success === true ? (
           <div className="bg-green-500 text-white p-4 flex flex-row items-center justify-center gap-4 w-full">
             <CircleCheck size={60} />
-            <p className="text-xl" dangerouslySetInnerHTML={{ __html: t.raw('success') }} />
+            <p className="text-xl" dangerouslySetInnerHTML={{ __html: t.raw("success") }} />
           </div>
         ) : null}
       </div>

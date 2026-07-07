@@ -2,7 +2,7 @@ import {defineRouting} from 'next-intl/routing';
  
 export const routing = defineRouting({
   // A list of all locales that are supported
-  locales: ['en', 'es', 'ja'],
+  locales: ['en', 'es', 'ca', 'ja'],
  
   // Used when no locale matches
   defaultLocale: 'en',
@@ -17,26 +17,31 @@ export const routing = defineRouting({
     "/": {
       en: '/',
       es: '/',
+      ca: '/',
       ja: '/'
     },
     '/legal-notice': {
       en: '/legal-notice',
       es: '/aviso-legal',
+      ca: '/avis-legal',
       ja: '/法的通知'
     },
     '/privacy-policy': {
       en: '/privacy-policy',
       es: '/politica-privacidad',
+      ca: '/politica-de-privacitat',
       ja: '/プライバシーポリシー'
     },
     '/register': {
       en: '/register',
       es: '/registro',
+      ca: '/registre',
       ja: '/登録'
     },
     '/activate': {
       en: '/activate',
       es: '/activate',
+      ca: '/activate',
       ja: '/activate'
     },
   }

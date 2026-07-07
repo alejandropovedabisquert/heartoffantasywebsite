@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       en: baseUrl,
       es: `${baseUrl}/es`,
       ja: `${baseUrl}/ja`,
+      ca: `${baseUrl}/ca`
     },
   }
 
@@ -16,22 +17,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       en: `${baseUrl}/privacy-policy`,
       es: `${baseUrl}/es/politica-privacidad`,
       ja: `${baseUrl}/ja/プライバシーポリシー`,
+      ca: `${baseUrl}/ca/politica-de-privacitat`
     },
   }
-
-  // const alternatesLegalNotice = {
-  //   languages: {
-  //     en: `${baseUrl}/legal-notice`,
-  //     es: `${baseUrl}/es/aviso-legal`,
-  //     ja: `${baseUrl}/ja/法的通知`,
-  //   },
-  // }
 
   const alternatesRegister = {
     languages: {
       en: `${baseUrl}/register`,
       es: `${baseUrl}/es/registro`,
       ja: `${baseUrl}/ja/登録`,
+      ca: `${baseUrl}/ca/registre`
     },
   }
 
@@ -51,13 +46,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.8,
     },
-    // {
-    //   url: `${baseUrl}/legal-notice`,
-    //   lastModified: new Date(),
-    //   alternates: alternatesLegalNotice,
-    //   changeFrequency: 'yearly',
-    //   priority: 0.8,
-    // },
     {
       url: `${baseUrl}/register`,
       lastModified: new Date(),
@@ -81,13 +69,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.8,
     },
-    // {
-    //   url: `${baseUrl}/es/aviso-legal`,
-    //   lastModified: new Date(),
-    //   alternates: alternatesLegalNotice,
-    //   changeFrequency: 'yearly',
-    //   priority: 0.8,
-    // },
     {
       url: `${baseUrl}/es/registro`,
       lastModified: new Date(),
@@ -111,13 +92,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.8,
     },
-    // {
-    //   url: `${baseUrl}/ja/法的通知`,
-    //   lastModified: new Date(),
-    //   alternates: alternatesLegalNotice,
-    //   changeFrequency: 'yearly',
-    //   priority: 0.8,
-    // },
     {
       url: `${baseUrl}/ja/登録`,
       lastModified: new Date(),
@@ -125,5 +99,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.8,
     },
+
+    // Catalan
+    {
+      url: `${baseUrl}/ca`,
+      lastModified: new Date(),
+      alternates: alternatesHome,
+      changeFrequency: 'monthly',
+      priority: 1,
+    },
+    {
+      url: `${baseUrl}/ca/politica-de-privacitat`,
+      lastModified: new Date(),
+      alternates: alternatesPrivacy,
+      changeFrequency: 'yearly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/ca/registre`,
+      lastModified: new Date(),
+      alternates: alternatesRegister,
+      changeFrequency: 'yearly',
+      priority: 0.8,
+    }, 
   ]
 }

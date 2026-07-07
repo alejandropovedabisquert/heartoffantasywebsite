@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
     return (
         <div className="relative overflow-hidden">
-            <div className="min-h-[300px] md:min-h-[500px] flex items-end justify-center">
+            <div className="min-h-75 md:min-h-125 flex items-end justify-center">
                 <Link href="/" aria-label="Heart of Fantasy Home">
                 <Image 
                     src={"/logo.webp"} 
