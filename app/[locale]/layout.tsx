@@ -10,6 +10,10 @@ import { Analytics } from "@vercel/analytics/next";
 import { Geist } from 'next/font/google';
 import HeaderSection from '@/components/sections/HeaderSection';
 
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: 'Metadata'});
