@@ -215,7 +215,8 @@
       "description": "Activate your account for Heart of Fantasy and get ready to explore a world of adventure and danger."
     },
     "activatingAccount": "Activating account...",
-    "success": "Your account has been activated successfully. <br>You can download the game at the following link: <a href=\"https://api.heartoffantasy.com/api/launcher\" download={true} class=\"underline\" >Download Heart of Fantasy</a>"
+    "success": "Your account has been activated successfully. <br>You can download the game at the following link: <a href=\"https://api.heartoffantasy.com/api/launcher\" download={true} class=\"underline\" >Download Heart of Fantasy</a>",
+    "failure": "Failed to activate your account. Please check your activation link or contact support for assistance on <a href=\"https://discord.gg/Qmp4aqJcQ8\" class=\"underline\" target=\"_blank\" rel=\"noopener noreferrer\">Discord</a>."
   },
   "BackButton": {
     "text": "Back to home"

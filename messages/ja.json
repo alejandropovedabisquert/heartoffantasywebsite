@@ -216,7 +216,8 @@
       "description": "Heart of Fantasyのアカウントを有効化し、冒険と危険の世界を探索する準備をしましょう。"
     },
     "activatingAccount": "アカウントを有効化しています...",
-    "success": "アカウントが正常に有効化されました。<br>以下のリンクからゲームをダウンロードできます: <a href=\"https://api.heartoffantasy.com/api/launcher\" download={true} class=\"underline\" >Heart of Fantasyをダウンロード</a>"
+    "success": "アカウントが正常に有効化されました。<br>以下のリンクからゲームをダウンロードできます: <a href=\"https://api.heartoffantasy.com/api/launcher\" download={true} class=\"underline\" >Heart of Fantasyをダウンロード</a>",
+    "failure": "アカウントの有効化に失敗しました。アクティベーションリンクを確認するか、<a href=\"https://discord.gg/Qmp4aqJcQ8\" class=\"underline\" target=\"_blank\" rel=\"noopener noreferrer\">Discord</a>でサポートにお問い合わせください。"
   },
   "BackButton": {
     "text": "ホームに戻る"

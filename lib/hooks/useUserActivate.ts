@@ -1,34 +1,34 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { usersApi } from "../api/users";
 import { notFound } from "next/navigation";
 
-// Hook for user activation from token in query parameters /activate?token=abc123
 export function useUserActivate() {
-    const [isLoading, setIsLoading] = useState(false);
-    const [response, setResponse] = useState({ success: false, message: "" });
-    
-    const activate = async (token: string) => {
-        if (!token) {
-            return { success: false, message: "Token is required" };
-        }
-        setIsLoading(true);
-        try {
-            const response = await usersApi.activateUser(token);
-            if (response.data?.message) {
-                // setResponse({ success: false, message: response.data?.message });  
-                notFound();  
-            } else{
-                setResponse({ success: true, message: "Activation successful" });
-            }
-        } catch (error: unknown) {
-            if (error instanceof Error) {
-                throw error;
-            }
-            setResponse({ success: false, message: "Activation failed" });
-        } finally {
-            setIsLoading(false);
-        }   
-    };
+  const [isLoading, setIsLoading] = useState(false);
+  const [response, setResponse] = useState({ success: false, message: "" });
+  
+  const activate = useCallback(async (token: string) => {
+    if (!token) {
+      setResponse({ success: false, message: "Token is required" });
+      return;
+    }
 
-    return { activate, isLoading, response };
+    setIsLoading(true);
+
+    try {
+      const res = await usersApi.activateUser(token);
+      
+      if (res.data?.message) {
+        notFound();  
+      } else {
+        setResponse({ success: true, message: "Activation successful" });
+      }
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? "Activation failed" : "An unknown error occurred";
+      setResponse({ success: false, message: errorMessage });
+    } finally {
+      setIsLoading(false);
+    }   
+  }, []);
+
+  return { activate, isLoading, response };
 }
