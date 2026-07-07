@@ -60,9 +60,8 @@ export function useRegister() {
         } catch (error: unknown) {
             if (error instanceof Error) {
                 setResponse({ success: false, message: "Error to obtain data" });
-                throw error;
+                return { success: false, message: "Error to obtain data" };
             }
-            return { success: false, message: "Error to obtain data" };
         } finally {
             setIsLoading(false);
         }
