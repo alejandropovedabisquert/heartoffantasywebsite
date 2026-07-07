@@ -57,11 +57,10 @@ export function useRegister() {
             }
             setResponse(responseData);
             return responseData;
-        } catch (error: unknown) {
-            if (error instanceof Error) {
-                setResponse({ success: false, message: "Error to obtain data" });
-                return { success: false, message: "Error to obtain data" };
-            }
+        } catch (error: any) {
+            const errorData = { success: false, message: "Error to obtain data" };
+            setResponse(errorData);
+            return errorData;
         } finally {
             setIsLoading(false);
         }
