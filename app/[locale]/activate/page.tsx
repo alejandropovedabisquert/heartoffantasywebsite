@@ -33,11 +33,11 @@ export default function Activate() {
             <CircleCheck size={60} />
             <p className="text-xl" dangerouslySetInnerHTML={{ __html: t.raw("success") }} />
           </div>
-        ) : (
+        ) : response.success === false ? (
           <div className="bg-red-500 text-white p-4 flex flex-row items-center justify-center gap-4 w-full">
             <p className="text-xl" dangerouslySetInnerHTML={{ __html: t.raw("failure") }} />
           </div>
-        )}
+        ) : null}
       </div>
     </LandingLayout>
   );
