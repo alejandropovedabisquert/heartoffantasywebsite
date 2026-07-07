@@ -57,7 +57,9 @@ export function useRegister() {
             }
             setResponse(responseData);
             return responseData;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
         } catch (error: any) {
+
             const errorData = { success: false, message: "Error to obtain data" };
             setResponse(errorData);
             return errorData;
