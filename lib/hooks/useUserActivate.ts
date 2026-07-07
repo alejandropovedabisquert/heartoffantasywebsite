@@ -4,7 +4,10 @@ import { notFound } from "next/navigation";
 
 export function useUserActivate() {
   const [isLoading, setIsLoading] = useState(false);
-  const [response, setResponse] = useState({ success: false, message: "" });
+  const [response, setResponse] = useState<{ success: boolean | null; message: string }>({ 
+    success: null, 
+    message: "" 
+  });
   
   const activate = useCallback(async (token: string) => {
     if (!token) {
