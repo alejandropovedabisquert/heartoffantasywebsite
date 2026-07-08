@@ -6,8 +6,14 @@ export async function getYoutubeVideos() {
     const playlistId = process.env.YT_PLAYLIST_ID
 
     try {
-        const data = await fetch(`${apiURL}?key=${apiKey}&channelId=${channelId}&playlistId=${playlistId}&part=snippet&maxResults=6`);
-
+        const url = `${apiURL}?key=${apiKey}&channelId=${channelId}&playlistId=${playlistId}&part=snippet&maxResults=6`;
+        
+        const data = await fetch(url, {
+            next: { 
+                revalidate: 604800 
+            }
+        });
+        
         if(!data.ok){
             throw Error('Failed to fetch videos');
         }

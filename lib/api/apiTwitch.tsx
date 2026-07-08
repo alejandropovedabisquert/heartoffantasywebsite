@@ -19,6 +19,9 @@ export async function getAccessToken() {
             'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: params,
+        next: {
+            revalidate: 86400
+        }
     });
 
     const data = await response.json();
@@ -39,6 +42,9 @@ export async function checkIfStreamerIsLive(streamerName: string) {
             'Client-ID': twitchKey,
             Authorization: `Bearer ${accessToken}`,
         },
+        next: {
+            revalidate: 60
+        }
     });
 
     const data = await response.json();
