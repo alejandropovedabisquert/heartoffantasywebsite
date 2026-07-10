@@ -10,7 +10,7 @@ const intlMiddleware = createMiddleware({
   pathnames: routing.pathnames
 });
 
-export default function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Redirigir de /[locale]/activate?token=... a /activate?token=...
