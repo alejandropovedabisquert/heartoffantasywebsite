@@ -37,11 +37,6 @@ export default function LocalizedLink({
     finalHref = href
   }
   
-  finalHref = finalHref.replace(/\/+/g, '/');
-  if (finalHref !== '/' && finalHref.endsWith('/')) {
-    finalHref = finalHref.slice(0, -1);
-  }
-
   return (
     <Link
       href={finalHref}
