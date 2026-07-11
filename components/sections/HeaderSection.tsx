@@ -107,7 +107,7 @@ export default function HeaderSection({
                 locale={locale}
               >
                 <Download />
-                {dict.download.link}
+                {dict.download.text}
               </LocalizedLink>
               <LanguageSwitcher currentLocale={locale} />
             </div>
