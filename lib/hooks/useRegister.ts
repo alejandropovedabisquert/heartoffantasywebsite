@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { FormErrors } from "@/components/common/RegisterForm";
 import { usersApi } from "../api/users";
-import { verifyCaptcha } from "../actions/verifyCaptcha";
+import { verifyCaptcha } from "../actions/verifyCaptchaActions";
 
 export function useRegister() {
     const [isLoading, setIsLoading] = useState(false);

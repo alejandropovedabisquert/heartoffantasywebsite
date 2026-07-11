@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
+      disallow: '/activate'
     },
     sitemap: 'https://www.heartoffantasy.com/sitemap.xml',
   }

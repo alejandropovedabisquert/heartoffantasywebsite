@@ -1,25 +1,21 @@
 "use client";
-import { Link } from "@/i18n/navigation";
-import { routing } from "@/i18n/routing";
 import LanguageSwitcher from "@/components/common/LocaleSwitcherSelect";
 import { Download } from "lucide-react";
 import Image from "next/image";
-import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { useBodyScrollLock } from "@/lib/hooks/useBodyScrollLock";
-import LinkCustom from "../ui/LinkCustom";
+import LocalizedLink from "../ui/LocalizedLink";
+import { getDictionary } from "@/app/[lang]/dictionaries";
+import { Locale } from "@/lib/routes";
 
-type AppPathname = keyof typeof routing.pathnames;
-
-type navProps = {
-  text: string;
-  link: AppPathname;
-};
-
-export default function HeaderSection() {
+export default function HeaderSection({
+  dict,
+  locale
+}: {
+  dict: Awaited<ReturnType<typeof getDictionary>>["HeaderNav"],
+  locale: Locale
+}) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const t = useTranslations("HeaderNav");
-  const locale = useLocale();
 
   useBodyScrollLock(isMenuOpen);
 
@@ -32,8 +28,9 @@ export default function HeaderSection() {
       <div className="text-white p-4 w-full flex justify-between items-center relative after:content-[''] after:block after:absolute after:inset-0 after:bg-black/50 after:-z-10 after:border-2 after:border-corporative">
         <div className="md:mx-auto flex items-center justify-between relative w-full">
           <div>
-            <Link
+            <LocalizedLink
               href="/"
+              locale={locale}
               className="text-2xl font-bold transition-all hover:text-corporative"
             >
               <Image
@@ -43,36 +40,38 @@ export default function HeaderSection() {
                 alt="logo"
                 priority={true}
               />
-            </Link>
+            </LocalizedLink>
           </div>
           <div
             className='hidden md:flex gap-6 justify-center items-center flex-row flex-wrap'
           >
             <nav>
               <ul className="flex space-x-4 list-none">
-                {t.raw("navigation").map((item: navProps, index: number) => (
+                {dict.navigation.map((item, index) => (
                   <li key={index}>
-                    <LinkCustom
+                    <LocalizedLink
                       href={item.link}
                       locale={locale}
                     >
                       {item.text}
-                    </LinkCustom>
+                    </LocalizedLink>
                   </li>
                 ))}
               </ul>
             </nav>
             <div className="flex items-center  gap-4">
-              <LanguageSwitcher />
-              <LinkCustom
+              <LanguageSwitcher currentLocale={locale} />
+              <LocalizedLink
                 variant="contrast"
                 className="flex gap-2"
-                href={t("download.link")}
+                href={dict.download.link}
+                isExternal={true}
                 download={true}
+                locale={locale}
               >
                 <Download />
-                {t("download.text")}
-              </LinkCustom>
+                {dict.download.text}
+              </LocalizedLink>
             </div>
           </div>
           <div
@@ -84,31 +83,33 @@ export default function HeaderSection() {
           >
             <nav>
               <ul className="flex flex-col items-center gap-4">
-                {t.raw("navigation").map((item: navProps, index: number) => (
+                {dict.navigation.map((item, index) => (
                   <li key={index}>
-                    <LinkCustom
+                    <LocalizedLink
                       href={item.link}
                       locale={locale}
                       onClick={toggleMenu}
                     >
                       {item.text}
-                    </LinkCustom>
+                    </LocalizedLink>
                   </li>
                 ))}
               </ul>
             </nav>
             <div className="flex items-center flex-col gap-4">
-              <LinkCustom
+              <LocalizedLink
                 variant="contrast"
                 className="flex gap-2"
-                href={t("download.link")}
+                href={dict.download.link}
                 download={true}
+                isExternal={true}
                 onClick={toggleMenu}
+                locale={locale}
               >
                 <Download />
-                {t("download.text")}
-              </LinkCustom>
-              <LanguageSwitcher />
+                {dict.download.link}
+              </LocalizedLink>
+              <LanguageSwitcher currentLocale={locale} />
             </div>
           </div>
         </div>

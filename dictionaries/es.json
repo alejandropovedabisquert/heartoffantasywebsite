@@ -4,9 +4,6 @@
     "description": "\"Heart of Fantasy\" es un MMORPG de supervivencia con permadeath y un mundo generado proceduralmente que incluye océanos, ríos y montañas.",
     "openGraphImage": "/openGraph.webp"
   },
-  "LocaleSwitcher": {
-    "locale": "{locale, select, es {Español} ca {Català} en {English} ja {日本語} other {Unknown}}"
-  },
   "HeaderNav": {
     "navigation": [
       {
@@ -89,12 +86,12 @@
     }
   ],
   "FooterSection": {
-    "copyright": "Heart of Fantasy © {year} Todos los derechos reservados",
+    "gameName": "Heart of Fantasy ©",
+    "copyright": "Todos los derechos reservados",
     "legalNav": [
       {
         "text": "Política de privacidad",
-        "link": "/privacy-policy",
-        "locale": "es"
+        "link": "/privacy-policy"
       }
     ]
   },
@@ -125,7 +122,7 @@
   },
   "PrivacyPolicySection": {
     "metadata": {
-      "title": "📄 Política de Privacidad | Heart of Fantasy",
+      "title": "Política de Privacidad",
       "description": "Descubre cómo Heart of Fantasy protege tus datos personales y cumple con la normativa de privacidad vigente."
     },
     "title": "📄 Política de Privacidad",
@@ -162,6 +159,10 @@
     ]
   },
   "RegisterForm": {
+    "metadata": {
+      "title": "Regístrate",
+      "description": "¿Listo para adentrarte en Heart of Fantasy? Regístrate gratis para crear tu perfil, interactuar con la comunidad y disfrutar de una experiencia única."
+    },
     "title": "¡Regístrate ahora!",
     "disclaimer": {
       "title": "IMPORTANTE:",
@@ -188,11 +189,14 @@
         "requiredError": "El captcha es obligatorio"
       },
       "conditions": {
-        "label": "He leído y acepto la <a href=\"/privacy-policy\" class=\"underline hover:text-corporative\" target=\"_blank\" rel=\"noopener noreferrer\">Política de Privacidad</a>.",
+        "label": "He leído y acepto la",
+        "cta": "Política de Privacidad",
+        "label_ja": "",
         "requiredError": "Debes aceptar la Política de Privacidad"
       },
       "successMessage": {
-        "text": "Se ha enviado un correo de confirmación al correo {email}. Por favor, revisa tu bandeja de entrada o en tu carpeta de spam para activar tu cuenta."
+        "text_a": "Se ha enviado un correo de confirmación al correo",
+        "text_b": ". Por favor, revisa tu bandeja de entrada o en tu carpeta de spam para activar tu cuenta."
       },
       "usernameExists": {
         "text": "El nombre de usuario ya existe. Por favor, elige otro."
@@ -211,7 +215,7 @@
   },
   "ActivatePage": {
     "metadata": {
-      "title": "Activación de cuenta | Heart of Fantasy",
+      "title": "Activación de cuenta",
       "description": "Activa tu cuenta para Heart of Fantasy y prepárate para explorar un mundo de aventura y peligro."
     },
     "activatingAccount": "Activando cuenta...",
@@ -223,12 +227,6 @@
   },
   "PageNotFound": {
     "title": "404 | No se ha podido encontrar esta página.",
-    "backButton": "Volver al inicio",
-    "locale": "es"
-  },
-  "Error": {
-    "title": "Algo ha salido mal",
-    "description": "Ha ocurrido un error inesperado.",
-    "retry": "Intentar de nuevo"
+    "backButton": "Volver al inicio"
   }
 }

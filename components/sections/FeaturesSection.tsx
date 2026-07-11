@@ -1,5 +1,5 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { getDictionary } from "@/app/[lang]/dictionaries";
 import { Titulo } from "../ui/Titulo";
 import { motion } from "framer-motion";
 
@@ -8,10 +8,15 @@ type featureProps = {
     description: string;
 }
 
-export default function FeaturesSection() {
-    const t = useTranslations('FeaturesSection');
-    const subtitle = t("subtitle");
-    const conclusion = t("conclusion");
+export default function FeaturesSection({
+    dict
+}:{
+    dict: Awaited<ReturnType<typeof getDictionary>>["FeaturesSection"],
+}) {
+    const title = dict.title;
+    const subtitle = dict.subtitle;
+    const conclusion = dict.conclusion;
+    const features = dict.features;
     return (
         <div className="my-24">
             <motion.div
@@ -20,7 +25,7 @@ export default function FeaturesSection() {
                 viewport={{ once: true }}
                 transition={{ duration: .3, ease: "easeOut" }}
             >
-                <Titulo as={"h2"} position="left" className="text-2xl sm:text-4xl font-bold my-4">{t("title")}</Titulo>
+                <Titulo as={"h2"} position="left" className="text-2xl sm:text-4xl font-bold my-4">{title}</Titulo>
             </motion.div>
             {subtitle && (
                 <motion.p
@@ -33,7 +38,7 @@ export default function FeaturesSection() {
             )}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {
-                    t.raw("features").map((feature: featureProps, index: number) => (
+                    features.map((feature: featureProps, index: number) => (
                         <motion.div
                             key={index}
                             className="col-span-1"

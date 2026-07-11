@@ -4,9 +4,6 @@
     "description": "\"Heart of Fantasy\"は、パーマデスと自動生成された世界（海、川、山を含む）を特徴とするサバイバルMMORPGです。",
     "openGraphImage": "/openGraph.webp"
   },
-  "LocaleSwitcher": {
-    "locale": "{locale, select, es {Español} ca {Català} en {English} ja {日本語} other {Unknown}}"
-  },
   "HeaderNav": {
     "navigation": [
       {
@@ -90,12 +87,12 @@
     }
   ],
   "FooterSection": {
-    "copyright": "Heart of Fantasy © {year} 全著作権所有",
+    "gameName": "Heart of Fantasy ©",
+    "copyright": "全著作権所有",
     "legalNav": [
       {
         "text": "プライバシーポリシー",
-        "link": "/プライバシーポリシー",
-        "locale": "ja"
+        "link": "/プライバシーポリシー"
       }
     ]
   },
@@ -126,7 +123,7 @@
   },
   "PrivacyPolicySection": {
     "metadata": {
-      "title": "📄 プライバシーポリシー | Heart of Fantasy",
+      "title": "プライバシーポリシー",
       "description": "Heart of Fantasyがどのように個人データを保護し、現行のプライバシー規制を遵守しているかをご確認ください。"
     },
     "title": "📄 プライバシーポリシー",
@@ -163,6 +160,10 @@
     ]
   },
   "RegisterForm": {
+    "metadata": {
+      "title": "登録",
+      "description": "Heart of Fantasyの世界へ飛び込む準備はできましたか？無料で登録してプロフィールを作成し、コミュニティと交流して、ここだけの特別な体験を楽しみましょう。"
+    },
     "title": "今すぐ登録！",
     "disclaimer": {
       "title": "重要:",
@@ -189,11 +190,14 @@
         "requiredError": "キャプチャは必須です"
       },
       "conditions": {
-        "label": "私は<a href=\"/privacy-policy\" class=\"underline hover:text-corporative\" target=\"_blank\" rel=\"noopener noreferrer\">プライバシーポリシー</a>を読み、同意します。",
+        "label": "私は",
+        "cta": "プライバシーポリシーt",
+        "label_ja": "を読み、同意します。",
         "requiredError": "プライバシーポリシーに同意する必要があります"
       },
       "successMessage": {
-        "text": "確認メールを{email}に送信しました。受信トレイまたは迷惑メールフォルダを確認して、アカウントを有効化してください。"
+        "text_a": "確認メールを",
+        "text_b": "に送信しました。受信トレイまたは迷惑メールフォルダを確認して、アカウントを有効化してください。"
       },
       "usernameExists": {
         "text": "ユーザー名は既に存在します。別のものを選んでください。"
@@ -212,7 +216,7 @@
   },
   "ActivatePage": {
     "metadata": {
-      "title": "アカウントの有効化 | Heart of Fantasy",
+      "title": "アカウントの有効化",
       "description": "Heart of Fantasyのアカウントを有効化し、冒険と危険の世界を探索する準備をしましょう。"
     },
     "activatingAccount": "アカウントを有効化しています...",
@@ -224,12 +228,6 @@
   },
   "PageNotFound": {
     "title": "404 | ページが見つかりませんでした。",
-    "backButton": "ホームに戻る",
-    "locale": "ja"
-  },
-  "Error": {
-    "title": "エラーが発生しました",
-    "description": "予期しないエラーが発生しました。",
-    "retry": "もう一度試す"
+    "backButton": "ホームに戻る"
   }
 }

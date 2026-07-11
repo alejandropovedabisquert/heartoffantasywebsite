@@ -253,7 +253,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-body#privacy-policy main ul, body#legal-notice main ul{
+body#privacy-policy main ul{
   list-style: disc;
   padding-left: 25px;
 }
@@ -265,7 +265,7 @@ body#privacy-policy main ul, body#legal-notice main ul{
   align-items: center;
   flex-direction: column;
   position: relative;
-  z-index: 99;
+  z-index: 1;
 }
 #bodyNotFound h1{
   font-size: 34px;

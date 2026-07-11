@@ -1,6 +1,6 @@
 "use client"
 import YoutubeResponse, { Video } from "@/types/youtube";
-import { getYoutubeVideos } from "@/lib/api/getYoutubeVideos";
+import { getYoutubeVideos } from "@/lib/api/youtube";
 import { useEffect, useState } from "react";
 import SkeletonGridVideo from "../skeleton/SkeletonGridVideo";
 import Image from "next/image";

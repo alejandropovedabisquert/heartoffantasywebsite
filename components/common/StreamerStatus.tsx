@@ -1,26 +1,27 @@
 "use client"
-import { checkIfStreamerIsLive } from "@/lib/api/apiTwitch";
-import { useTranslations } from "next-intl";
+import { checkIfStreamerIsLive } from "@/lib/api/twitch";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { BookmarkX } from "lucide-react";
 import { TwitchStreamResponse } from "@/types/twitch";
+import { getDictionary } from "@/app/[lang]/dictionaries";
 
-type nameProps = {
-    streamerName: string,
-}
-
-export default function StreamerStatus(name: nameProps) {
+export default function StreamerStatus({
+    dict,
+    streamer
+}:{
+    dict:  Awaited<ReturnType<typeof getDictionary>>["TwitchPopup"],
+    streamer: string
+}) {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [isPopupVisible, setIsPopupVisible] = useState<boolean>(true);
     const [data, setData] = useState<TwitchStreamResponse>();
-    const t = useTranslations("TwitchPopup");
 
     useEffect(() => {
         const fetchStreamerStatus = async () => {
             try {
-                const data = await checkIfStreamerIsLive(name.streamerName);
+                const data = await checkIfStreamerIsLive(streamer);
                 setData(data);
             } catch (error) {
                 console.error('Error fetching streamer status:', error);
@@ -31,7 +32,7 @@ export default function StreamerStatus(name: nameProps) {
 
         fetchStreamerStatus();
 
-    }, [name.streamerName]);
+    }, [streamer]);
 
     const handleClosePopup = () => {
         setIsPopupVisible(false); // Ocultar el popup
@@ -60,7 +61,7 @@ export default function StreamerStatus(name: nameProps) {
                                 </div>
                                 <div className="py-4 pr-4 hidden md:block">
                                     <h3 className="font-bold">
-                                        {data?.data[0].user_name} {t("online")}
+                                        {data?.data[0].user_name} {dict.online}
                                     </h3>
                                     <h4 className="truncate max-w-64">
                                         {data?.data[0].title}

@@ -3,16 +3,27 @@ import clsx from "clsx";
 import Image, { ImageProps } from "next/image";
 import { useEffect, useState } from "react";
 import ModalComponent from "../ui/ModalComponent";
-import { useTranslations } from "next-intl";
 import { useBodyScrollLock } from "@/lib/hooks/useBodyScrollLock";
 import { motion } from "framer-motion";
+import { getDictionary } from "@/app/[lang]/dictionaries";
 
-export default function GallerySection() {
+export default function GallerySection({
+    dict
+}:{
+    dict: Awaited<ReturnType<typeof getDictionary>>["GallerySection"],
+}) {
     const [selectedImage, setSelectedImage] = useState<ImageProps | null>(null);
-    const t = useTranslations();
-    const images = t.raw("GallerySection");
+    const images = dict;
 
     useBodyScrollLock(!!selectedImage);
+
+        const handleOnClicked = (src: string, index: number) => {
+        setSelectedImage(images[index]);
+    };
+
+    const handleCloseModal = () => {
+        setSelectedImage(null);
+    };
 
     useEffect(() => {
         const keyDownHandler = (event: KeyboardEvent) => {
@@ -26,14 +37,6 @@ export default function GallerySection() {
             document.removeEventListener("keydown", keyDownHandler);
         };
     }, []);
-
-    const handleOnClicked = (src: string, index: number) => {
-        setSelectedImage(images[index]);
-    };
-
-    const handleCloseModal = () => {
-        setSelectedImage(null);
-    };
 
     const modalStyles = clsx(
         "w-screen h-screen fixed left-0 top-0 opacity-0 transition-all duration-300",

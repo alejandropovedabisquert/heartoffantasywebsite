@@ -1,11 +1,14 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { getDictionary } from "@/app/[lang]/dictionaries";
 import { Titulo } from "../ui/Titulo";
 import GridVideo from "./GridVideo";
 import { motion } from "framer-motion";
 
-export default function VideosSection() {
-    const t = useTranslations('VideosSection');
+export default function VideosSection({
+    dict
+}:{
+    dict: Awaited<ReturnType<typeof getDictionary>>["VideosSection"],
+}) {
     return (
         <div className="relative my-24">
             <motion.div
@@ -14,7 +17,7 @@ export default function VideosSection() {
                 viewport={{ once: true }}
                 transition={{ duration: .3, ease: "easeOut" }}
             >
-                <Titulo as={"h2"} position="left" className="text-2xl sm:text-4xl font-bold my-4">{t("title")}</Titulo>
+                <Titulo as={"h2"} position="left" className="text-2xl sm:text-4xl font-bold my-4">{dict.title}</Titulo>
             </motion.div>
             <GridVideo/>
         </div>

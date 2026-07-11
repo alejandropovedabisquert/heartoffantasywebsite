@@ -8,14 +8,14 @@ export default function SliderSection() {
     );
     return (
         <div className={`min-h-200 relative ${gradientStyles}`}>
-            <div className="absolute top-0 min-h-200 w-full bg-[url(/bg_principal.webp)] bg-center bg-cover bg-no-repeat" />
+            <div className="absolute top-0 min-h-200 w-full bg-[url(/bg_principal.webp)] bg-center bg-cover bg-no-repeat"/>
             <div 
             className={clsx(
                 "absolute left-1/2 top-1/2 ease-in -translate-y-1/2 -translate-x-1/2 z-5",
                 "after:content-[''] after:absolute after:inset-1 after:bg-radial after:from-black after:from-20% after:to-transparent after:rounded-full after:blur-xl after:w-120 after:h-120 after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2"
             )}>
                 <div className="w-50 h-50 sm:w-75 sm:h-75 relative z-10">
-                    <Image src={"/logo.webp"} fill alt="logo" priority={true} />
+                    <Image src={"/logo.webp"} fill alt="logo" sizes="(width >= 40rem) 300px" priority={true} />
                 </div>
             </div>
             {/* <video

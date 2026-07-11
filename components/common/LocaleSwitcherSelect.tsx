@@ -1,18 +1,27 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
-import { routing } from "@/i18n/routing";
 import { Globe } from "lucide-react";
-import { usePathname } from "@/i18n/navigation";
+import { Locale, locales, pathnames } from "@/lib/routes";
+import { usePathname, useRouter } from "next/navigation";
 
-export default function LocaleSwitcher() {
+export default function LocaleSwitcher({
+  currentLocale,
+}: {
+  currentLocale: string;
+}) {
   const [open, setOpen] = useState<boolean>(false);
   const heightRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState<number>(0);
-  const t = useTranslations("LocaleSwitcher");
-  const currentLocale = useLocale();
   const pathname = usePathname();
+  const router = useRouter();
+
+  const languageLabels = {
+    en: "English",
+    es: "Español",
+    ca: "Català",
+    ja: "日本語",
+  };
 
   // Recalcular altura cada vez que se abre el dropdown
   const recalculateHeight = useCallback(() => {
@@ -47,10 +56,43 @@ export default function LocaleSwitcher() {
   }, [open, recalculateHeight]);
 
   const handleLocaleChange = (newLocale: string) => {
-    const newUrl = `/${newLocale}${pathname}`;
-    window.location.href = newUrl;
-  };
+    const decodedPathname = decodeURI(pathname);
+    const parts = decodedPathname.split("/");
+    const maybeLocale = parts[1];
+    
+    const isLocalePresent = locales.includes(maybeLocale as Locale);
 
+    let currentPathWithoutLocale = isLocalePresent
+      ? `/${parts.slice(2).join("/")}`
+      : decodedPathname;
+
+    if (currentPathWithoutLocale !== "/" && currentPathWithoutLocale.endsWith("/")) {
+      currentPathWithoutLocale = currentPathWithoutLocale.slice(0, -1);
+    }
+    if (currentPathWithoutLocale === "") {
+      currentPathWithoutLocale = "/";
+    }
+
+    let internalPath = currentPathWithoutLocale;
+    for (const [key, translations] of Object.entries(pathnames)) {
+      if (
+        translations[currentLocale as keyof typeof translations] ===
+        currentPathWithoutLocale
+      ) {
+        internalPath = key;
+        break;
+      }
+    }
+
+    const newTranslatedPath = pathnames[internalPath as keyof typeof pathnames]?.[newLocale as Locale] || internalPath;
+
+    const newUrl = `/${newLocale}${newTranslatedPath}`;
+    
+    const finalUrl = newUrl.replace(/\/+/g, '/');
+
+    router.push(finalUrl);
+    router.refresh();
+  };
   return (
     <div className="relative">
       <div
@@ -58,7 +100,7 @@ export default function LocaleSwitcher() {
         onClick={handleToggle}
       >
         <Globe />
-        {t("locale", { locale: currentLocale })}
+        {languageLabels[currentLocale as Locale] || currentLocale.toUpperCase()}
       </div>
 
       <div
@@ -66,7 +108,7 @@ export default function LocaleSwitcher() {
         className={`text-center overflow-hidden bg-corporative transition-all absolute left-0 right-0 z-50`}
         style={open ? { height: `${height}px` } : { height: 0 }}
       >
-        {routing.locales.map(
+        {locales.map(
           (cur) =>
             cur !== currentLocale && (
               <button
@@ -74,7 +116,7 @@ export default function LocaleSwitcher() {
                 onClick={() => handleLocaleChange(cur)}
                 className="p-2 cursor-pointer block w-full bg-corporative transition-all hover:bg-white hover:text-black"
               >
-                {t("locale", { locale: cur })}
+                {languageLabels[cur] || cur.toUpperCase()}
               </button>
             ),
         )}

@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       en: `${baseUrl}/privacy-policy`,
       es: `${baseUrl}/es/politica-privacidad`,
       ja: `${baseUrl}/ja/プライバシーポリシー`,
-      ca: `${baseUrl}/ca/politica-de-privacitat`
+      ca: `${baseUrl}/ca/politica-privacitat`
     },
   }
 
@@ -109,7 +109,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/ca/politica-de-privacitat`,
+      url: `${baseUrl}/ca/politica-privacitat`,
       lastModified: new Date(),
       alternates: alternatesPrivacy,
       changeFrequency: 'yearly',

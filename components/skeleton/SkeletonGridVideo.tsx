@@ -15,10 +15,10 @@ export default function SkeletonGridVideo({ length = 2 }: { length?: number }) {
           viewport={{ once: true }}
           transition={{ duration: .3, ease: "easeOut", delay: (index + 1) * 0.1 }}
         >
-          <div className="relative overflow-hidden w-full h-[200px] animate-pulse bg-slate-300">
+          <div className="relative overflow-hidden w-full h-50 animate-pulse bg-slate-300">
             <div className="absolute w-full h-full bg-black opacity-40 z-10 group-hover/image:opacity-20 transition-all"></div>
-            <div className="mt-4 ml-4 w-[80%] h-[10px] animate-pulse bg-slate-500 rounded-md"></div>
-            <div className="mt-4 ml-4 w-[70%] h-[10px] animate-pulse bg-slate-500 rounded-md"></div>
+            <div className="mt-4 ml-4 w-[80%] h-2.5 animate-pulse bg-slate-500 rounded-md"></div>
+            <div className="mt-4 ml-4 w-[70%] h-2.5 animate-pulse bg-slate-500 rounded-md"></div>
           </div>
         </motion.div>
       ))}

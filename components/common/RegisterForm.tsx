@@ -4,12 +4,14 @@ import HCaptcha from "@hcaptcha/react-hcaptcha";
 import Input from "@/components/ui/Input";
 import { Titulo } from "@/components/ui/Titulo";
 import clsx from "clsx";
-import { useLocale, useTranslations } from "next-intl";
-import { validateRegisterForm } from "@/lib/formValidations/registerValidation";
-import { validateCaptcha } from "@/lib/formValidations/captchaValidation";
+import { validateRegisterForm } from "@/lib/validations/register";
+import { validateCaptcha } from "@/lib/validations/captcha";
 import { useRegister } from "@/lib/hooks/useRegister";
 import { Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
+import { getDictionary } from "@/app/[lang]/dictionaries";
+import LocalizedLink from "../ui/LocalizedLink";
+import { Locale } from "@/lib/routes";
 
 const API_ERRORS = {
   USERNAME_EXISTS: "Username already exists.",
@@ -22,8 +24,13 @@ export type FormErrors = {
   success?: boolean;
 };
 // TODO: PENSAR EN UTILIZAR EL CAPTCHA DE CLOUDFARE QUE ES MÁS LIGERO Y NO REQUIERE CARGAR UN SCRIPT EXTERNO, ADEMÁS DE SER MÁS PERSONALIZABLE
-export default function RegisterForm() {
-  const t = useTranslations("RegisterForm");
+export default function RegisterForm({
+  dict,
+  locale
+}: {
+  dict: Awaited<ReturnType<typeof getDictionary>>["RegisterForm"];
+  locale: Locale
+}) {;
   const ref = useRef<HTMLFormElement>(null);
   const captchaRef = useRef<HCaptcha | null>(null);
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
@@ -36,7 +43,6 @@ export default function RegisterForm() {
   }>({});
 
   const { register, isLoading, response } = useRegister();
-  const locale = useLocale();
 
   const onCaptchaChange = (token: string) => {
     setCaptchaToken(token);
@@ -45,10 +51,10 @@ export default function RegisterForm() {
   const onCaptchaExpire = () => setCaptchaToken(null);
 
   const validateForm = () => {
-    const formErrors = validateRegisterForm({ username, email, password }, t);
-    const captchaError = validateCaptcha(captchaToken || "", t);
+    const formErrors = validateRegisterForm({ username, email, password }, dict);
+    const captchaError = validateCaptcha(captchaToken || "", dict);
     const termsError = !acceptedTerms && {
-      terms: { message: t("inputs.conditions.requiredError"), success: false },
+      terms: { message: dict.inputs.conditions.requiredError, success: false },
     };
     const newErrors = { ...formErrors, ...captchaError, ...termsError };
     setErrors(newErrors);
@@ -81,13 +87,13 @@ export default function RegisterForm() {
       )}
     >
       {response?.message === API_ERRORS.USERNAME_EXISTS ? (
-        <p>{t("inputs.usernameExists.text")}</p>
+        <p>{dict.inputs.usernameExists.text}</p>
       ) : response?.message === API_ERRORS.EMAIL_EXISTS ? (
-        <p>{t("inputs.emailExists.text")}</p>
+        <p>{dict.inputs.emailExists.text}</p>
       ) : response?.success === true ? (
-        <p>{t("inputs.successMessage.text", { email: email || "undefined" })}</p>
+        <p>{dict.inputs.successMessage.text_a} {email || "undefined"} {dict.inputs.successMessage.text_b}</p>
       ) : response?.message === API_ERRORS.DATA_ERROR ? (
-        <p>{t("inputs.errorMessage.text")}</p>
+        <p>{dict.inputs.errorMessage.text}</p>
       ) : (
         <p>{response?.message}</p>
       )}
@@ -106,7 +112,7 @@ export default function RegisterForm() {
           position="center"
           className="text-2xl sm:text-4xl font-bold my-4"
         >
-          {t("title")}
+          {dict.title}
           <span className="text-corporative">#</span>
         </Titulo>
       </motion.div>
@@ -118,10 +124,10 @@ export default function RegisterForm() {
           viewport={{ once: true }}
           transition={{ duration: .3, ease: "easeOut" }}
         >
-          <h3 className="font-bold mb-2">{t("disclaimer.title")}</h3>
+          <h3 className="font-bold mb-2">{dict.disclaimer.title}</h3>
           <p
             className="text-base"
-            dangerouslySetInnerHTML={{ __html: t.raw("disclaimer.text") }}
+            dangerouslySetInnerHTML={{ __html: dict.disclaimer.text }}
           />
         </motion.div>
         <form ref={ref} onSubmit={handleFormSubmit}>
@@ -134,7 +140,7 @@ export default function RegisterForm() {
             <Input
               id="username"
               type="text"
-              placeholder={t("inputs.username.placeholder")}
+              placeholder={dict.inputs.username.placeholder}
               value={username}
               onChange={(e) => {
                 setUsername(e.target.value);
@@ -155,7 +161,7 @@ export default function RegisterForm() {
             <Input
               id="email"
               type="text"
-              placeholder={t("inputs.email.placeholder")}
+              placeholder={dict.inputs.email.placeholder}
               value={email}
               onChange={(e) => {
                 setEmail(e.target.value);
@@ -176,7 +182,7 @@ export default function RegisterForm() {
             <Input
               id="password"
               type="password"
-              placeholder={t("inputs.password.placeholder")}
+              placeholder={dict.inputs.password.placeholder}
               value={password}
               onChange={(e) => {
                 setPassword(e.target.value);
@@ -205,12 +211,9 @@ export default function RegisterForm() {
                 }}
               />
               {/* Content is from trusted i18n translation files, not user input */}
-              <span
-                className="text-base"
-                dangerouslySetInnerHTML={{
-                  __html: t.raw("inputs.conditions.label"),
-                }}
-              />
+              <span className="text-base">
+                {dict.inputs.conditions.label} <LocalizedLink className="underline" target="_blank" rel="noopener noreferrer" href="/privacy-policy"locale={locale}>privacy-policy</LocalizedLink>{dict.inputs.conditions.label_ja ? (` ${dict.inputs.conditions.label_ja}`) : (".")}
+              </span>
             </label>
             {errors.terms && (
               <div className="text-red-600"><p>{errors.terms.message}</p></div>
@@ -250,10 +253,10 @@ export default function RegisterForm() {
                   {isLoading ? (
                     <>
                       <Loader2 className="animate-spin" />
-                      {t("inputs.submit.loading")}
+                      {dict.inputs.submit.loading}
                     </>
                   ) : (
-                    t("inputs.submit.placeholder")
+                    dict.inputs.submit.placeholder
                   )}
                 </button>
               </div>

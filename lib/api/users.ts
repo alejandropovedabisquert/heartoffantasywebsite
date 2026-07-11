@@ -1,4 +1,4 @@
-import { fetchApi } from "./connectApi";
+import { fetchApi } from "./apiClient";
 
 const ENDPOINTBASE = '/User';
 

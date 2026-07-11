@@ -4,9 +4,6 @@
     "description": "\"Heart of Fantasy\" és un MMORPG de supervivència amb permadeath i un món generat de manera procedimental que inclou oceans, rius i muntanyes.",
     "openGraphImage": "/openGraph.webp"
   },
-  "LocaleSwitcher": {
-    "locale": "{locale, select, es {Español} ca {Català} en {English} ja {日本語} other {Unknown}}"
-  },
   "HeaderNav": {
     "navigation": [
       {
@@ -15,7 +12,7 @@
       },
       {
         "text": "Registrar-se",
-        "link": "/registre"
+        "link": "/register"
       }
     ],
     "download": {
@@ -89,12 +86,12 @@
     }
   ],
   "FooterSection": {
-    "copyright": "Heart of Fantasy © {year} Tots els drets reservats",
+    "gameName": "Heart of Fantasy ©",
+    "copyright": "Tots els drets reservats",
     "legalNav": [
       {
         "text": "Política de privacitat",
-        "link": "/privacy-policy",
-        "locale": "ca"
+        "link": "/privacy-policy"
       }
     ]
   },
@@ -125,7 +122,7 @@
   },
   "PrivacyPolicySection": {
     "metadata": {
-      "title": "📄 Política de Privacitat | Heart of Fantasy",
+      "title": "Política de Privacitat",
       "description": "Descobreix com Heart of Fantasy protegeix les teves dades personals i compleix amb la normativa de privacitat vigent."
     },
     "title": "📄 Política de Privacitat",
@@ -162,6 +159,10 @@
     ]
   },
   "RegisterForm": {
+    "metadata": {
+      "title": "Registra't",
+      "description": "A punt per endinsar-te a Heart of Fantasy? Registra't gratuïtament per crear el teu perfil, interactuar amb la comunitat i gaudir d'una experiència única."
+    },
     "title": "Registra't ara!",
     "disclaimer": {
       "title": "IMPORTANT:",
@@ -188,11 +189,14 @@
         "requiredError": "El captcha és obligatori"
       },
       "conditions": {
-        "label": "He llegit i accepto la <a href=\"/privacy-policy\" class=\"underline hover:text-corporative\" target=\"_blank\" rel=\"noopener noreferrer\">Política de Privacitat</a>.",
+        "label": "He llegit i accepto la",
+        "cta": "Política de Privacitat",
+        "label_ja": "",
         "requiredError": "Has d'acceptar la Política de Privacitat"
       },
       "successMessage": {
-        "text": "S'ha enviat un correu de confirmació al correu {email}. Si us plau, revisa la teva safata d'entrada o la carpeta de correu brossa per activar el teu compte."
+        "text_a": "S'ha enviat un correu de confirmació al correu",
+        "text_b": ". Si us plau, revisa la teva safata d'entrada o la carpeta de correu brossa per activar el teu compte."
       },
       "usernameExists": {
         "text": "El nom d'usuari ja existeix. Si us plau, tria'n un altre."
@@ -211,7 +215,7 @@
   },
   "ActivatePage": {
     "metadata": {
-      "title": "Activació de compte | Heart of Fantasy",
+      "title": "Activació de compte",
       "description": "Activa el teu compte per a Heart of Fantasy i prepara't per explorar un món d'aventura i perill."
     },
     "activatingAccount": "Activant compte...",
@@ -223,12 +227,6 @@
   },
   "PageNotFound": {
     "title": "404 | No s'ha pogut trobar aquesta pàgina.",
-    "backButton": "Tornar a l'inici",
-    "locale": "ca"
-  },
-  "Error": {
-    "title": "Alguna cosa ha sortit malament",
-    "description": "Ha ocorregut un error inesperat.",
-    "retry": "Tornar a intentar"
+    "backButton": "Tornar a l'inici"
   }
 }
