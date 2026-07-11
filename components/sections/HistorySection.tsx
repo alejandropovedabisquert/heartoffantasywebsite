@@ -46,8 +46,9 @@ export default function HistorySection({
                     {/* <HeartV2 /> */}
                     <Image
                         src={"/heart.webp"}
-                        width={500}
-                        height={500}
+                        className="image-rendering-pixelated"
+                        width={800}
+                        height={800}
                         alt="logo"
                         priority={true}
                     />

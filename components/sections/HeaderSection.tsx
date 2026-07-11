@@ -31,12 +31,13 @@ export default function HeaderSection({
             <LocalizedLink
               href="/"
               locale={locale}
-              className="text-2xl font-bold transition-all hover:text-corporative"
+              className="text-2xl w-30 block font-bold transition-all hover:text-corporative"
             >
               <Image
                 src={"/heart.webp"}
-                width={120}
-                height={120}
+                className="image-rendering-pixelated"
+                width={500}
+                height={500}
                 alt="logo"
                 priority={true}
               />
