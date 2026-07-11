@@ -1,6 +1,7 @@
 "use client";
 import { Titulo } from "../ui/Titulo";
 import HeartV2 from "../ui/HeartV2";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 
@@ -40,9 +41,16 @@ export default function HistorySection({
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: .3, ease: "easeOut", delay: .2 }}
-                    className="col-span-6 md:col-span-2 w-62.5 h-62.5 m-auto"
+                    className="col-span-6 md:col-span-2 w-90 h-62.5 m-auto"
                 >
-                    <HeartV2 />
+                    {/* <HeartV2 /> */}
+                    <Image
+                        src={"/heart.webp"}
+                        width={500}
+                        height={500}
+                        alt="logo"
+                        priority={true}
+                    />
                 </motion.div>
             </motion.div>
         </div>

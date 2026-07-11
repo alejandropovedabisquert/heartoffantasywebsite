@@ -34,9 +34,9 @@ export default function HeaderSection({
               className="text-2xl font-bold transition-all hover:text-corporative"
             >
               <Image
-                src={"/heart.png"}
-                width={70}
-                height={70}
+                src={"/heart.webp"}
+                width={120}
+                height={120}
                 alt="logo"
                 priority={true}
               />
