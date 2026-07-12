@@ -78,9 +78,10 @@ export default function RegisterForm({
     formData.append("password", password);
 
     await register(formData);
+
+    captchaRef.current?.reset();
   };
 
-  // Restauramos tu función original de renderizado con todas las traducciones
   const renderServerResponse = (
     response: FormErrors | undefined | null,
     email?: string
@@ -182,7 +183,7 @@ export default function RegisterForm({
 
           <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} className="mt-4">
             <div className="flex gap-4 flex-wrap items-center">
-              <button type="submit" className="px-6 py-4 text-lg flex items-center justify-center gap-2 bg-corporative text-white">
+              <button type="submit" className="cursor-pointer px-6 py-4 text-lg flex items-center justify-center gap-2 bg-corporative text-white transition-all hover:bg-white hover:text-black">
                 {isLoading ? <><Loader2 className="animate-spin" /> {dict.inputs.submit.loading}</> : dict.inputs.submit.placeholder}
               </button>
               <div>{response?.success === false && renderServerResponse(response)}</div>
