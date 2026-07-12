@@ -8,6 +8,12 @@ export default function SliderSection() {
     );
     return (
         <div className={`min-h-200 relative ${gradientStyles}`}>
+            <link 
+                rel="preload" 
+                href="/bg_principal.webp" 
+                as="image" 
+                fetchPriority="high"
+            />
             <div className="absolute top-0 min-h-200 w-full bg-[url(/bg_principal.webp)] bg-center bg-cover bg-no-repeat"/>
             <div 
             className={clsx(

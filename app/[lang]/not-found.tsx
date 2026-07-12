@@ -1,6 +1,6 @@
 import FirefliesEffect from "@/components/common/FirefliesEffect";
-import HeartV2 from "@/components/ui/HeartV2";
 import Link from "next/link";
+import Image from "next/image";
 import { getDictionary } from "./dictionaries";
 import { headers } from "next/headers";
 import { hasLocale, Locale } from "@/lib/routes";
@@ -18,7 +18,14 @@ export default async function NotFound() {
   return (
     <div>
       <div id="bodyNotFound">
-        <HeartV2 />
+        <Image
+          src={"/heart.webp"}
+          className="image-rendering-pixelated"
+          width={800}
+          height={800}
+          alt="logo"
+          priority={true}
+        />
         <h1>{title}</h1>
         <Link href={`/${lang}`}>{backButton}</Link>
       </div>

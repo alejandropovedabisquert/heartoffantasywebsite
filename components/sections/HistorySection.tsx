@@ -1,6 +1,5 @@
 "use client";
 import { Titulo } from "../ui/Titulo";
-import HeartV2 from "../ui/HeartV2";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { getDictionary } from "@/app/[lang]/dictionaries";
