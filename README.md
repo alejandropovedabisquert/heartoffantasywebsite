@@ -10,12 +10,12 @@ Este es un proyecto en constante desarrollo, ya que el videojuego también lo es
 
 ### Características Principales del Sitio
 
-- 🌐 **Multiidioma**: Soporte completo para Español, Inglés y Japonés
+- 🌐 **Multiidioma**: Soporte completo para Español, Catalán, Inglés y Japonés
 - 📱 **Diseño Responsive**: Optimizado para todos los dispositivos
 - ✨ **Animaciones**: Efectos visuales con Motion y efectos personalizados de luciérnagas
-- 🔒 **Formulario de Registro**: Incluye validación y protección con hCaptcha
+- 🔒 **Formulario de Registro**: Incluye validación y protección con cloudflare
 - 🎨 **UI/UX Moderna**: Diseño inmersivo con gradientes y efectos visuales temáticos
-- 📸 **Galería de Imágenes**:  Visualización de capturas del juego con modal interactivo
+- 📸 **Galería de Imágenes**:  Visualización de capturas del juego con modal
 - 🎥 **Sección de Devblogs**: Contenido actualizado sobre el desarrollo del juego
 
 ## 🚀 Tecnologías
