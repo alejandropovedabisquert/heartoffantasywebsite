@@ -1,7 +1,7 @@
 import clsx from "clsx";
 
 const Input: React.FC<{
-  id: string;
+  id?: string;
   placeholder?: string;
   type?: string;
   name?: string;

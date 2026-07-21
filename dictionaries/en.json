@@ -92,6 +92,10 @@
       {
         "text": "Privacy Policy",
         "link": "/privacy-policy"
+      },
+      {
+        "text": "Cookie Policy",
+        "link": "/cookies"
       }
     ]
   },
@@ -228,5 +232,57 @@
   "PageNotFound": {
     "title": "404 | This page could not be found.",
     "backButton": "Back to home"
+  },
+  "CookieConsent": {
+    "banner": {
+      "text": "We use our own cookies to improve your experience and remember your preferences (such as language). You can accept all cookies, reject them, or configure your preferences.",
+      "buttons": {
+        "configure": "Configure",
+        "reject": "Reject",
+        "acceptAll": "Accept all"
+      }
+    },
+    "modal": {
+      "title": "Cookie Settings",
+      "description": "Review and adjust your preferences. Essential cookies cannot be disabled as they are necessary for the website to function.",
+      "sections": {
+        "essential": {
+          "title": "Strictly Necessary",
+          "text": "Necessary for the website to function (security, network). They cannot be disabled."
+        },
+        "preferences": {
+          "title": "Preferences / Functionality",
+          "text": "They allow us to remember choices that change the way the website behaves, such as your preferred language to redirect you automatically."
+        }
+      },
+      "buttons": {
+        "cancel": "Cancel",
+        "save": "Save preferences"
+      }
+    }
+  },
+  "CookiePolicy": {
+    "metadata": {
+      "title": "Cookie Policy",
+      "description": "Read the Heart of Fantasy Cookie Policy. Learn what cookies we use, their purpose, and how you can manage your preferences to improve your experience on our website."
+    },
+    "title": "📄 Cookie Policy",
+    "update": "<strong>Last update:</strong> [07/21/2026]",
+    "purposes": {
+      "title": "Types of cookies we use and their purpose",
+      "essential": {
+        "title": "1. Strictly Necessary Cookies",
+        "description": "These are essential for the website to function properly. They allow navigation on the page, traffic control, user session identification, and ensure site security. Without these cookies, the website cannot function. Being essential, they do not require user consent."
+      },
+      "preferences": {
+        "title": "2. Preferences or Personalization Cookies",
+        "description": "These allow us to remember information so that the user accesses the service with certain characteristics that can differentiate their experience from that of other users. In our case, we use them exclusively to remember the user's preferred language (lang) and load the interface directly in that language on future visits."
+      }
+    },
+    "revokeConsent": {
+      "title": "Revoking consent",
+      "text": "You can withdraw or modify your consent at any time. To do so, click on the 'Cookie Settings' button located below this text block to reopen the preferences panel. You can also manage, restrict, or block cookies at any time from your browser settings.",
+      "buttonConfCookies": "Cookie Settings"
+    }
   }
 }

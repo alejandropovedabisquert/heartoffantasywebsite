@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Globe } from "lucide-react";
 import { Locale, locales, pathnames } from "@/lib/routes";
 import { usePathname, useRouter } from "next/navigation";
+import { getCookieAction, setCookieAction } from "@/lib/actions/cookiesActions";
 
 export default function LocaleSwitcher({
   currentLocale,
@@ -55,12 +56,24 @@ export default function LocaleSwitcher({
     }
   }, [open, recalculateHeight]);
 
-  const handleLocaleChange = (newLocale: string) => {
+  const handleLocaleChange = async (newLocale: Locale) => {
     const decodedPathname = decodeURI(pathname);
     const parts = decodedPathname.split("/");
     const maybeLocale = parts[1];
     
     const isLocalePresent = locales.includes(maybeLocale as Locale);
+    const consentItem = await getCookieAction({name: "cookie-consent"});
+
+    if (consentItem) {
+      try {
+        const consent = JSON.parse(decodeURIComponent(consentItem));
+        if (consent.preferences) {
+          await setCookieAction({name: "lang", data: newLocale});
+        }
+      } catch (error) {
+        console.error("Error parseando las preferencias de cookies:", error);
+      }
+    }
 
     let currentPathWithoutLocale = isLocalePresent
       ? `/${parts.slice(2).join("/")}`
@@ -91,7 +104,6 @@ export default function LocaleSwitcher({
     const finalUrl = newUrl.replace(/\/+/g, '/');
 
     router.push(finalUrl);
-    router.refresh();
   };
   return (
     <div className="relative">

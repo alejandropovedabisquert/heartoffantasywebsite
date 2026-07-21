@@ -6,7 +6,7 @@ import BackButton from "./BackButton";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { Locale } from "@/lib/routes";
 
-export default function GenericPage({
+export default function PrivacyPolicyContent({
   dict,
   locale
 }: {
@@ -33,7 +33,7 @@ export default function GenericPage({
         transition={{ duration: 0.3, ease: "easeOut", delay: 0.1 }}
       >
         <Titulo
-          as={"h2"}
+          as={"h1"}
           position="left"
           className="text-3xl sm:text-4xl font-bold mt-10"
         >
@@ -60,7 +60,7 @@ export default function GenericPage({
             transition={{
               duration: 0.3,
               ease: "easeOut",
-              delay: 0.3 + index * 0.1,
+              delay: 0.3,
             }}
           >
             <h3 className="font-bold text-2xl">{feature.title}</h3>

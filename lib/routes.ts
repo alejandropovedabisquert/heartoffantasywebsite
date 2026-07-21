@@ -27,10 +27,16 @@ export const pathnames = {
     ca: "/activate",
     ja: "/activate",
   },
+  "/cookies": {
+    en: "/cookies",
+    es: "/cookies",
+    ca: "/cookies",
+    ja: "/cookies",
+  }
 } as const;
 
 export type Locale = (typeof locales)[number]
- 
+
 export function hasLocale(locale: string): locale is Locale {
   return locales.includes(locale as Locale);
 }

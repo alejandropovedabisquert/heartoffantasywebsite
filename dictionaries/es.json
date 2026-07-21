@@ -92,6 +92,10 @@
       {
         "text": "Política de privacidad",
         "link": "/privacy-policy"
+      },      
+      {
+        "text": "Política de Cookies",
+        "link": "/cookies"
       }
     ]
   },
@@ -228,5 +232,57 @@
   "PageNotFound": {
     "title": "404 | No se ha podido encontrar esta página.",
     "backButton": "Volver al inicio"
+  },
+  "CookieConsent": {
+    "banner": {
+      "text": "Utilizamos cookies propias para mejorar tu experiencia y recordar tus preferencias (como el idioma). Puedes aceptar todas las cookies, rechazarlas o configurar tus preferencias.",
+      "buttons": {
+        "configure": "Configurar",
+        "reject": "Rechazar",
+        "acceptAll": "Aceptar todas"
+      }
+    },
+    "modal": {
+      "title": "Configuración de Cookies",
+      "description": "Revisa y ajusta tus preferencias. Las cookies esenciales no se pueden desactivar ya que son necesarias para el funcionamiento de la web.",
+      "sections": {
+        "essential": {
+          "title": "Estrictamente Necesarias",
+          "text": "Necesarias para que la web funcione (seguridad, red). No se pueden desactivar."
+        },
+        "preferences": {
+          "title": "Preferencias / Funcionalidad",
+          "text": "Permiten recordar elecciones que cambian el comportamiento de la web, como tu idioma preferido para redirigirte automáticamente."
+        }
+      },
+      "buttons": {
+        "cancel": "Cancelar",
+        "save": "Guardar preferencias"
+      }
+    }
+  },
+  "CookiePolicy": {
+    "metadata": {
+      "title": "Política de Cookies",
+      "description": "Consulta la Política de Cookies de Heart of Fantasy. Descubre qué cookies utilizamos, su propósito y cómo puedes gestionar tus preferencias para mejorar tu experiencia en nuestra web."
+    },
+    "purposes": {
+      "title": "Tipos de cookies que utilizamos y su propósito",
+      "essential": {
+        "title": "1. Cookies Estrictamente Necesarias",
+        "description": "Son aquellas imprescindibles para que el sitio web funcione correctamente. Permiten la navegación por la página, controlar el tráfico, identificar la sesión de usuario y garantizar la seguridad del sitio. Sin estas cookies, la web no puede funcionar. Al ser esenciales, no requieren el consentimiento del usuario."
+      },
+      "preferences": {
+        "title": "2. Cookies de Preferencias o Personalización",
+        "description": "Son aquellas que permiten recordar información para que el usuario acceda al servicio con determinadas características que pueden diferenciar su experiencia de la de otros usuarios. En nuestro caso, las utilizamos exclusivamente para recordar el idioma (lang) preferido por el usuario y cargar la interfaz directamente en ese idioma en futuras visitas."
+      }
+    },
+    "title": "📄 Política de Cookies",
+    "update": "<strong>Última actualización:</strong> [21/07/2026]",
+    "revokeConsent": {
+      "title": "Revocación del consentimiento",
+      "text": "Puedes retirar o modificar tu consentimiento en cualquier momento. Para ello, haz clic en el botón 'Configuración de Cookies' situado debajo de este bloque de texto para reabrir el panel de preferencias. También puedes gestionar, restringir o bloquear las cookies en cualquier momento desde la configuración de tu navegador.",
+      "buttonConfCookies": "Configuración de Cookies"
+    }
   }
 }

@@ -24,7 +24,7 @@ export default function HeaderSection({
   };
 
   return (
-    <header className="z-10 relative md:absolute md:container top-4 left-1/2 -translate-x-1/2 w-full px-8 md:px-0">
+    <header className="z-20 relative md:absolute md:container top-4 left-1/2 -translate-x-1/2 w-full px-8 md:px-0">
       <div className="text-white p-4 w-full flex justify-between items-center relative after:content-[''] after:block after:absolute after:inset-0 after:bg-black/50 after:-z-10 after:border-2 after:border-corporative">
         <div className="md:mx-auto flex items-center justify-between relative w-full">
           <div>

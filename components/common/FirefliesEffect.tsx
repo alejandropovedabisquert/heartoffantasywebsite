@@ -1,5 +1,6 @@
 "use client";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation"; // 1. Importamos usePathname
 import { Firefly, FirefliesConfig } from "@/lib/utils/fireflies";
 
 type FirefliesEffectProps = {
@@ -20,24 +21,34 @@ const FirefliesEffect = ({
   glow = true,
 }: FirefliesEffectProps) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const firefliesRef = useRef<Firefly[]>([]); // We use useRef for avoid re-renderings
+  const firefliesRef = useRef<Firefly[]>([]);
+  const pathname = usePathname();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const mainElement = document.getElementsByTagName("main")[0];
+
     const resizeCanvas = () => {
-      canvas.width = document.getElementsByTagName("main")[0].scrollWidth;
-      canvas.height = document.getElementsByTagName("main")[0].scrollHeight;
+      if (mainElement) {
+        canvas.width = mainElement.scrollWidth;
+        canvas.height = mainElement.scrollHeight; 
+      }
     };
 
     resizeCanvas();
+    
     window.addEventListener("resize", resizeCanvas);
 
-    // Create the fireflies onlin once
+    const resizeObserver = new ResizeObserver(() => resizeCanvas());
+    if (mainElement) {
+      resizeObserver.observe(mainElement);
+    }
+
     if (firefliesRef.current.length === 0) {
       const config: FirefliesConfig = { count, speed, flicker, colors, sizeRange, glow };
       for (let i = 0; i < count; i++) {
@@ -48,7 +59,6 @@ const FirefliesEffect = ({
     let animationFrameId: number;
 
     const animate = () => {
-      if (!ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       firefliesRef.current.forEach((firefly) => {
         firefly.update();
@@ -62,10 +72,11 @@ const FirefliesEffect = ({
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener("resize", resizeCanvas);
-    }
-  });
+      resizeObserver.disconnect();
+    };
+  }, [pathname]);
 
-  return <canvas ref={canvasRef} className="absolute object-cover top-0 left-0 w-screen h-full pointer-events-none" />;
+  return <canvas ref={canvasRef} className="absolute object-cover top-0 left-0 w-screen h-auto pointer-events-none" />;
 };
 
 export default FirefliesEffect;

@@ -8,7 +8,7 @@ export function proxy(request: NextRequest) {
   // === SOLUCIÓN JAPONÉS: Decodificar la URL (/%E7%99%BB... -> /登録) ===
   const decodedPathname = decodeURI(pathname);
 
-  // 1. Ignorar archivos estáticos, imágenes y APIs (usamos el pathname original por seguridad)
+  // Ignorar archivos estáticos, imágenes y APIs (usamos el pathname original por seguridad)
   if (
     pathname.startsWith('/_next') ||
     pathname.includes('.') ||
@@ -17,22 +17,40 @@ export function proxy(request: NextRequest) {
     return;
   }
 
-  // 2. === Lógica de Activación de Cuentas ===
-  if (decodedPathname.endsWith('/activate')) {
-    const segments = decodedPathname.split('/');
-    if (segments.length === 3) {
-      const localeSegment = segments[1];
-      if (locales.includes(localeSegment as Locale)) {
-        const newPathname = '/activate' + (search || '');
-        return NextResponse.redirect(new URL(newPathname, request.url));
-      }
-    }
-  }
-
-  // 3. === Lógica general de Internacionalización y Slugs ===
+  // === Lógica general de Internacionalización y Slugs ===
   const pathnameSegments = decodedPathname.split('/');
   const maybeLocale = pathnameSegments[1];
   const hasLocale = locales.includes(maybeLocale as Locale);
+
+  // Identificar qué idioma está pidiendo la URL en este momento
+  const currentUrlLocale = hasLocale ? maybeLocale : defaultLocale;
+
+  // === NUEVA LÓGICA DE COOKIES ===
+  const localeCookie = request.cookies.get('lang')?.value as Locale | undefined;
+
+  // Si tiene cookie válida y NO coincide con el idioma de la URL actual, redirigimos
+  if (localeCookie && locales.includes(localeCookie) && localeCookie !== currentUrlLocale) {
+    
+    // Extraemos la ruta pura, ignorando el idioma en el que esté actualmente
+    let pathWithoutLocale = hasLocale 
+      ? `/${pathnameSegments.slice(2).join('/')}`
+      : decodedPathname;
+
+    if (pathWithoutLocale !== '/' && pathWithoutLocale.endsWith('/')) {
+      pathWithoutLocale = pathWithoutLocale.slice(0, -1);
+    }
+    if (pathWithoutLocale === '') pathWithoutLocale = '/';
+
+    // Construimos la nueva ruta. Si la cookie es el idioma por defecto, va sin prefijo.
+    const redirectPath = localeCookie === defaultLocale
+      ? pathWithoutLocale
+      : `/${localeCookie}${pathWithoutLocale}`;
+
+    const redirectUrl = new URL(redirectPath, request.url);
+    redirectUrl.search = search;
+    return NextResponse.redirect(redirectUrl);
+  }
+  // ===============================
 
   // REDIRECCIÓN: Si la URL incluye el idioma por defecto explícitamente (/en/...), lo quitamos.
   if (maybeLocale === defaultLocale) {
@@ -42,8 +60,8 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(redirectUrl);
   }
 
-  // Determinamos el locale actual.
-  const currentLocale = hasLocale ? maybeLocale : defaultLocale;
+  // Determinamos el locale actual para los headers (reaprovechamos la variable de arriba)
+  const currentLocale = currentUrlLocale;
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-locale', currentLocale);
 

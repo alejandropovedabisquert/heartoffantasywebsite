@@ -9,16 +9,20 @@ import HeaderSection from "@/components/sections/HeaderSection";
 import { hasLocale, locales } from "@/lib/routes";
 import { getDictionary } from "./dictionaries";
 import StreamerStatus from "@/components/common/StreamerStatus";
+import CookieBanner from "@/components/common/CookieBanner";
+import { hasCookieAction } from "@/lib/actions/cookiesActions";
+import FirefliesEffect from "@/components/common/FirefliesEffect";
+import { CookieProvider } from "@/context/CookieContext";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.heartoffantasy.com'),
+  metadataBase: new URL("https://www.heartoffantasy.com"),
   title: {
-    template: '%s | Heart of Fantasy',
-    default: 'Heart of Fantasy', // Título si no hay otro
+    template: "%s | Heart of Fantasy",
+    default: "Heart of Fantasy", // Título si no hay otro
   },
   openGraph: {
-    siteName: 'Heart of Fantasy',
-    type: 'website',
+    siteName: "Heart of Fantasy",
+    type: "website",
   },
 };
 
@@ -40,21 +44,31 @@ export default async function RootLayout({
   if (!hasLocale(lang)) notFound();
 
   const dict = await getDictionary(lang);
-  
+  const hasConsent = await hasCookieAction({ name: "cookie-consent" });
 
-  // TODO: Create a context for the bodyidsetter and pass the id from the page to avoid passing all the messages to the client side
   return (
     <html lang={lang} className="overflow-x-hidden">
       <body
         suppressHydrationWarning
         className={`${geistSans.className} antialiased overflow-x-hidden`}
       >
-        <Analytics />
-        <BodyIdSetter />
-        <HeaderSection dict={dict.HeaderNav} locale={lang} />
-        <main>{children}</main>
-        <FooterSection dict={dict.FooterSection} locale={lang} />
-        <StreamerStatus dict={dict.TwitchPopup} streamer="blacksmith3" />
+        <CookieProvider hasConsent={hasConsent} locale={lang}>
+          <FirefliesEffect
+            count={100} // Cuantas luciernagas apareceran
+            speed={3} // A que velocidad se mueven
+            flicker={true} // Activar parpadeo
+            colors={["#A43046", "#FFFFFF"]} // Colores de las luciernagas
+            sizeRange={[3, 4]} // Tamaños entre 3px y 8px
+            glow={true} // Activar glow
+          />
+          <Analytics />
+          <BodyIdSetter />
+          <HeaderSection dict={dict.HeaderNav} locale={lang} />
+          <main className="relative z-10">{children}</main>
+          <FooterSection dict={dict.FooterSection} locale={lang} />
+          <StreamerStatus dict={dict.TwitchPopup} streamer="blacksmith3" />
+          <CookieBanner dict={dict.CookieConsent} />
+        </CookieProvider>
       </body>
     </html>
   );

@@ -1,5 +1,4 @@
 import BannerGodotSection from "@/components/sections/BannerGodotSection";
-import FirefliesEffect from "@/components/common/FirefliesEffect";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import GallerySection from "@/components/sections/GallerySection";
 import HistorySection from "@/components/sections/HistorySection";
@@ -55,15 +54,7 @@ export default async function Home({ params }: PageProps<'/[lang]'>) {
   return (
     <>
       <SliderSection/>
-      <main className={`relative overflow-hidden ${gradientStyles}`}>
-        <FirefliesEffect
-          count={100} // Cuantas luciernagas apareceran
-          speed={3} // A que velocidad se mueven
-          flicker={true} // Activar parpadeo
-          colors={["#A43046", "#FFFFFF",]} // Colores de las luciernagas
-          sizeRange={[3, 4]} // Tamaños entre 3px y 8px
-          glow={true} // Activar glow
-        />
+      <div className={`relative overflow-hidden ${gradientStyles}`}>
         <div className="container mx-auto px-4 pt-24 overflow-hidden relative z-20">
           <HistorySection dict={dict.HistorySection}/>
           <GallerySection dict={dict.GallerySection}/>
@@ -75,7 +66,7 @@ export default async function Home({ params }: PageProps<'/[lang]'>) {
         <div className="container mx-auto px-4 overflow-hidden relative z-20">
           <VideosSection dict={dict.VideosSection}/>
         </div>
-      </main>
+      </div>
     </>
   );
 }

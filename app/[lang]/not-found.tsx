@@ -1,9 +1,8 @@
-import FirefliesEffect from "@/components/common/FirefliesEffect";
-import Link from "next/link";
 import Image from "next/image";
 import { getDictionary } from "./dictionaries";
 import { headers } from "next/headers";
 import { hasLocale, Locale } from "@/lib/routes";
+import LocalizedLink from "@/components/ui/LocalizedLink";
 
 export default async function NotFound() {
   const headersList = await headers();
@@ -16,28 +15,21 @@ export default async function NotFound() {
   const backButton = dict.PageNotFound.backButton;
 
   return (
-    <div>
+    <>
       <div id="bodyNotFound">
         <Image
-          src={"/heart.webp"}
-          className="image-rendering-pixelated"
-          width={800}
-          height={800}
+          src={"/logo.webp"}
+          width={250}
+          height={250}
           alt="logo"
           priority={true}
+          className="mx-auto my-10 z-1 relative"
         />
         <h1>{title}</h1>
-        <Link href={`/${lang}`}>{backButton}</Link>
+        <LocalizedLink locale={lang} href="/">
+          {backButton}
+        </LocalizedLink>
       </div>
-
-      <FirefliesEffect
-        count={100} // Cuantas luciernagas apareceran
-        speed={3} // A que velocidad se mueven
-        flicker={true} // Activar parpadeo
-        colors={["#A43046", "#FFFFFF"]} // Colores de las luciernagas
-        sizeRange={[3, 4]} // Tamaños entre 3px y 8px
-        glow={true} // Activar glow
-      />
-    </div>
+    </>
   );
 }

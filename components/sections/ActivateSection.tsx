@@ -1,6 +1,4 @@
 "use client";
-
-import { notFound, useSearchParams } from "next/navigation";
 import { useUserActivate } from "@/lib/hooks/useUserActivate";
 import { useEffect, Suspense } from "react";
 import { CircleCheck } from "lucide-react";
@@ -8,11 +6,11 @@ import { getDictionary } from "@/app/[lang]/dictionaries";
 
 function ActivateContent({
   dict,
+  token,
 }: {
   dict: Awaited<ReturnType<typeof getDictionary>>["ActivatePage"];
+  token: string;
 }) {
-  const searchParams = useSearchParams();
-  const token = searchParams.get("token");
   const { activate, isLoading, response } = useUserActivate();
 
   const activatingAccount = dict.activatingAccount;
@@ -20,13 +18,8 @@ function ActivateContent({
   const failure = dict.failure;
 
   useEffect(() => {
-    if (!token) return;
     void activate(token);
   }, [activate, token]);
-
-  if (!token) {
-    notFound();
-  }
 
   return (
     <div className="container mx-auto px-4 overflow-hidden min-h-125 flex flex-col items-center justify-center">
@@ -51,8 +44,10 @@ function ActivateContent({
 
 export default function ActivateSection({
   dict,
+  token,
 }: {
   dict: Awaited<ReturnType<typeof getDictionary>>["ActivatePage"];
+  token: string;
 }) {
   return (
     <Suspense 
@@ -62,7 +57,7 @@ export default function ActivateSection({
         </div>
       }
     >
-      <ActivateContent dict={dict} />
+      <ActivateContent dict={dict} token={token}/>
     </Suspense>
   );
 }

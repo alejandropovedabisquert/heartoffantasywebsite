@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import PrivacyPolicyContent from "@/components/common/PrivacyPolicyContent";
 import { getDictionary } from "../dictionaries";
 import { Locale } from "@/lib/routes";
 import { getAlternateLanguages } from "@/lib/utils/seo";
 import LocalizedLink from "@/components/ui/LocalizedLink";
 import Image from "next/image";
+import CookiesPolicyContent from "@/components/common/CookiesPolicyContent";
 
 export async function generateMetadata({
   params,
@@ -13,10 +13,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang);
-  const title = dict.PrivacyPolicySection.metadata.title;
-  const description = dict.PrivacyPolicySection.metadata.description;
+  const title = dict.CookiePolicy.metadata.title;
+  const description = dict.CookiePolicy.metadata.description;
 
-  const languages = getAlternateLanguages("/privacy-policy");
+  const languages = getAlternateLanguages("/cookies");
 
   return {
     metadataBase: new URL("https://www.heartoffantasy.com"),
@@ -58,7 +58,7 @@ export default async function Page({
           />
         </LocalizedLink>
       </div>
-      <PrivacyPolicyContent dict={dict} locale={lang} />
+      <CookiesPolicyContent dict={dict} locale={lang} />
     </>
   );
 }

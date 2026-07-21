@@ -92,6 +92,10 @@
       {
         "text": "Política de privacitat",
         "link": "/privacy-policy"
+      },
+      {
+        "text": "Política de Galetes",
+        "link": "/cookies"
       }
     ]
   },
@@ -228,5 +232,57 @@
   "PageNotFound": {
     "title": "404 | No s'ha pogut trobar aquesta pàgina.",
     "backButton": "Tornar a l'inici"
+  },
+  "CookieConsent": {
+    "banner": {
+      "text": "Utilitzem galetes pròpies per millorar la teva experiència i recordar les teves preferències (com l'idioma). Pots acceptar totes les galetes, rebutjar-les o configurar les teves preferències.",
+      "buttons": {
+        "configure": "Configurar",
+        "reject": "Rebutjar",
+        "acceptAll": "Acceptar-ho tot"
+      }
+    },
+    "modal": {
+      "title": "Configuració de Galetes",
+      "description": "Revisa i ajusta les teves preferències. Les galetes essencials no es poden desactivar ja que són necessàries per al funcionament de la web.",
+      "sections": {
+        "essential": {
+          "title": "Estrictament Necessàries",
+          "text": "Necessàries perquè la web funcioni (seguretat, xarxa). No es poden desactivar."
+        },
+        "preferences": {
+          "title": "Preferències / Funcionalitat",
+          "text": "Permeten recordar eleccions que canvien el comportament de la web, com el teu idioma preferit per a redirigir-te automàticament."
+        }
+      },
+      "buttons": {
+        "cancel": "Cancel·lar",
+        "save": "Guardar preferències"
+      }
+    }
+  },
+  "CookiePolicy": {
+    "metadata": {
+      "title": "Política de Galetes",
+      "description": "Consulta la Política de Galetes de Heart of Fantasy. Descobreix quines galetes utilitzem, el seu propòsit i com pots gestionar les teves preferències per millorar la teva experiència a la nostra web."
+    },
+    "title": "📄 Política de Galetes",
+    "update": "<strong>Última actualització:</strong> [21/07/2026]",
+    "purposes": {
+      "title": "Tipus de galetes que utilitzem i el seu propòsit",
+      "essential": {
+        "title": "1. Galetes Estrictament Necessàries",
+        "description": "Són aquelles imprescindibles perquè el lloc web funcioni correctament. Permeten la navegació per la pàgina, controlar el trànsit, identificar la sessió d'usuari i garantir la seguretat del lloc. Sense aquestes galetes, la web no pot funcionar. Com que són essencials, no requereixen el consentiment de l'usuari."
+      },
+      "preferences": {
+        "title": "2. Galetes de Preferències o Personalització",
+        "description": "Són aquelles que permeten recordar informació perquè l'usuari accedeixi al servei amb determinades característiques que poden diferenciar la seva experiència de la d'altres usuaris. En el nostre cas, les utilitzem exclusivament per recordar l'idioma (lang) preferit per l'usuari i carregar la interfície directament en aquest idioma en futures visites."
+      }
+    },
+    "revokeConsent": {
+      "title": "Revocació del consentiment",
+      "text": "Pots retirar o modificar el teu consentiment en qualsevol moment. Per fer-ho, fes clic al botó 'Configuració de Galetes' situat sota d'aquest bloc de text per reobrir el tauler de preferències. També pots gestionar, restringir o bloquejar les galetes en qualsevol moment des de la configuració del teu navegador.",
+      "buttonConfCookies": "Configuració de Galetes"
+    }
   }
 }
