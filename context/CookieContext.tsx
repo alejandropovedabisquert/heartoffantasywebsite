@@ -1,8 +1,8 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
-import { setCookieAction } from "@/lib/actions/cookiesActions";
 import { Locale } from "@/lib/routes";
+import { removeCookieClient, setCookieClient } from "@/lib/utils/clientCookies";
 
 // Tipos
 type CookiePreferences = {
@@ -42,7 +42,7 @@ export function CookieProvider({
 
   // Función global para guardar el consentimiento
   const saveConsent = async (prefs: CookiePreferences) => {
-    await setCookieAction({
+    setCookieClient({
       name: "cookie-consent",
       data: JSON.stringify(prefs),
     });
@@ -52,9 +52,9 @@ export function CookieProvider({
     setShowSettings(false);
 
     if (!prefs.preferences) {
-      document.cookie = "lang=; path=/; max-age=0;";
+      removeCookieClient({name: "lang"})
     } else {
-      await setCookieAction({ name: "lang", data: locale });
+      setCookieClient({ name: "lang", data: locale });
     }
   };
 

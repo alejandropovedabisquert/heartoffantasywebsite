@@ -10,9 +10,10 @@ import { hasLocale, locales } from "@/lib/routes";
 import { getDictionary } from "./dictionaries";
 import StreamerStatus from "@/components/common/StreamerStatus";
 import CookieBanner from "@/components/common/CookieBanner";
-import { hasCookieAction } from "@/lib/actions/cookiesActions";
 import FirefliesEffect from "@/components/common/FirefliesEffect";
 import { CookieProvider } from "@/context/CookieContext";
+import { hasCookieClient } from "@/lib/utils/clientCookies";
+import { cookies } from "next/headers";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.heartoffantasy.com"),
@@ -44,7 +45,8 @@ export default async function RootLayout({
   if (!hasLocale(lang)) notFound();
 
   const dict = await getDictionary(lang);
-  const hasConsent = await hasCookieAction({ name: "cookie-consent" });
+  const cookieStore = await cookies();
+  const hasConsent = cookieStore.has("cookie-consent");
 
   return (
     <html lang={lang} className="overflow-x-hidden">
