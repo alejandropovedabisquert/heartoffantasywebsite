@@ -284,5 +284,64 @@
       "text": "You can withdraw or modify your consent at any time. To do so, click on the 'Cookie Settings' button located below this text block to reopen the preferences panel. You can also manage, restrict, or block cookies at any time from your browser settings.",
       "buttonConfCookies": "Cookie Settings"
     }
+  },
+  "ForgotPasswordForm": {
+    "metadata": {
+      "title": "Recover password",
+      "description": "Regain access to your account quickly and safely. Enter your email address and we will send you a link to create a new password."
+    },
+    "title": "Forgot your password?",
+    "description": "Don't worry. Enter the email address associated with your account and we will send you instructions to reset it.",
+    "inputs": {
+      "email": {
+        "placeholder": "Email address",
+        "requiredError": "Email is required.",
+        "validError": "Please enter a valid email address."
+      },
+      "captcha": {
+        "placeholder": "Captcha",
+        "requiredError": "Captcha is required"
+      },
+      "statusMessage": {
+        "success": "If the email is registered, you will shortly receive a link to reset your password.",
+        "error": "An error occurred while processing your request. Please try again later."
+      },
+      "submit": {
+        "placeholder": "Send recovery link",
+        "loading": "Sending link..."
+      }
+    }
+  },
+  "ResetPasswordForm": {
+    "metadata": {
+      "title": "Create new password",
+      "description": "Set a new password for your account. Make sure to choose a strong password that you haven't used before."
+    },
+    "title": "Create your new password",
+    "description": "You're one step away from recovering your account. Enter your new password below.",
+    "inputs": {
+      "password": {
+        "placeholder": "New password",
+        "requiredError": "Password is required.",
+        "validError": "Password must be at least 6 characters long."
+      },
+      "samePassword": {
+        "placeholder": "Confirm your new password",
+        "requiredError": "You must confirm your password.",
+        "validError": "Passwords do not match."
+      },
+      "captcha": {
+        "placeholder": "Security check",
+        "requiredError": "Please complete the security check."
+      },
+      "statusMessage": {
+        "success": "Your password has been successfully updated! You can now log in.",
+        "error": "An error occurred while processing your request. Please try again later."
+      },
+      "submit": {
+        "placeholder": "Update password",
+        "loading": "Updating..."
+      }
+    }
   }
 }

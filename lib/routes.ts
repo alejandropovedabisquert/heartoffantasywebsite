@@ -27,6 +27,18 @@ export const pathnames = {
     ca: "/activate",
     ja: "/activate",
   },
+  "/forgot-password": {
+    en: "/forgot-password",
+    es: "/forgot-password",
+    ca: "/forgot-password",
+    ja: "/forgot-password",
+  },
+  "/reset-password": {
+    en: "/reset-password",
+    es: "/reset-password",
+    ca: "/reset-password",
+    ja: "/reset-password",
+  },
   "/cookies": {
     en: "/cookies",
     es: "/cookies",

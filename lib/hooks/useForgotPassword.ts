@@ -4,16 +4,14 @@ import { usersApi } from "../api/users";
 import { verifyCaptcha } from "../actions/verifyCaptchaActions";
 import { FormErrors } from "@/types/formErrors";
 
-export function useRegister() {
+export function useForgotPassword() {
     const [isLoading, setIsLoading] = useState(false);
     const [response, setResponse] = useState<FormErrors>({});
-    const register = async (formData: FormData) => {
-        const username = formData.get('username')?.toString() || '';
+    const forgotPassword = async (formData: FormData) => {
         const email = formData.get('email')?.toString() || '';
-        const password = formData.get('password')?.toString() || '';
         const token = formData.get('captcha')?.toString() || "";
 
-        if (!username || !email || !password || !token) {
+        if (!email || !token) {
             const data = { message: 'All fields are required', success: false };
             setResponse(data);
             return data;
@@ -21,12 +19,6 @@ export function useRegister() {
 
         if (!/\S+@\S+\.\S+/.test(email)) {
             const data = { message: 'Invalid email format', success: false };
-            setResponse(data);
-            return data;
-        }
-
-        if (password.length < 6) {
-            const data = { message: 'Password must be at least 6 characters', success: false };
             setResponse(data);
             return data;
         }
@@ -40,7 +32,7 @@ export function useRegister() {
 
         setIsLoading(true);
         try {
-            const result = await usersApi.register(username, email, password);
+            const result = await usersApi.forgotPasswordUser(email);
             let responseData: { success: boolean; message?: string;};
 
             if (!result.data) {
@@ -59,7 +51,6 @@ export function useRegister() {
             return responseData;
         // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
         } catch (error: any) {
-
             const errorData = { success: false, message: "Error to obtain data" };
             setResponse(errorData);
             return errorData;
@@ -68,5 +59,5 @@ export function useRegister() {
         }
     };
 
-    return { register, isLoading, response };
+    return { forgotPassword, isLoading, response };
 }

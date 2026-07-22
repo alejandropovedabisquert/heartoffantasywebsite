@@ -92,7 +92,7 @@
       {
         "text": "Política de privacidad",
         "link": "/privacy-policy"
-      },      
+      },
       {
         "text": "Política de Cookies",
         "link": "/cookies"
@@ -283,6 +283,65 @@
       "title": "Revocación del consentimiento",
       "text": "Puedes retirar o modificar tu consentimiento en cualquier momento. Para ello, haz clic en el botón 'Configuración de Cookies' situado debajo de este bloque de texto para reabrir el panel de preferencias. También puedes gestionar, restringir o bloquear las cookies en cualquier momento desde la configuración de tu navegador.",
       "buttonConfCookies": "Configuración de Cookies"
+    }
+  },
+  "ForgotPasswordForm": {
+    "metadata": {
+      "title": "Recuperar contraseña",
+      "description": "Restablece el acceso a tu cuenta de forma rápida y segura. Introduce tu correo electrónico y te enviaremos un enlace para crear una nueva contraseña."
+    },
+    "title": "¿Has olvidado tu contraseña?",
+    "description": "No te preocupes. Introduce el correo electrónico asociado a tu cuenta y te enviaremos las instrucciones para restablecerla.",
+    "inputs": {
+      "email": {
+        "placeholder": "Correo electrónico",
+        "requiredError": "El correo electrónico es obligatorio.",
+        "validError": "Por favor, introduce una dirección de correo válida."
+      },
+      "captcha": {
+        "placeholder": "Captcha",
+        "requiredError": "El captcha es obligatorio"
+      },
+      "statusMessage": {
+        "success": "Si el correo está registrado, en breve recibirás un enlace para restablecer tu contraseña.",
+        "error": "Ha ocurrido un error al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde."
+      },
+      "submit": {
+        "placeholder": "Enviar enlace de recuperación",
+        "loading": "Enviando enlace..."
+      }
+    }
+  },
+  "ResetPasswordForm": {
+    "metadata": {
+      "title": "Crear nueva contraseña",
+      "description": "Establece una nueva contraseña para tu cuenta. Asegúrate de elegir una contraseña segura y que no hayas utilizado antes."
+    },
+    "title": "Crea tu nueva contraseña",
+    "description": "Estás a un paso de recuperar tu cuenta. Introduce tu nueva contraseña a continuación.",
+    "inputs": {
+      "password": {
+        "placeholder": "Nueva contraseña",
+        "requiredError": "La contraseña es obligatoria.",
+        "validError": "La contraseña debe tener al menos 6 caracteres."
+      },
+      "samePassword": {
+        "placeholder": "Confirma tu nueva contraseña",
+        "requiredError": "Debes confirmar tu contraseña.",
+        "validError": "Las contraseñas no coinciden."
+      },
+      "captcha": {
+        "placeholder": "Verificación de seguridad",
+        "requiredError": "Por favor, completa la verificación de seguridad."
+      },
+      "statusMessage": {
+        "success": "¡Tu contraseña se ha actualizado correctamente! Ya puedes iniciar sesión.",
+        "error": "Ha ocurrido un error al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde."
+      },
+      "submit": {
+        "placeholder": "Actualizar contraseña",
+        "loading": "Actualizando..."
+      }
     }
   }
 }

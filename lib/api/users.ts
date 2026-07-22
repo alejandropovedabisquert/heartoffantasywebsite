@@ -13,4 +13,14 @@ export const usersApi = {
             method: "POST",
             body: JSON.stringify({ token }),
         }),
+    forgotPasswordUser: (email: string) =>
+        fetchApi<{ message: string, success: boolean }>(`${ENDPOINTBASE}/forgot-password`, {
+            method: "POST",
+            body: JSON.stringify({ email }),
+        }),
+    resetPasswordUser: (newPassword: string, token: string) =>
+        fetchApi<{ message: string, success: boolean }>(`${ENDPOINTBASE}/reset-password`, {
+            method: "POST",
+            body: JSON.stringify({ newPassword, token }),
+        }),
 };

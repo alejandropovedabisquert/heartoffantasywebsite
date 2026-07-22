@@ -4,23 +4,17 @@ import { usersApi } from "../api/users";
 import { verifyCaptcha } from "../actions/verifyCaptchaActions";
 import { FormErrors } from "@/types/formErrors";
 
-export function useRegister() {
+export function useResetPassword() {
     const [isLoading, setIsLoading] = useState(false);
     const [response, setResponse] = useState<FormErrors>({});
-    const register = async (formData: FormData) => {
-        const username = formData.get('username')?.toString() || '';
-        const email = formData.get('email')?.toString() || '';
+    const resetPassword = async (formData: FormData) => {
         const password = formData.get('password')?.toString() || '';
-        const token = formData.get('captcha')?.toString() || "";
+        const samePassword = formData.get('samePassword')?.toString() || '';
+        const captchaToken = formData.get('captcha')?.toString() || "";
+        const token = formData.get('token')?.toString() || "";
 
-        if (!username || !email || !password || !token) {
+        if (!password || !samePassword || !captchaToken) {
             const data = { message: 'All fields are required', success: false };
-            setResponse(data);
-            return data;
-        }
-
-        if (!/\S+@\S+\.\S+/.test(email)) {
-            const data = { message: 'Invalid email format', success: false };
             setResponse(data);
             return data;
         }
@@ -31,7 +25,13 @@ export function useRegister() {
             return data;
         }
 
-        const captchaValid = await verifyCaptcha(token);
+        if(password !== samePassword){
+            const data = { message: 'Passwords do not match', success: false };
+            setResponse(data);
+            return data;
+        }
+
+        const captchaValid = await verifyCaptcha(captchaToken);
         if (!captchaValid) {
             const data = { message: 'Invalid captcha', success: false };
             setResponse(data);
@@ -40,26 +40,25 @@ export function useRegister() {
 
         setIsLoading(true);
         try {
-            const result = await usersApi.register(username, email, password);
-            let responseData: { success: boolean; message?: string;};
+            const result = await usersApi.resetPasswordUser(samePassword, token);
+            let responseData: { success: boolean; message?: string; };
 
             if (!result.data) {
                 responseData = {
                     success: result.status === 200,
-                    message: result.status === 200 ? "Registration successful" : "Registration failed",
+                    message: result.status === 200 ? "Change Password successful" : "Change Password failed",
                 };
             } else {
-                responseData = { 
-                    success: result.status === 200, 
+                responseData = {
+                    success: result.status === 200,
                     message: result.data.message
-                 };
+                };
 
             }
             setResponse(responseData);
             return responseData;
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
         } catch (error: any) {
-
             const errorData = { success: false, message: "Error to obtain data" };
             setResponse(errorData);
             return errorData;
@@ -68,5 +67,5 @@ export function useRegister() {
         }
     };
 
-    return { register, isLoading, response };
+    return { resetPassword, isLoading, response };
 }

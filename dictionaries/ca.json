@@ -284,5 +284,64 @@
       "text": "Pots retirar o modificar el teu consentiment en qualsevol moment. Per fer-ho, fes clic al botó 'Configuració de Galetes' situat sota d'aquest bloc de text per reobrir el tauler de preferències. També pots gestionar, restringir o bloquejar les galetes en qualsevol moment des de la configuració del teu navegador.",
       "buttonConfCookies": "Configuració de Galetes"
     }
+  },
+  "ForgotPasswordForm": {
+    "metadata": {
+      "title": "Recuperar contrasenya",
+      "description": "Restableix l'accés al teu compte de manera ràpida i segura. Introdueix el teu correu electrònic i t'enviarem un enllaç per crear una nova contrasenya."
+    },
+    "title": "Has oblidat la teva contrasenya?",
+    "description": "No et preocupis. Introdueix el correu electrònic associat al teu compte i t'enviarem les instruccions per restablir-la.",
+    "inputs": {
+      "email": {
+        "placeholder": "Correu electrònic",
+        "requiredError": "El correu electrònic és obligatori.",
+        "validError": "Si us plau, introdueix una adreça de correu vàlida."
+      },
+      "captcha": {
+        "placeholder": "Captcha",
+        "requiredError": "El captcha és obligatori"
+      },
+      "statusMessage": {
+        "success": "Si el correu està registrat, ben aviat rebràs un enllaç per restablir la teva contrasenya.",
+        "error": "S'ha produït un error en processar la teva sol·licitud. Si us plau, torna-ho a intentar més tard."
+      },
+      "submit": {
+        "placeholder": "Enviar enllaç de recuperació",
+        "loading": "Enviant enllaç..."
+      }
+    }
+  },
+  "ResetPasswordForm": {
+    "metadata": {
+      "title": "Crear nova contrasenya",
+      "description": "Estableix una nova contrasenya per al teu compte. Assegura't de triar una contrasenya segura i que no hagis utilitzat abans."
+    },
+    "title": "Crea la teva nova contrasenya",
+    "description": "Estàs a un pas de recuperar el teu compte. Introdueix la teva nova contrasenya a continuació.",
+    "inputs": {
+      "password": {
+        "placeholder": "Nova contrasenya",
+        "requiredError": "La contrasenya és obligatòria.",
+        "validError": "La contrasenya ha de tenir com a mínim 6 caràcters."
+      },
+      "samePassword": {
+        "placeholder": "Confirma la teva nova contrasenya",
+        "requiredError": "Has de confirmar la teva contrasenya.",
+        "validError": "Les contrasenyes no coincideixen."
+      },
+      "captcha": {
+        "placeholder": "Verificació de seguretat",
+        "requiredError": "Si us plau, completa la verificació de seguretat."
+      },
+      "statusMessage": {
+        "success": "La teva contrasenya s'ha actualitzat correctament! Ja pots iniciar sessió.",
+        "error": "S'ha produït un error en processar la teva sol·licitud. Si us plau, torna-ho a intentar més tard."
+      },
+      "submit": {
+        "placeholder": "Actualitzar contrasenya",
+        "loading": "Actualitzant..."
+      }
+    }
   }
 }

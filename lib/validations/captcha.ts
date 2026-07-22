@@ -1,4 +1,4 @@
-import { FormErrors } from "@/components/common/RegisterForm";
+import { FormErrors } from "@/types/formErrors";
 
 type ValidateCaptchaDict = {
   inputs: {

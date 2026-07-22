@@ -12,7 +12,6 @@ import StreamerStatus from "@/components/common/StreamerStatus";
 import CookieBanner from "@/components/common/CookieBanner";
 import FirefliesEffect from "@/components/common/FirefliesEffect";
 import { CookieProvider } from "@/context/CookieContext";
-import { hasCookieClient } from "@/lib/utils/clientCookies";
 import { cookies } from "next/headers";
 
 export const metadata: Metadata = {

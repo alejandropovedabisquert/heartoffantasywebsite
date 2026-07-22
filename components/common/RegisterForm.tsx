@@ -14,17 +14,13 @@ import { Locale } from "@/lib/routes";
 
 import { TurnstileWidget, TurnstileHandle } from "@/components/ui/TurnstileWidget";
 import { AnimatedInput } from "@/components/ui/animated/AnimatedInput";
+import { FormErrors } from "@/types/formErrors";
 
 const API_ERRORS = {
   USERNAME_EXISTS: "Username already exists.",
   EMAIL_EXISTS: "Email already exists.",
   DATA_ERROR: "Error to obtain data",
 } as const;
-
-export type FormErrors = {
-  message?: string;
-  success?: boolean;
-};
 
 export default function RegisterForm({
   dict,
@@ -117,7 +113,7 @@ export default function RegisterForm({
   return (
     <div className="container relative z-10">
       <motion.div initial={{ opacity: 0, y: -50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-        <Titulo as={"h2"} position="center" className="text-2xl sm:text-4xl font-bold my-4">
+        <Titulo as={"h1"} position="center" className="text-2xl sm:text-4xl font-bold my-4">
           {dict.title} <span className="text-corporative">#</span>
         </Titulo>
       </motion.div>
