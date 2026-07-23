@@ -95,7 +95,7 @@ export default function ResetPasswordForm({
                     "text-center",
                     { "text-red-600": response?.success === false },
                     {
-                        "bg-green-600 px-6 py-2 text-green-200": response?.success === true,
+                        "bg-green-600 text-lg px-8 py-4 text-green-200": response?.success === true,
                     },
                 )}
             >
@@ -114,80 +114,86 @@ export default function ResetPasswordForm({
 
     return (
         <div className="container relative z-10">
-            <motion.div
-                initial={{ opacity: 0, y: -50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-            >
-                <Titulo
-                    as={"h1"}
-                    position="center"
-                    className="text-2xl sm:text-4xl font-bold my-4"
-                >
-                    {dict.title} <span className="text-corporative">#</span>
-                </Titulo>
-            </motion.div>
-            <div className="max-w-2xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, y: -50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
-                    <p className="text-lg">{dict.description}</p>
-                </motion.div>
-
-                <form ref={formRef} onSubmit={handleFormSubmit}>
-                    <AnimatedInput
-                        id="password" type="password" direction="right"
-                        placeholder={dict.inputs.password.placeholder}
-                        value={password} error={errors.password?.message}
-                        onChange={(e) => { setPassword(e.target.value); clearError("password"); }}
-                    />
-
-                    <AnimatedInput
-                        id="samePassword" type="password" direction="right"
-                        placeholder={dict.inputs.samePassword.placeholder}
-                        value={samePassword} error={errors.samePassword?.message}
-                        onChange={(e) => { setSamePassword(e.target.value); clearError("samePassword"); }}
-                    />
-
-
-                    <TurnstileWidget
-                        ref={captchaRef}
-                        locale={locale}
-                        error={errors.captcha?.message}
-                    />
-                    <div>
-                        {response?.success === true &&
-                            renderServerResponse(response)}
-                    </div>
-
+            {response?.success === true ? (
+                <div>
+                    {response?.success === true &&
+                        renderServerResponse(response)}
+                </div>
+            ) : (
+                <>
                     <motion.div
-                        initial={{ opacity: 0, y: 50 }}
+                        initial={{ opacity: 0, y: -50 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="mt-4"
+                        viewport={{ once: true }}
                     >
-                        <div className="flex gap-4 flex-wrap items-center">
-                            <button
-                                type="submit"
-                                className="cursor-pointer px-6 py-4 text-lg flex items-center justify-center gap-2 bg-corporative text-white transition-all hover:bg-white hover:text-black"
-                            >
-                                {isLoading ? (
-                                    <>
-                                        <Loader2 className="animate-spin" />{" "}
-                                        {dict.inputs.submit.loading}
-                                    </>
-                                ) : (
-                                    dict.inputs.submit.placeholder
-                                )}
-                            </button>
-                            <div>
-                                {response?.success === false && renderServerResponse(response)}
-                            </div>
-                        </div>
+                        <Titulo
+                            as={"h1"}
+                            position="center"
+                            className="text-2xl sm:text-4xl font-bold my-4"
+                        >
+                            {dict.title} <span className="text-corporative">#</span>
+                        </Titulo>
                     </motion.div>
-                </form>
-            </div>
+                    <div className="max-w-2xl mx-auto">
+                        <motion.div
+                            initial={{ opacity: 0, y: -50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <p className="text-lg">{dict.description}</p>
+                        </motion.div>
+
+                        <form ref={formRef} onSubmit={handleFormSubmit}>
+                            <AnimatedInput
+                                id="password" type="password" direction="right"
+                                placeholder={dict.inputs.password.placeholder}
+                                value={password} error={errors.password?.message}
+                                onChange={(e) => { setPassword(e.target.value); clearError("password"); }}
+                            />
+
+                            <AnimatedInput
+                                id="samePassword" type="password" direction="right"
+                                placeholder={dict.inputs.samePassword.placeholder}
+                                value={samePassword} error={errors.samePassword?.message}
+                                onChange={(e) => { setSamePassword(e.target.value); clearError("samePassword"); }}
+                            />
+
+
+                            <TurnstileWidget
+                                ref={captchaRef}
+                                locale={locale}
+                                error={errors.captcha?.message}
+                            />
+
+                            <motion.div
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                className="mt-4"
+                            >
+                                <div className="flex gap-4 flex-wrap items-center">
+                                    <button
+                                        type="submit"
+                                        className="cursor-pointer px-6 py-4 text-lg flex items-center justify-center gap-2 bg-corporative text-white transition-all hover:bg-white hover:text-black"
+                                    >
+                                        {isLoading ? (
+                                            <>
+                                                <Loader2 className="animate-spin" />{" "}
+                                                {dict.inputs.submit.loading}
+                                            </>
+                                        ) : (
+                                            dict.inputs.submit.placeholder
+                                        )}
+                                    </button>
+                                    <div>
+                                        {response?.success === false && renderServerResponse(response)}
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </form>
+                    </div>
+                </>
+            )}
+
         </div>
     );
 }
