@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Titulo } from "@/components/ui/Titulo";
-import BackButton from "./BackButton";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { Locale } from "@/lib/routes";
+import BackButton from "@/components/common/BackButton";
 
 export default function PrivacyPolicyContent({
   dict,

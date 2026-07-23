@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import "./globals.css";
-import FooterSection from "@/components/sections/FooterSection";
+import FooterSection from "@/components/layout/FooterSection";
 import { Metadata } from "next";
 import BodyIdSetter from "@/components/common/BodyIdSetter";
 import { Analytics } from "@vercel/analytics/next";
 import { Geist } from "next/font/google";
-import HeaderSection from "@/components/sections/HeaderSection";
+import HeaderSection from "@/components/layout/HeaderSection";
 import { hasLocale, locales } from "@/lib/routes";
 import { getDictionary } from "./dictionaries";
 import StreamerStatus from "@/components/common/StreamerStatus";

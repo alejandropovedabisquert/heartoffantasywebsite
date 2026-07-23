@@ -4,7 +4,7 @@ import { Locale } from "@/lib/routes";
 import { getAlternateLanguages } from "@/lib/utils/seo";
 import LocalizedLink from "@/components/ui/LocalizedLink";
 import Image from "next/image";
-import CookiesPolicyContent from "@/components/common/CookiesPolicyContent";
+import CookiesPolicyContent from "@/components/pages/cookies/CookiesPolicyContent";
 
 export async function generateMetadata({
   params,

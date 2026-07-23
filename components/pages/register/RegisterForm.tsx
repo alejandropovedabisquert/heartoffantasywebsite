@@ -9,7 +9,7 @@ import { useRegister } from "@/lib/hooks/useRegister";
 import { Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { getDictionary } from "@/app/[lang]/dictionaries";
-import LocalizedLink from "../ui/LocalizedLink";
+import LocalizedLink from "../../ui/LocalizedLink";
 import { Locale } from "@/lib/routes";
 
 import { TurnstileWidget, TurnstileHandle } from "@/components/ui/TurnstileWidget";

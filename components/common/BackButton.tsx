@@ -1,7 +1,7 @@
 import { ArrowLeft } from "lucide-react";
-import LinkCustom from "../ui/LocalizedLink";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { Locale } from "@/lib/routes";
+import LocalizedLink from "../ui/LocalizedLink";
 
 export default function BackButton({
   dict,
@@ -12,13 +12,13 @@ export default function BackButton({
 }) {
   const text = dict.text;
   return (
-    <LinkCustom
+    <LocalizedLink
       href={"/"}
       locale={locale}
       variant="corporative"
       className="flex gap-2"
     >
       <ArrowLeft /> {text}
-    </LinkCustom>
+    </LocalizedLink>
   );
 }

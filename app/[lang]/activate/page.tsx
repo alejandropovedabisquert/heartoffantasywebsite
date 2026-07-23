@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getDictionary } from "../dictionaries";
-import ActivateSection from "@/components/sections/ActivateSection";
+import ActivateSection from "@/components/pages/activate/ActivateSection";
 import { Metadata } from "next";
 import { hasLocale, Locale } from "@/lib/routes";
 import { getAlternateLanguages } from "@/lib/utils/seo";

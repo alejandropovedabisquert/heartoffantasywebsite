@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import { getAlternateLanguages } from "@/lib/utils/seo";
 import LocalizedLink from "@/components/ui/LocalizedLink";
 import Image from "next/image";
-import ForgotPasswordForm from "@/components/common/ForgotPasswordForm";
+import ForgotPasswordForm from "@/components/pages/forgot-password/ForgotPasswordForm";
 
 export async function generateMetadata({
   params,

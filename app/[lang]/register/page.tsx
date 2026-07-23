@@ -1,4 +1,4 @@
-import RegisterForm from "@/components/common/RegisterForm";
+import RegisterForm from "@/components/pages/register/RegisterForm";
 import { getDictionary } from "../dictionaries";
 import { Locale } from "@/lib/routes";
 import { Metadata } from "next";

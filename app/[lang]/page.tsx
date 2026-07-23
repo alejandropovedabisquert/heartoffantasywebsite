@@ -1,9 +1,9 @@
-import BannerGodotSection from "@/components/sections/BannerGodotSection";
-import FeaturesSection from "@/components/sections/FeaturesSection";
-import GallerySection from "@/components/sections/GallerySection";
-import HistorySection from "@/components/sections/HistorySection";
-import SliderSection from "@/components/sections/SliderSection";
-import VideosSection from "@/components/sections/VideosSection";
+import BannerGodotSection from "@/components/pages/home/BannerGodotSection";
+import FeaturesSection from "@/components/pages/home/FeaturesSection";
+import GallerySection from "@/components/pages/home/GallerySection";
+import HistorySection from "@/components/pages/home/HistorySection";
+import SliderSection from "@/components/pages/home/SliderSection";
+import VideosSection from "@/components/pages/home/VideosSection";
 import clsx from "clsx";
 import { notFound } from "next/navigation";
 import { getDictionary } from "./dictionaries";

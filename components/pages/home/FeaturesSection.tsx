@@ -1,6 +1,6 @@
 "use client";
 import { getDictionary } from "@/app/[lang]/dictionaries";
-import { Titulo } from "../ui/Titulo";
+import { Titulo } from "../../ui/Titulo";
 import { motion } from "framer-motion";
 
 type featureProps = {

@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Titulo } from "@/components/ui/Titulo";
-import BackButton from "./BackButton";
+import BackButton from "../../common/BackButton";
 import { getDictionary } from "@/app/[lang]/dictionaries";
 import { Locale } from "@/lib/routes";
 import { useCookies } from "@/context/CookieContext";
-import { Button } from "../ui/Button";
+import { Button } from "../../ui/Button";
 
 export default function CookiesPolicyContent({
   dict,

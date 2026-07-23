@@ -1,7 +1,7 @@
 "use client";
 import { getDictionary } from "@/app/[lang]/dictionaries";
-import { Titulo } from "../ui/Titulo";
-import GridVideo from "./GridVideo";
+import { Titulo } from "../../ui/Titulo";
+import GridVideo from "../../common/GridVideo";
 import { motion } from "framer-motion";
 
 export default function VideosSection({

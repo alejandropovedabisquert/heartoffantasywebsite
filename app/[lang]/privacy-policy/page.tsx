@@ -1,10 +1,10 @@
 import { Metadata } from "next";
-import PrivacyPolicyContent from "@/components/common/PrivacyPolicyContent";
 import { getDictionary } from "../dictionaries";
 import { Locale } from "@/lib/routes";
 import { getAlternateLanguages } from "@/lib/utils/seo";
 import LocalizedLink from "@/components/ui/LocalizedLink";
 import Image from "next/image";
+import PrivacyPolicyContent from "@/components/pages/privacy-policy/PrivacyPolicyContent";
 
 export async function generateMetadata({
   params,
