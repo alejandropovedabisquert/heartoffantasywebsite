@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Globe } from "lucide-react";
 import { Locale, locales, pathnames } from "@/lib/routes";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { updateLocaleCookieClient } from "@/lib/utils/clientCookies";
 
 export default function LocaleSwitcher({
@@ -16,6 +16,7 @@ export default function LocaleSwitcher({
   const [height, setHeight] = useState<number>(0);
   const pathname = usePathname();
   const router = useRouter();
+  const searchParams = useSearchParams();
 
   const languageLabels = {
     en: "English",
@@ -91,7 +92,13 @@ export default function LocaleSwitcher({
 
     const newUrl = `/${newLocale}${newTranslatedPath}`;
     
-    const finalUrl = newUrl.replace(/\/+/g, '/');
+    let finalUrl = newUrl.replace(/\/+/g, '/');
+
+    const queryString = searchParams.toString();
+    
+    if (queryString) {
+      finalUrl += `?${queryString}`;
+    }
 
     router.push(finalUrl);
     router.refresh();
