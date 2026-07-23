@@ -59,7 +59,7 @@ export default function GallerySection({
                             initial={{ opacity: 0, y: -20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: .3, ease: "easeOut", delay: (index + 1) * 0.1 }}
+                            transition={{ duration: .3, ease: "easeOut", delay: 0.1 }}
                         >
                             <Image
                                 {...image}

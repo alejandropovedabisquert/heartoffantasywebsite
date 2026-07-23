@@ -36,8 +36,8 @@ export default function HeaderSection({
               <Image
                 src={"/heart.webp"}
                 className="image-rendering-pixelated"
-                width={500}
-                height={500}
+                width={800}
+                height={476}
                 alt="logo"
                 priority={true}
               />
