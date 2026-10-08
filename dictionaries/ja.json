@@ -54,6 +54,68 @@
     ],
     "conclusion": "勇気はあるか――闇を越え、伝説となれ。"
   },
+    "TeamSection": {
+    "title": "私たちのチーム",
+    "members": [
+      {
+        "name": "Blacksmith",
+        "role": "ファウンダー & バックエンドエンジニア",
+        "image": "/team/blacksmith.webp",
+        "socials": [
+          {
+            "link": "https://www.youtube.com/@blacksmith94",
+            "icon": "youtube"
+          },
+          {
+            "link": "https://www.twitch.tv/blacksmith3",
+            "icon": "twitch"
+          }
+        ]
+      },
+      {
+        "name": "Germán Coronel",
+        "role": "3Dアーティスト",
+        "image": "/team/german.webp",
+        "socials": [
+          {
+            "link": "https://www.youtube.com/germancoronelg",
+            "icon": "youtube"
+          },
+          {
+            "link": "https://www.twitch.tv/germancoronelg",
+            "icon": "twitch"
+          }
+        ]
+      },
+      {
+        "name": "Niko",
+        "role": "3Dアーティスト",
+        "image": "/team/niko.webp",
+        "socials": [
+          {
+            "link": "https://www.artstation.com/niko_twice",
+            "icon": "artstation"
+          }
+        ]
+      },
+      {
+        "name": "Chicodeloszorros",
+        "role": "ウェブ開発者",
+        "image": "/team/chicodeloszorros.webp",
+        "socials": 
+        [
+          {
+            "link": "https://www.linkedin.com/in/alejandro-poveda-bisquert",
+            "icon": "linkedin"
+          },
+          {
+            "link": "https://www.alejandropoveda.es/",
+            "icon": "website"
+          }
+        ]
+      }
+    ]
+  },
   "BannerGodotSection": {
     "title": "使用エンジン："
   },

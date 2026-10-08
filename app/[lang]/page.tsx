@@ -10,6 +10,7 @@ import { getDictionary } from "./dictionaries";
 import { hasLocale, Locale } from "@/lib/routes";
 import { Metadata } from "next";
 import { getAlternateLanguages } from "@/lib/utils/seo";
+import TeamSection from "@/components/pages/home/TeamSection";
 
 export async function generateMetadata({
   params,
@@ -59,6 +60,7 @@ export default async function Home({ params }: PageProps<'/[lang]'>) {
           <HistorySection dict={dict.HistorySection}/>
           <GallerySection dict={dict.GallerySection}/>
           <FeaturesSection dict={dict.FeaturesSection}/>
+          <TeamSection dict={dict.TeamSection}/>
         </div>
         <div className="relative overflow-hidden">
           <BannerGodotSection dict={dict.BannerGodotSection}/>

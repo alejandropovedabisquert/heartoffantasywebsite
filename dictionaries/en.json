@@ -53,6 +53,68 @@
     ],
     "conclusion": ""
   },
+  "TeamSection": {
+    "title": "The team",
+    "members": [
+      {
+        "name": "Blacksmith",
+        "role": "Founder & Backend Engineer",
+        "image": "/team/blacksmith.webp",
+        "socials": [
+          {
+            "link": "https://www.youtube.com/@blacksmith94",
+            "icon": "youtube"
+          },
+          {
+            "link": "https://www.twitch.tv/blacksmith3",
+            "icon": "twitch"
+          }
+        ]
+      },
+      {
+        "name": "Germán Coronel",
+        "role": "3D Artist",
+        "image": "/team/german.webp",
+        "socials": [
+          {
+            "link": "https://www.youtube.com/germancoronelg",
+            "icon": "youtube"
+          },
+          {
+            "link": "https://www.twitch.tv/germancoronelg",
+            "icon": "twitch"
+          }
+        ]
+      },
+      {
+        "name": "Niko",
+        "role": "3D Artist",
+        "image": "/team/niko.webp",
+        "socials": [
+          {
+            "link": "https://www.artstation.com/niko_twice",
+            "icon": "artstation"
+          }
+        ]
+      },
+      {
+        "name": "Chicodeloszorros",
+        "role": "Web Developer",
+        "image": "/team/chicodeloszorros.webp",
+        "socials": 
+        [
+          {
+            "link": "https://www.linkedin.com/in/alejandro-poveda-bisquert",
+            "icon": "linkedin"
+          },
+          {
+            "link": "https://www.alejandropoveda.es/",
+            "icon": "website"
+          }
+        ]
+      }
+    ]
+  },
   "BannerGodotSection": {
     "title": "Made with"
   },
