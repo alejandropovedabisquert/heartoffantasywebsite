@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { getInternalPath, locales, defaultLocale, Locale } from './lib/routes'; 
+import { getInternalPath, getLocalizedPath, isInternalPath, locales, defaultLocale, Locale } from './lib/routes';
 
 export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
@@ -57,7 +57,8 @@ export function proxy(request: NextRequest) {
     const newPath = decodedPathname.replace(`/${defaultLocale}`, '') || '/';
     const redirectUrl = new URL(newPath, request.url);
     redirectUrl.search = search;
-    return NextResponse.redirect(redirectUrl);
+    // 308 permanente: la URL /en/... nunca es la buena
+    return NextResponse.redirect(redirectUrl, 308);
   }
 
   // Determinamos el locale actual para los headers (reaprovechamos la variable de arriba)
@@ -87,6 +88,14 @@ export function proxy(request: NextRequest) {
         headers: requestHeaders,
       }
     });
+  }
+
+  // Si piden el slug interno en un idioma donde está traducido (ej. /es/privacy-policy),
+  // redirigimos al slug traducido para no servir contenido duplicado
+  if (isInternalPath(pathWithoutLocale)) {
+    const redirectUrl = new URL(getLocalizedPath(pathWithoutLocale, currentLocale as Locale), request.url);
+    redirectUrl.search = search;
+    return NextResponse.redirect(redirectUrl, 308);
   }
 
   if (!hasLocale) {

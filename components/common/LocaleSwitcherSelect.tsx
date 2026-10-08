@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Globe } from "lucide-react";
-import { Locale, locales, pathnames } from "@/lib/routes";
+import { defaultLocale, getLocalizedPath, isInternalPath, Locale, locales, pathnames } from "@/lib/routes";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { updateLocaleCookieClient } from "@/lib/utils/clientCookies";
 
@@ -88,11 +88,10 @@ export default function LocaleSwitcher({
       }
     }
 
-    const newTranslatedPath = pathnames[internalPath as keyof typeof pathnames]?.[newLocale as Locale] || internalPath;
-
-    const newUrl = `/${newLocale}${newTranslatedPath}`;
-    
-    let finalUrl = newUrl.replace(/\/+/g, '/');
+    // URL pública final (sin /en ni barra final) para evitar redirecciones
+    let finalUrl = isInternalPath(internalPath)
+      ? getLocalizedPath(internalPath, newLocale)
+      : `${newLocale === defaultLocale ? "" : `/${newLocale}`}${internalPath}`.replace(/\/+/g, '/');
 
     const queryString = searchParams.toString();
     

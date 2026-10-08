@@ -49,6 +49,28 @@ export const pathnames = {
 
 export type Locale = (typeof locales)[number]
 
+export type InternalPath = keyof typeof pathnames;
+
+// Rutas que no deben indexarse (noindex) ni aparecer en el sitemap
+export const noIndexPaths: InternalPath[] = ["/activate", "/forgot-password", "/reset-password"];
+
+export function isInternalPath(path: string): path is InternalPath {
+  return Object.prototype.hasOwnProperty.call(pathnames, path);
+}
+
+// Devuelve la URL pública final de una ruta interna (sin prefijo para el idioma por defecto
+// y sin barra final), para que enlaces, hreflang y sitemap apunten siempre a la URL definitiva
+export function getLocalizedPath(internalPath: InternalPath, locale: Locale): string {
+  const translatedSlug = pathnames[internalPath][locale];
+  const prefix = locale === defaultLocale ? "" : `/${locale}`;
+
+  let path = `${prefix}${translatedSlug}`.replace(/\/+/g, "/");
+  if (path !== "/" && path.endsWith("/")) {
+    path = path.slice(0, -1);
+  }
+  return path || "/";
+}
+
 export function hasLocale(locale: string): locale is Locale {
   return locales.includes(locale as Locale);
 }

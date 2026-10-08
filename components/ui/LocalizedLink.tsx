@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Locale, pathnames } from "@/lib/routes";
+import { defaultLocale, getLocalizedPath, isInternalPath, Locale, pathnames } from "@/lib/routes";
 import clsx from "clsx";
 
 const variantStyles: Record<string, string> = {
@@ -27,11 +27,11 @@ export default function LocalizedLink({
   isExternal = false,
   ...rest
 }: LocalizedLinkProps) {
-  // Buscamos la traducción de la ruta, o usamos el href original como fallback
-  const translatedPath = pathnames[href as keyof typeof pathnames]?.[locale] || href;
-
-  // Construimos la URL final con el idioma
-  let finalHref = `/${locale}${translatedPath}`;
+  // Construimos la URL pública final (sin /en ni barra final) para evitar redirecciones.
+  // Si la ruta no está mapeada, usamos el href original con el prefijo del idioma como fallback
+  let finalHref = isInternalPath(href)
+    ? getLocalizedPath(href, locale)
+    : `${locale === defaultLocale ? "" : `/${locale}`}${href}`;
 
   if(isExternal){
     finalHref = href

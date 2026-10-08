@@ -22,6 +22,10 @@ export async function generateMetadata({
     metadataBase: new URL("https://www.heartoffantasy.com"),
     title: title,
     description: description,
+    robots: {
+      index: false,
+      follow: true,
+    },
     alternates: {
       canonical: languages[lang],
       languages: languages,
