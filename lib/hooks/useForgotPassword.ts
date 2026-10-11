@@ -8,6 +8,7 @@ export function useForgotPassword() {
     const [isLoading, setIsLoading] = useState(false);
     const [response, setResponse] = useState<FormErrors>({});
     const forgotPassword = async (formData: FormData) => {
+        setIsLoading(true);
         const email = formData.get('email')?.toString() || '';
         const token = formData.get('captcha')?.toString() || "";
 
@@ -30,7 +31,6 @@ export function useForgotPassword() {
             return data;
         }
 
-        setIsLoading(true);
         try {
             const result = await usersApi.forgotPasswordUser(email);
             let responseData: { success: boolean; message?: string;};

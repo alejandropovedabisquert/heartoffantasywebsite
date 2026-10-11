@@ -163,6 +163,7 @@ export default function ForgotPasswordForm({
                         <div className="flex gap-4 flex-wrap items-center">
                             <button
                                 type="submit"
+                                disabled={isLoading} aria-busy={isLoading}
                                 className="cursor-pointer px-6 py-4 text-lg flex items-center justify-center gap-2 bg-corporative text-white transition-all hover:bg-white hover:text-black"
                             >
                                 {isLoading ? (
