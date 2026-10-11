@@ -46,7 +46,7 @@ export default async function Activate({
   const { token } = await searchParams;
   if (!hasLocale(lang) || typeof token !== "string") notFound();
   const res = await usersApi.activateUser(token);
-  if (res.status !== 200) notFound();
+  if (res.status !== 200 && res.status !== 400) notFound();
   const dict = await getDictionary(lang);
 
   return (
