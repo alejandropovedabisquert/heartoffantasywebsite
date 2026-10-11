@@ -98,6 +98,18 @@
           }
         ]
       },
+            {
+        "name": "MuntiDev",
+        "role": "3Dアーティスト",
+        "image": "/team/muntidev.webp",
+        "socials": 
+        [
+          {
+            "link": "https://www.twitch.tv/muntidev",
+            "icon": "twitch"
+          }
+        ]
+      },
       {
         "name": "Chicodeloszorros",
         "role": "ウェブ開発者",

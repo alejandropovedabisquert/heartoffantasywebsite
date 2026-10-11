@@ -38,7 +38,7 @@ export default function TeamSection({
                     >
                         <div className="relative overflow-hidden mb-12 hover-grayscale-0 wow fadeInUp">
                             <div className="relative overflow-hidden px-6">
-                                <Image src={member.image} width={300} height={300} className="max-w-full h-auto mx-auto rounded-full" alt={member.name} />
+                                <Image src={member.image} width={300} height={300} className="max-w-full h-auto mx-auto rounded-full" alt={member.name} priority={false} />
                             </div>
                             <div className="pt-6 text-center">
                                 <p className="text-lg leading-normal font-bold mb-1">{member.name}</p>
@@ -48,7 +48,7 @@ export default function TeamSection({
                                         member.socials &&
                                         member.socials.map((social, idx) => (
                                             <a key={idx} target="_blank" rel="noopener noreferrer" aria-label={`${social.icon} link`} href={social.link}>
-                                                <img src={`/rrss_svg/${social.icon}.svg`} alt={`${social.icon} icon`} className="w-6 h-6 scale-100 transition-all hover:scale-150" />
+                                                <Image src={`/rrss_svg/${social.icon}.svg`} alt={`${social.icon} icon`} width={24} height={24} unoptimized={true} className="w-6 h-6 scale-100 transition-all hover:scale-150" />
                                             </a>
                                         ))
                                     }

@@ -98,6 +98,18 @@
         ]
       },
       {
+        "name": "MuntiDev",
+        "role": "Artista 3D",
+        "image": "/team/muntidev.webp",
+        "socials": 
+        [
+          {
+            "link": "https://www.twitch.tv/muntidev",
+            "icon": "twitch"
+          }
+        ]
+      },
+      {
         "name": "Chicodeloszorros",
         "role": "Desarrollador Web",
         "image": "/team/chicodeloszorros.webp",
