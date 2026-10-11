@@ -36,37 +36,42 @@ export default function GridVideo() {
     }
 
     if (!videos) {
-        return <SkeletonGridVideo length={3}/>;
+        return <SkeletonGridVideo length={3} />;
     }
 
     return (
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {videos?.items.map((video: Video, index: number) => (
-                <motion.div 
-                className="col-span-2" key={video.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: .3, ease: "easeOut", delay: index * 0.1 }}
-                >
-                    <div className="relative overflow-hidden group/image">
-                        <a href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}&list=${video.snippet.playlistId}`} target="_blank">
-                            <div className={backgroundStyles}>
-                                <Image
-                                    className="group-hover/image:scale-110 transition-all"
-                                    src={`${video.snippet.thumbnails.maxres.url}`}
-                                    alt={video.snippet.title}
-                                    width={800}
-                                    height={800}
-                                />
-                                <h3 className="font-bold text-white text-lg absolute top-0 p-4 z-20">
-                                    {video.snippet.title}
-                                </h3>
-                            </div>
-                        </a>
-                    </div>
-                </motion.div>
-            ))}
+            {videos?.items.map((video: Video, index: number) => {
+                const t = video.snippet.thumbnails;
+                const thumb = t.maxres ?? t.high ?? t.medium ?? t.default;
+                if (!thumb) return null;
+                return (
+                    <motion.div
+                        className="col-span-2" key={video.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: .3, ease: "easeOut", delay: index * 0.1 }}
+                    >
+                        <div className="relative overflow-hidden group/image">
+                            <a href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}&list=${video.snippet.playlistId}`} target="_blank">
+                                <div className={backgroundStyles}>
+                                    <Image
+                                        className="group-hover/image:scale-110 transition-all"
+                                        src={`${thumb.url}`}
+                                        alt={video.snippet.title}
+                                        width={800}
+                                        height={800}
+                                    />
+                                    <h3 className="font-bold text-white text-lg absolute top-0 p-4 z-20">
+                                        {video.snippet.title}
+                                    </h3>
+                                </div>
+                            </a>
+                        </div>
+                    </motion.div>
+                )
+            })}
         </div>
     );
 }
