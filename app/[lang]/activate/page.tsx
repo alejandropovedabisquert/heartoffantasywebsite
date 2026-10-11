@@ -6,6 +6,7 @@ import { hasLocale, Locale } from "@/lib/routes";
 import { getAlternateLanguages } from "@/lib/utils/seo";
 import LocalizedLink from "@/components/ui/LocalizedLink";
 import Image from "next/image";
+import { usersApi } from "@/lib/api/users";
 
 export async function generateMetadata({
   params,
@@ -40,16 +41,13 @@ export async function generateMetadata({
 export default async function Activate({
   params,
   searchParams,
-}: {
-  params: Promise<{ lang: Locale }>;
-  searchParams: Promise<{ token?: string }>;
-}) {
-  const lang = (await params).lang;
+}: PageProps<"/[lang]/activate">) {
+  const { lang } = await params;
   const { token } = await searchParams;
-  if (!hasLocale(lang)) notFound();
-
+  if (!hasLocale(lang) || typeof token !== "string") notFound();
+  const res = await usersApi.activateUser(token);
+  if (res.status !== 200) notFound();
   const dict = await getDictionary(lang);
-  if (!token) notFound();
 
   return (
     <>
@@ -69,7 +67,7 @@ export default async function Activate({
           />
         </LocalizedLink>
       </div>
-      <ActivateSection dict={dict.ActivatePage} token={token}/>
+      <ActivateSection dict={dict.ActivatePage} token={token} />
     </>
   );
 }
