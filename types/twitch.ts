@@ -16,11 +16,11 @@ type Stream = {
     is_mature: boolean;
 }
 
-type Pagination = {
-    cursor: string;
+export type TwitchLiveStatus = {
+    live: boolean;
+    stream: Stream | null;
 }
 
 export type TwitchStreamResponse = {
     data: Stream[];
-    pagination: Pagination;
 }

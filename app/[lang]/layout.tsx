@@ -67,7 +67,7 @@ export default async function RootLayout({
           <HeaderSection dict={dict.HeaderNav} locale={lang} />
           <main className="relative z-10">{children}</main>
           <FooterSection dict={dict.FooterSection} locale={lang} />
-          <StreamerStatus dict={dict.TwitchPopup} streamer="blacksmith3" />
+          <StreamerStatus dict={dict.TwitchPopup} />
           <CookieBanner dict={dict.CookieConsent} />
         </CookieProvider>
       </body>
