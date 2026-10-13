@@ -2,7 +2,7 @@
 import LanguageSwitcher from "@/components/common/LocaleSwitcherSelect";
 import { Download } from "lucide-react";
 import Image from "next/image";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useBodyScrollLock } from "@/lib/hooks/useBodyScrollLock";
 import LocalizedLink from "../ui/LocalizedLink";
 import { getDictionary } from "@/app/[lang]/dictionaries";
@@ -61,7 +61,9 @@ export default function HeaderSection({
               </ul>
             </nav>
             <div className="flex items-center  gap-4">
-              <LanguageSwitcher currentLocale={locale} />
+              <Suspense fallback={null}>
+                <LanguageSwitcher currentLocale={locale} />
+              </Suspense>
               <LocalizedLink
                 variant="contrast"
                 className="flex gap-2"
@@ -110,7 +112,9 @@ export default function HeaderSection({
                 <Download />
                 {dict.download.text}
               </LocalizedLink>
-              <LanguageSwitcher currentLocale={locale} />
+              <Suspense fallback={null}>
+                <LanguageSwitcher currentLocale={locale} />
+              </Suspense>
             </div>
           </div>
         </div>
