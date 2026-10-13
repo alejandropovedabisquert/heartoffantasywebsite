@@ -1,30 +1,21 @@
-"use server"
-export async function getYoutubeVideos() {
+import "server-only";
+import type YoutubeResponse from "@/types/youtube";
+
+export async function getYoutubeVideos(): Promise<YoutubeResponse> {
     const apiKey = process.env.YT_API_KEY;
     const channelId = process.env.YT_CHANNEL_ID;
     const apiURL = process.env.YT_API_URL;
-    const playlistId = process.env.YT_PLAYLIST_ID
+    const playlistId = process.env.YT_PLAYLIST_ID;
 
-    try {
-        const url = `${apiURL}?key=${apiKey}&channelId=${channelId}&playlistId=${playlistId}&part=snippet&maxResults=6`;
-        
-        const data = await fetch(url, {
-            next: { 
-                revalidate: 604800 
-            }
-        });
-        
-        if(!data.ok){
-            throw Error('Failed to fetch videos');
-        }
+    const url = `${apiURL}?key=${apiKey}&channelId=${channelId}&playlistId=${playlistId}&part=snippet&maxResults=6`;
 
-        return await data.json();
+    const response = await fetch(url, {
+        next: { revalidate: 604800 },
+    });
 
-    } catch (error: unknown) {
-        if (error instanceof Error) {
-            throw new Error(error.message);
-        } else {
-            throw new Error("An error acurred while fetching the videos");
-        }
+    if (!response.ok) {
+        throw new Error(`Failed to fetch videos: ${response.status}`);
     }
+
+    return (await response.json()) as YoutubeResponse;
 }

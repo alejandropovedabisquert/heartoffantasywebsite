@@ -1,77 +1,13 @@
-"use client"
-import YoutubeResponse, { Video } from "@/types/youtube";
-import { getYoutubeVideos } from "@/lib/api/youtube";
-import { useEffect, useState } from "react";
-import SkeletonGridVideo from "../skeleton/SkeletonGridVideo";
-import Image from "next/image";
-import clsx from "clsx";
-import { motion } from "framer-motion";
-
-export default function GridVideo() {
-    const [videos, setVideos] = useState<YoutubeResponse | null>(null);
-    const [error, setError] = useState<string | null>(null);
-
-    const backgroundStyles = clsx(
-        "before:absolute before:w-full before:h-full before:bg-black before:opacity-40 before:z-10 group-hover/image:before:opacity-20 before:transition-all",
-    );
-
-    useEffect(() => {
-        async function fetchVideos() {
-            try {
-                const res = await getYoutubeVideos();
-                setVideos(res)
-            } catch (err: unknown) {
-                if (err instanceof Error) {
-                    setError(err.message);
-                } else {
-                    setError('An unexpected error ocurred');
-                }
-            }
-        }
-        fetchVideos();
-    }, [])
-
-    if (error) {
-        return <div>Error: {error}</div>;
-    }
-
-    if (!videos) {
-        return <SkeletonGridVideo length={3} />;
-    }
-
+import { getYoutubeVideos } from "@/lib/api/youtube"; // con "server-only", sin "use server"
+import VideoCard from "../pages/home/VideoCard";
+export default async function GridVideo() {
+    const videos = await getYoutubeVideos().catch(() => null);
+    if (!videos?.items.length) return null;
     return (
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {videos?.items.map((video: Video, index: number) => {
-                const t = video.snippet.thumbnails;
-                const thumb = t.maxres ?? t.high ?? t.medium ?? t.default;
-                if (!thumb) return null;
-                return (
-                    <motion.div
-                        className="col-span-2" key={video.id}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: .3, ease: "easeOut", delay: index * 0.1 }}
-                    >
-                        <div className="relative overflow-hidden group/image">
-                            <a href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}&list=${video.snippet.playlistId}`} target="_blank">
-                                <div className={backgroundStyles}>
-                                    <Image
-                                        className="group-hover/image:scale-110 transition-all"
-                                        src={`${thumb.url}`}
-                                        alt={video.snippet.title}
-                                        width={800}
-                                        height={800}
-                                    />
-                                    <h3 className="font-bold text-white text-lg absolute top-0 p-4 z-20">
-                                        {video.snippet.title}
-                                    </h3>
-                                </div>
-                            </a>
-                        </div>
-                    </motion.div>
-                )
-            })}
+            {videos.items.map((video, index) => (
+                <VideoCard key={video.id} video={video} index={index} />
+            ))}
         </div>
     );
 }

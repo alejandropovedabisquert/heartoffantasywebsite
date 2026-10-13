@@ -1,25 +1,20 @@
-"use client";
 import { getDictionary } from "@/app/[lang]/dictionaries";
-import { Titulo } from "../../ui/Titulo";
 import GridVideo from "../../common/GridVideo";
-import { motion } from "framer-motion";
+import { Suspense } from "react";
+import SkeletonGridVideo from "@/components/skeleton/SkeletonGridVideo";
+import AnimatedTitle from "@/components/ui/animated/AnimatedTitle";
 
 export default function VideosSection({
     dict
-}:{
+}: {
     dict: Awaited<ReturnType<typeof getDictionary>>["VideosSection"],
 }) {
     return (
         <div className="relative my-24">
-            <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: .3, ease: "easeOut" }}
-            >
-                <Titulo as={"h2"} position="left" className="text-2xl sm:text-4xl font-bold my-4">{dict.title}</Titulo>
-            </motion.div>
-            <GridVideo/>
+            <AnimatedTitle dict={dict.title} />
+            <Suspense fallback={<SkeletonGridVideo length={3} />}>
+                <GridVideo />
+            </Suspense>
         </div>
     );
 }
