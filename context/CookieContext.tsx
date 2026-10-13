@@ -1,8 +1,8 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, ReactNode, useSyncExternalStore } from "react";
 import { Locale } from "@/lib/routes";
-import { removeCookieClient, setCookieClient } from "@/lib/utils/clientCookies";
+import { hasCookieClient, removeCookieClient, setCookieClient } from "@/lib/utils/clientCookies";
 
 // Tipos
 type CookiePreferences = {
@@ -12,7 +12,6 @@ type CookiePreferences = {
 
 type CookieContextType = {
   isVisible: boolean;
-  setIsVisible: (visible: boolean) => void;
   showSettings: boolean;
   setShowSettings: (show: boolean) => void;
   preferences: CookiePreferences;
@@ -22,18 +21,23 @@ type CookieContextType = {
 
 // Crear el contexto
 const CookieContext = createContext<CookieContextType | undefined>(undefined);
+const subscribe = () => () => { };
 
 // Provider
 export function CookieProvider({
   children,
-  hasConsent,
   locale,
 }: {
   children: ReactNode;
-  hasConsent: boolean;
   locale: Locale;
 }) {
-  const [isVisible, setIsVisible] = useState(!hasConsent);
+  const hasConsent = useSyncExternalStore(
+    subscribe,
+    () => hasCookieClient({ name: "cookie-consent" }),
+    () => true,
+  );
+  const [dismissed, setDismissed] = useState(false);
+  const isVisible = !hasConsent && !dismissed;
   const [showSettings, setShowSettings] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
     essential: true,
@@ -46,13 +50,13 @@ export function CookieProvider({
       name: "cookie-consent",
       data: JSON.stringify(prefs),
     });
-    
+
     setPreferences(prefs);
-    setIsVisible(false);
+    setDismissed(true);
     setShowSettings(false);
 
     if (!prefs.preferences) {
-      removeCookieClient({name: "lang"})
+      removeCookieClient({ name: "lang" })
     } else {
       setCookieClient({ name: "lang", data: locale });
     }
@@ -62,7 +66,6 @@ export function CookieProvider({
     <CookieContext.Provider
       value={{
         isVisible,
-        setIsVisible,
         showSettings,
         setShowSettings,
         preferences,

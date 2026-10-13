@@ -12,7 +12,6 @@ import StreamerStatus from "@/components/common/StreamerStatus";
 import CookieBanner from "@/components/common/CookieBanner";
 import FirefliesEffect from "@/components/common/FirefliesEffect";
 import { CookieProvider } from "@/context/CookieContext";
-import { cookies } from "next/headers";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.heartoffantasy.com"),
@@ -44,8 +43,6 @@ export default async function RootLayout({
   if (!hasLocale(lang)) notFound();
 
   const dict = await getDictionary(lang);
-  const cookieStore = await cookies();
-  const hasConsent = cookieStore.has("cookie-consent");
 
   return (
     <html lang={lang} className="overflow-x-hidden">
@@ -53,7 +50,7 @@ export default async function RootLayout({
         suppressHydrationWarning
         className={`${geistSans.className} antialiased overflow-x-hidden`}
       >
-        <CookieProvider hasConsent={hasConsent} locale={lang}>
+        <CookieProvider locale={lang}>
           <FirefliesEffect
             count={100} // Cuantas luciernagas apareceran
             speed={3} // A que velocidad se mueven
