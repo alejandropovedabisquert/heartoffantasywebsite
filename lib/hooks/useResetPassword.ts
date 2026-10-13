@@ -1,8 +1,8 @@
 'use client';
 import { useState } from "react";
 import { usersApi } from "../api/users";
-import { verifyCaptcha } from "../actions/verifyCaptchaActions";
 import { FormErrors } from "@/types/formErrors";
+import { verifyCaptcha } from "../actions/verifyCaptchaActions";
 
 export function useResetPassword() {
     const [isLoading, setIsLoading] = useState(false);
